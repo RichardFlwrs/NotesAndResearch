@@ -1,6 +1,7 @@
 Learning react.js with a game tutorial from: https://reactjs.org/tutorial/tutorial.html
 
- We must create a react project with node.js and using the template they provide, you should manage the structure of classes/components for a 'Tic Tac Toe' game. In this example they separate the game in 3 Models; Game, Board and Square. Through the whole tutorial you can see how the main logic scale from the smallest class Square, then the Board and finally the Game class. With this you may understand how components works and how they comunicate each other.
+ We must create a react project with node.js and using the template they provide, you should manage the structure of classes/components for a 'Tic Tac Toe' game. 
+ In this example they separate the game in 3 Models; Game, Board and Square. Through the whole tutorial you can see how the main logic scale from the smallest class Square, then the Board and finally the Game class. With this you may understand how components works and how they comunicate each other.
  The tutorial also explain how to add a "history" feature of all the moves you do in the game using immutability. Registering the state every time you do a move.
  
 
