@@ -1,0 +1,67 @@
+En este tema se revisan los conceptos básicos de la programacion orientado a objectos en un ámbito general.
+
+
+
+
+> Conjuntos
+
+] Un conjunto es una colección desordenada de elementos no repetidos, asociados por algún patrón
+
+] El Conjunto es el fundamento del conocimiento, del pensamiento, del lenguaje y de la lógica: cada cosa y cada concepto/palabra define, habla, refiere a, …​ un conjunto.
+
+	(Tipos de Conjuntos)
+	
+	+ Extension:
+	Colección desordenada de elementos no repetidos, asociados por extensión (aleatoriedad, capricho, …​)
+	
+	+ Comprensión: 
+	Colección desordenada de elementos no repetidos, asociados por comprensión (criterio, ecuación, condición, …​) con conjunto de características comunes, patrón
+
+> Objetos y Clases
+
+[ OBJETOS ]
+Un objeto es un conjunto de elementos que son otros (conjuntos de) objetos que a su vez …​ y así recursivamente!. Hasta llegar a las elementos mas simples (atomos/celulas).
+
++ Puede ser tangible o intangible
+
+[ CLASES ]
+Una clase es un conjunto cuyos elementos son las características comunes de otro conjunto de objetos similares
+
+	~ e.g.
+	
+		[objeto]		|		[clase]
+	
+		1) un gato		|		felino (Felidae)
+		
+		2) ":)"			|		emoticono 
+.
+
+> Clases Abstractas
+Una clase abstracta es el conjunto intersección de características comunes de un conjunto de clases similares
+
+	~ e.g.
+		:Mamifero => Perro, Cerdo
+	
+	(Donde Mamifero es la clase Abstracta que hereda las propiedades a ambos elementos)
+
+
+> Jerarquías de Composición vs Clasificación
+
+[ COMPOSICIÓN ]
+"tú eres el conjunto de tus órganos que cada uno es el conjunto de tejidos que son el conjunto de células, …​ partículas elmentales"
+
+[ CLASIFICACIÓN ]
+"la persona es una mujer o un hombre que a su vez se subdividen en …​ con características generales, comunes, compartidas, …​"
+
+> Relación de Asociación.
+
+> Estructuras de Objetos
+	+ Secuencia
+	+ Arbol
+	+ Grafo
+	+ Jerarquía
+	
+> Estrategias de Clasificación
+	+ Con clases / Conciso	|	Categorización clásica
+				 / Difuso	|	Agrupación conceptual
+	+ Sin clases			|	Teoría de prototipos
