@@ -19,7 +19,7 @@ Learning react.js with a game tutorial from: https://reactjs.org/tutorial/tutori
 	+ Inside the template, you will need to use 
 		. [props], for all the values you may pass to the component via html-properties.
 		
-		. [states],	data that may need to be stored for the compoenent. You can cahnge the values with the method: 'setState()'
+		. [states],	data that may need to be stored for the compoenent. You can change the values with the method: 'setState()'
 	.
 	+ setState: React will update only the properties mentioned in 'setState' method leaving the remaining state as is.
 	
