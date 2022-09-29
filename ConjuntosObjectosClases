@@ -63,5 +63,6 @@ Una clase abstracta es el conjunto intersección de características comunes de 
 	
 > Estrategias de Clasificación
 	+ Con clases / Conciso	|	Categorización clásica
-				 / Difuso	|	Agrupación conceptual
-	+ Sin clases			|	Teoría de prototipos
+		     / Difuso	|	Agrupación conceptual
+		    		|
+	+ Sin clases		|	Teoría de prototipos
