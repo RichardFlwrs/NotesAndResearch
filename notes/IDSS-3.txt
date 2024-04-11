@@ -1,0 +1,70 @@
+What is outliers?
+- data points that stands out from the group of distribution
+
+
+# The Singular Value Decomposition (SVD) of a matrix is a factorization of that matrix into three matrices, where the columns of U are the left singular vectors; S has singular values and is diagonal; and V has rows that are the right singular vectors.
+# SVD represents an expansion of the original data in a coordinate system where the covariance matrix is diagonal.
+
+# Alternating Least Squares (ALS) is an optimization technique used to solve the matrix factorization problem. This technique achieves good performance and has proven relatively easy to implement. It uses regularisation methods to avoid overfitting and increase prediction accuracy.
+
+----
+
+
+The properties of Root Mean Squared Error (RMSE), Precision, Recall, and F1 Score play significant roles in evaluating the performance of a Collaborative Filtering Recommendation System. Here's how each of these metrics affects and reflects the effectiveness of a collaborative filtering system:
+
+
+RMSE (Root Mean Squared Error):
+
+Effect: RMSE measures the average squared differences between predicted and actual ratings, thereby quantifying the prediction accuracy.
+Impact: A lower RMSE indicates more accurate predictions. For a recommendation system, lower RMSE implies that the system can make more precise rating predictions, leading to better recommendations tailored to users' preferences.
+
+
+
+Precision:
+
+Effect: Precision measures the proportion of recommended items that are relevant to the user out of all recommended items.
+Impact: A higher precision value suggests that the system recommends a higher ratio of relevant items to the user. In the context of collaborative filtering, higher precision indicates that the system can suggest items that align closely with user preferences, increasing user satisfaction with the recommendations.
+
+
+
+Recall:
+
+Effect: Recall measures the proportion of relevant items that have been recommended to the user out of all relevant items.
+Impact: Higher recall implies that the recommendation system is effectively capturing a larger portion of items that the user would find relevant. In collaborative filtering, higher recall signifies that the system does not miss out on suggesting relevant items, improving the user experience and recommendation quality.
+
+
+
+F1 Score:
+
+Effect: F1 Score is the harmonic mean of precision and recall, providing a balanced evaluation of a recommendation system's performance.
+Impact: A higher F1 score indicates a good balance between precision and recall. It signifies that the recommendation system can provide relevant recommendations (high precision) while not missing out on important items (high recall) for the user.
+
+
+
+In summary, for a Collaborative Filtering Recommendation System:
+
+Low RMSE: Indicates accurate prediction of ratings, leading to precise recommendations.
+High Precision: Reflects a higher proportion of relevant recommendations, enhancing user satisfaction.
+High Recall: Indicates capturing a larger portion of relevant items, increasing the coverage of user preferences.
+High F1 Score: Shows a good balance between precision and recall, ensuring both recommendation quality and coverage.
+
+By understanding and optimizing these metrics in a collaborative filtering system, you can enhance the accuracy and relevance of recommendations provided to users, ultimately improving the overall performance and user experience of the recommendation system.
+
+
+---
+
+1) C
+2) C
+3) B 
+4) A
+5) B 
+6) D
+7) C
+8) C
+9) B
+10) B
+11) C
+12) C
+13) A
+14) B
+15) C

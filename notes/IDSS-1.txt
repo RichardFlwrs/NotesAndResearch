@@ -1,0 +1,157 @@
+
+
+
+Probability
+
+- Normal Probability
+
+- Conditional Probability
+    ° A%B = A+B / B
+
+- Bayes Rule
+    ° 
+
+!# TODO: Look out for excercies on internet
+
+________________________________________________________________________
+
+
+Types of Statistics
+
+- Inferntial Statistics & Descriptive Statistics 
+
+- Descriptive
+    < mean, media, mode; are different type of averages from a data set >
+
+    ° Mean (The average value)
+        Is adding up all data points and dividing the sum by the number of data points ( or total number ).
+
+    ° Median (The middle value)
+        Is the middle value after all data points have been arranged in value order as a list of numbers
+
+    ° Mode (The most frequently value)
+        Is the value that appears the most number of times in a data set
+
+    ° Range
+        Is the differnce between the largest value and the smallest value
+
+    ° Standar Deviation (How spread the data is)
+
+
+# This values works to know how "normal" de data measure is in a *histogram* (frequency distribution)
+# ( Skewed or Symetrical Data ) => mean = media = mode
+#       https://ift.world/concept1/concept-8-symmetry-skewness-return-distributions
+# I need to search excercices of this at least for 4 hours at week
+
+________________________________________________________________________
+
+
+Tabular Data Representation using Matrices
+
+" Each row is a record, 
+each column is an attribute "
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________
+...     Data Science Application Case Study & Statistics    ...
+________________________________________________________________________
+
+
+Un Hotel esta teniendo pérdidas de dinero debido a las altas cancelaciones en las reservaciones de sus clientes
+Y te estan pidiendo como Cientifico de Datos que les des una solucion.
+
+
+
+    (1) Analizar la situacion
+
+Lo primero que hay que hacer es buscar razones o parametros para que los clientes quieran cancelar:
+    .   Analizar Trendings (Patrones)
+    .   Preguntar razones de cancelaciones
+    .   Price problem?
+    .   Flexible cancelation policy
+    .   Competencia
+    .   Tiempo del año
+    .   Tipo de cliente (costumer)
+
+
+Con estos parametros hay que dar una respuesta numérica. Brindando un proabilidad de cancelacion para cada reservacion.
+<Example> Un problema grande que sucedió en AirBnB es que se alquilaban cuartos para fiestas y dejaban un desastre de altos costos de reparacion. Asi que se utilzaron parametros como la 'edad', 'tiempo_de_estadía' y 'cuartos_a_rentar' para en caso de que sea alta la probabilidad de fiesta se haga una investigacion antes de registrar el hospedaje (booking).
+
+
+
+    (2) ¿Cómo crear un Modelo de solución?
+
+Tip 1: Nunca saltes directamente a la DATA y empieces a codear, primero analiza el negocio. Invierte una buena cantidad de tiempo en entender el /modelo_de_negocio y sus problemas frecuentes.
+
+Tip 2: Preguntar para aclarar ideas. Entre mas preguntas coherentes tengas mejor!
+    <Example> "Es esta la primera vez que se encuentran con este problema o es algo frecuente"
+        |   "Reglas de cancelacion/juego/pérdidas, etc"
+        |   "Beneficios de la competencia"
+        |   "Es un problema interno o externo a la empresa"
+
+Tip 3: No necesitas DATA para dar una solucion, pero es tu evidencia para demostrar (rely on data) que tu solucion es probable de funcionar.
+
+
+
+    (3) Directorio de data necesario / Data Gathering
+
+. Booking Data
+. Website Data (click stream)
+. Property Data (facilities; like wifi, calefaction, etc )
+. Social Media
+. Weather Data
+. Flight Price
+
+We might use SQL for data manage, and once you get the data you need to use Python for the manipulation of large data /along with some libraries for statistics.
+
+With these we need to achieve the "change of cancelation"
+
+
+    (4) Explore the Data ( EDA )
+
+What is EDA (Exploration Data Analysis)?
+<Ejemplo> de entrar a un lago mientras exploras las afueras:
+    .   Prfundidad
+    .   Temperatura
+    .   Fauna
+    .   Limpieza
+
+Para crear un modelo de solucion es necesario clarificar ciertas dudas antes de construir el modelo.
+De manera pragmatica esto vendría siendo la EDA.
+
+
+    (5) Build the Model
+
+<>
+
+    (6) Model deployment
+
+<>
+
+    (7) Metrics 
+
+<>
+
+    (8) Decision Making
+
+<>
+
+
+
+
+

@@ -1,0 +1,40 @@
+Mes: Noviembre 
+
+{M2}(1) . 
+{J}(2) . 
+{V}(3) . 
+{S}(4) . 
+{D}(5) . 
+--- 
+{L}(6) . 
+{M}(7) . 
+{M2}(8) . 
+{J}(9) . 
+{V}(10) . 
+{S}(11) . <Descanso> 
+{D}(12) . 
+--- 
+{L}(13) . 
+{M}(14) . 
+{M2}(15) . En la mañana Acomodo el patio un poco para que el arenero no se humedezca 
+    |   Saliendo del trabajo; conozco a Ali la vecina del departamento 20
+    |   Fallece "Eugenio"; la lagartija 😔. causa: Inanicion
+{J}(16) . <Trabajo> Conozco a Bernardo.- subgerente de Benavides suc Torres
+    |   Volví a escribir la BITACORA
+    |   Salgo con Cecy al restaurante "Tres Abuelas"
+{V}(17) . Voy con los amigos de Moy hasta Garcia. Jugamos juegos de mesa
+{S}(18) . <Descanso> 
+{D}(19) . 
+--- 
+{L}(20) . 
+{M}(21) . 
+{M2}(22) . 
+{J}(23) . Cecy va a un concierto de Miranda
+{V}(24) . Me inyectan TriB12 y salgo a las 3pm. Prefiero no ir a la posada para descansar mejor
+{S}(25) . Avanzo con la escula de IDSS
+{D}(26) . 
+--- 
+{L}(27) . 
+{M}(28) . 
+{M2}(29) . 
+{J}(30) . 

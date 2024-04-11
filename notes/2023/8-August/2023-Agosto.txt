@@ -1,0 +1,125 @@
+Mes: Agosto 
+
+
+{M}(1) . Estudio Python por 1 hora y creo un perfil para entrevistas en ingles    
+    |    Intento mover el carro y se le acaba la pila    
+    |    Ansiedad en el trabajo    
+    |    Hablo un poco de sexualidad con Cecy y la historia con mis padres
+{M2}(2) . Limpio mi laptop y organizo programas para empezar proyectos nuevos    
+    |    Empiezo a ver gameplay de Dark souls después de Estudiar
+{J}(3) .  Estudio MySQL + Hago un examen de JSON por parte de LinkedIn y no lo paso  
+    |   Descargo Dark Souls en mi compu    
+    |   Llevo el carro al mecanico para checar la pila    
+    |   Se cancela el plan ver 'Open Heimer' y mejor jugamos sims 4 y despues vemos Hora de Aventura c:
+{V}(4) . Podcast con eh Rubiu   
+    |   Pierdo $100 pesos en el Trabajo.    
+    |   
+{S}(5) . Tengo mi clases de introduccion a estadísticas para Data Science
+    |   Voy a comer con Cecy en "Las 3 abuelas", comimos envueltos de mole
+    |   Empiezo el libro de Python for Data Science en el trabajo
+    |   Hoja de Excel para manejar los pagos del clima
+{D}(6) . Limpio la casa y les hablo a mis roomies sobre la limpieza. Investigo strategias para Dark Souls je je
+    |   Podcast en el trabajo: Fisica y Psiconeuroinmunología (psico_neuro_inmuno-logía)
+    |   Se planifican los pagos para el Clima con Gerardo   
+________________________________________________________________________
+
+{L}(7) . (Desvelada de God of War con Gera && Cena con Cecy) 
+    |   Me desvelo hasta las 3am jugando God of War con Gerardo.- Despierto a las 12pm
+    |   En el trabajo; Yazmin se pone a llorar, trabajo con emoción por la entrevista de mañana
+    |   Voy con Cecy y cenamos arroz aguado con atún mezclado con queso crema y aguacate 🥴💫 hahah
+{M}(8) . (Entrevista con Dr Robledo) 
+    |   Llego felíz a mi depa y me preparo para ir a la entrevista
+    |   Me fue bien en la entrevista, me siento optimista y pienso que me seré el elegido
+    |   Me quedo en mi depa.- Juego tantito Dark Souls y veo un episodio de los Simpson con mis roomies. Me duermo temprano
+{M2}(9) . (regular) 
+    |   Me levanto tarde y muy descansado (Duermo 12 horas)  ,   Veo videos interesantes de ciencia '(Spandrel)'
+    |   Trabajo con Rene.- Le menciono que no quiero hablar de mi carro con él
+    |   Duermo con Cecy pero batallo mucho en dormir y me desvelo con videos de Dark Souls hasta las 3am
+{J}(10) . (Entreno pierna con Macías && Rest. italiano ) 
+    |   <Descanso> Juego Dark Souls por 2 horas y muevo tantito el carro
+    |   Entrenamiento de pierna con Macías (llega 1 hora tarde por el tráfico)
+    |   Tengo ansiedad porque creo que no me hablaran para el trabajo en Facultad de Economía
+    |   Comida en restaurante Italiano con Cecy ✨
+    |   Vamos a HEB y compramos cena (pruebo por primera vez los 'palmitos' y los 'elotitos') + Adventure Time
+{V}(11) . (peli: 'Pitch Perfect') 
+    |   Llego a mi casa para jugar mas Dark Souls... 😩😮‍💨. Aunque venzo al boss que nunca pude vencer antes hahah e.e
+    |   Trabajo muy adolorido de los gluteos pero consigo terminar los pendientes
+    |   Se va la luz en el depa y leo por 1 hora en el café cacao
+    |   Termino de ver 'Pitch Perfect' con Cecy
+{S}(12) . (Día perfecto junto con Cecy) 🌟
+    |   En la mañana despierto teniendo un sueño muy raro hahah. Tambien hacemos Yoga 😊
+    |   Desayuno omelete y vemos Hora de Aventura mientras la lap se encuentra en la silla
+    |   <Trabajo> investigo sobre los ejercicios de gluteos y escucho Podcast 49 con Crespo y Santaolalla
+    |   Al llegar al depa actualizo mi gitHub para poder darlo como portafolio en futuros trabajos
+{D}(13) . (Alice in Wonderland && Extenuacion por limpieza)
+    |   Me levanto tarde para las claeses, pero eran la introduccion a Python (otra vez) asi que terminé saltandola
+    |   Empiezo mi 'Wheel of Life' en excel + reflexión semanal
+    |   <Trabajo> Leo introduccion de GEB y compro libro de 'Alicia en el mundo de las maravillas' por el mismo autor; Lewis Carroll.
+    |   Tambien mientras trabajo en limpieza escucho todo el podcast 50 con Crespo y Santaolalla
+
+    
+"A partir de ahora empezaré a escribir la reflexión de la semana todos los domingos, con el fin de resumir mis experiencias y enfocar mis objetivos".
+"Fue una muy bonita semana .- mis momentos favoritos; God_of_War con Gera, Comer en restaurante con Cecy y ver AT, Avanzar muy rápido a Dark Souls y por ultimo empezar haciendo mi portafiolio para trabajo".
+"Esta semana tambien fue cuando tuve mi entrevista para la escuela de Economia como auxiliar y aunque al principio pensé que sería el elegido me dió un golpe de realidad para esforzarme aún mas con mi carrera. Y ahora incluso si no me quedo en el puesto me siento con mas certeza del valor que tengo como programador y me siento mucho mas motivado para dar lo mejor que tengo".
+________________________________________________________________________
+
+{L}(14) . Espero entrevista y no pasa nada{M}(15) . Entrevista && Cine: Tortugas Ninjas{M2}(16) . Dark Souls + Lectura larga{J}(17) . Después del trabajo voy a casa de mis papás, le enseño a mi padre sobre git y node js.
+    |   Tambien le enseño a jugar Smash a mi mamá.
+{V}(18) . Libro y peliculas sobre Alicia a mi hermano   
+    |   Jugamos Dark Souls  
+    |   Emmanuel hace berrinche porque su fiesta se canceló
+{S}(19) . Desayuno Hot Cakes con Cecy en su depa
+    |   La Dra Berenice viene a "turistear" en nuestro turno
+    |   Paso la noche con Sair mientra me tomo un té de manzanilla (me dolía el estomago)
+{D}(20) . <Trabajo> Libro GEB, y gameplay de 'Detroit become human'
+    |   Voy con los papás de Cecy a comer
+
+"Necesito cambiar mi ambiente para modificar mis hábitos de consumo"
+"Paso tiempo con mi familia y mis amigos"
+________________________________________________________________________
+
+{L}(21) . (me desvelo hasta las 3am jugando con Gera)
+    |   Me despierto a las 12:30 y solo voy a trabajar, aparte una de mis gatas me hirió el pie
+{M}(22) . ()
+    |   Me levanto temprano para dejar las llaves del consultorio en la farmacia
+    |   Entrenamiento espartano
+    |   <Trabajo> Nos regalan chinle relleno y me habla el doctor de la Facultad de Economia
+    |   Llego al depa y jugamos 'Vampire Survivors' con Gera y Sair
+{M2}(23) . ()
+    |   Me doy cuenta que debo 27mil pesos de la escuela IDSS y me quedaría solo con 6mil pesos de mis ahorros
+    |   Limpio mi cocina y me preparo un caldo.- Le cuento a Sair que quiza me vaya a casa de mis papás
+    |   Llego a la casa y platico con Cecy de Friends y HIMYM por mensaje
+{J}(24) . ()
+    |   Me levanto temprano para jugar Skyrim mientras escucho Loret (no oí nada)
+    |   <Trabajo> desde las 11.- Me llaman de la escuela para cambiar mi fecha de entrada
+    |   En la noche voy al cafe 'Mad Cafe' con Cecy y platicamos sobre su trauma con la dieta y de la violencia en muejeres (casos de acoso)
+{V}(25) . (día pesado pero muy bonito)
+    |   Voy al dentista y me ponen las ligas águila
+    |   Hago entrevista para trabajo con COPPEL
+    |   Lavo la ropa y limpio mi cuarto y la mesa para poder venderla
+    |   Cocino lentejas y quesadillas para la velada con Cecy
+    |   Vemos pelicula 'Van Hellsing' y un episodio de 'Berserk'
+{S}(26) . ()
+    |   En la mañana jugamos al juego de armar palabras, y luego jugamos Dark Souls
+    |   <Trabajo>
+    |   Vamos a la fiesta de Chuy donde daban tacos y todos cantaban en karaoke
+{D}(27) . ()
+    |   Cocinamos huevo con jamon mientras oimos 'Destripando la historia'
+    |   Vemos 'Metal Family' y 'Helluva Boss'
+    |   <Trabajo> Hablo con Jaz para mejorar la relacion de trabajo
+    |   Juego Skyrim durante 3 horas 🥴
+
+
+"Me he pasado jugando, creo que esto me pasa cada vez que paso mucho tiempo con mi pareja, pues quiero compensar el tiempo que no le dí a mi ocio o metas personales de juego; que al final quiero abarcar con más de lo que debo"
+"Esta semana hice mucho mas ejercicio, y quiero hacer esta rutina todos los días pues solo me toma 10 minutos y realemnte me siento con muchísima mas energía"
+________________________________________________________________________
+
+{L}(28) . En la mañana solo juego a Skyrim y directo para el trabajo
+    |   <Trabajo> Rosi habla conmigo por mi problema con Jazmin
+    |   Me desvelo jugando y hablando con Emmanuel.- Me cuenta del señor mayor argentio que ambos atendimos
+{M}(29) . Me levanto solo para ir al trabajo (Emmanuel y Gera van al cerro)
+    |   Al salir voy con Cecy y cenamos Sushi
+{M2}(30) . <Descanso> Voy con abuelita + Cine 'Barbie'
+    |   Noticia.- Me habla le Dr de Economía para darme la noticia de que me aceptan para el trabajo de Auxiliar!!
+{J}(31) . En la mañana avanzo con el proyecto del IDSS (me gustoa muchísimo)
+    |   Hablo con mis roomies del trabajo y de vivir con Emmanuel

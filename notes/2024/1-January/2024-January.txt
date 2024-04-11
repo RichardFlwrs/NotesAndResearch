@@ -1,0 +1,40 @@
+Mes: Enero 
+
+{L}(1) . Pelicula: "Wonka"
+{M}(2) . 
+{M2}(3) . 
+{J}(4) . Compro la pila del carro ($2,100) Llega Emmanuel un rato mientras cocino
+{V}(5) . Porfin me puse a estudiar pero aun no tan fuerte.  Veo a Cecy después de 3 días
+{S}(6) . Mesesaurio N° 6 --> Pelicula: "El niño y la Garza"  +  Restaurante Italiano
+{D}(7) . [deadline] Quiz - Making senses of Unstructured Data  +  Online classes
+    |   Aprendo qeu debo evitar la cafeína
+# Toda esta semana me la pase jugando Pillars of Eternity en vez de estudiar FUERTE. Ahora me he quedado atras con los temas y creo que debería de recursar todas las clases...
+--- 
+{L}(8) .
+{M}(9) . 
+{M2}(10) . 
+{J}(11) . 
+{V}(12) . Limpio los vidrios del carro. Desayuno en casa de Abuelita
+{S}(13) . Clases IDSS + Entrevista de trabajo para la Secretería de Seguridad de Santa Catarina
+    |   Fiesta de Annie (Llevo mi carro)  &&   Fiesta de Mariel, me emborracho musho jeje
+{D}(14) . 
+--- 
+{L}(15) . <vacaciones> Paso todo el día con el CRUD para la prueba tecnica  |   Kebabs y peliculas con Cecy 💞
+{M}(16) . Aikido, platico con Pedro para un puesto de trabajo como DevOps con Jenkins
+{M2}(17) . Cena con Lucy (mejor amiga de Cecy) en Wingstop Army
+{J}(18) . Entrevista con Teleperformance (TP)   |   Aikido, mini drama con cinta negra (Alejandro)  |   Patinamos hasta casa de Cecy
+{V}(19) . Aviso en la farmacia que voy a renunciar  |   Tomamos hasta morir en casa de Sergio
+{S}(20) . Desayunamos en casa de Sergio     |   Carne asada con Mariana y Mario (de Cecy) en García
+{D}(21) . Ultimo día de trabajo en farmacias Benavides  |   
+--- 
+{L}(22) . [deadline] Quiz - Linear Regression [Failed]  |   Cine: Poor things
+{M}(23) . siesta de 3 horas...  |   Aikido.- reaccion ante golpes directos
+{M2}(24) . Cocina: Carne molida con Espinacas y champiñones (tacos) |   Hora de aventura y chai en la noche
+{J}(25) . Ejercicio + Illojuan straming |   Aikido
+{V}(26) . 
+{S}(27) . Descanso largo y bonito con Cecy  |   Peli: Memento
+{D}(28) . Cerro + Omelete   |   Cocina con Emmanuel |   Chisme con Annie y Gera
+--- 
+{L}(29) . Handshake |   Peli: Scott Pilgrim
+{M}(30) . Recogemos el equipo en el CEDIS para trabajar |   Invito a Abisai a jugar ajedrez
+{M2}(31) . Primer día para conocernos en el trabajo |   Limpio Cocina + sopa de pollo con Cecy

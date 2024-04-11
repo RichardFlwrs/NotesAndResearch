@@ -1,0 +1,45 @@
+Mes: Octubre 
+
+{D}(1) . 
+--- 
+{L}(2) . 
+{M}(3) . 
+{M2}(4) . 
+{J}(5) . Cita en el SAT
+{V}(6) . 
+{S}(7) . 
+{D}(8) . 
+--- 
+{L}(9) . Cecy viene al depa para ver pelicula 'Devil-Wears-Prada'
+    |   Al final jugamos juegos de mesa con Emmanuel y Gera
+{M}(10) . Horneo Pay de Manzana
+{M2}(11) . Voy a casa de mis papás
+    |   Videos muiscales (MTV) con mi hermano
+{J}(12) . Me rechazan de Neoris
+    |   Mando CV para un puesto en KIA con coreanos
+    |   Pelicula
+{V}(13) . Voy para mi depa
+    |   Voy a dormir con Cecy
+{S}(14) . 
+{D}(15) . 
+--- 
+{L}(16) . 
+{M}(17) . 
+{M2}(18) . 
+{J}(19) . Voy a Pesquería para una entrevista con KIA
+{V}(20) . Planea a ver una pelicula con Cecy, pero me quedé jugando con Emmanuel a Elden Ring
+{S}(21) . 
+{D}(22) . 
+--- 
+{L}(23) . Viene Yazmin a renunciar y dejar las llaves
+{M}(24) . 
+{M2}(25) . <Descanso> Juego Smite con mi hermano
+    |   Voy con Cecy a Fantasías Miguel y Parisina por materiales para los disfraces
+{J}(26) . Hago la cola para el dizfraz
+{V}(27) . Dentista
+    |   Pastel de despedida para Rosi
+{S}(28) . 
+{D}(29) . 
+--- 
+{L}(30) . 
+{M}(31) . 

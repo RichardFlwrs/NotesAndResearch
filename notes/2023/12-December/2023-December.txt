@@ -1,0 +1,40 @@
+Mes: Diciembre 
+
+{V}(1) . 
+{S}(2) . 
+{D}(3) . 
+--- 
+{L}(4) . 
+{M}(5) . Desayuno y comida perfecta |   Meseario con Cecy
+{M2}(6) . NO GAMING DAY (finally)   |   
+{J}(7) . Cita al Dentista   |   Actualizo CV y Constancia Fiscal (failed)   |   Cierra tienda con Emmanuel + Fiesta de Ali
+{V}(8) . 
+{S}(9) . 
+{D}(10) . [deadline] Quiz - Python for Data Science
+# Desde ese martes dejé de jugar y me concentré en mi rutina para poder estudiar
+--- 
+{L}(11) . 
+{M}(12) . 
+{M2}(13) . Limpié toda la casa
+{J}(14) . Entrevista con Neoris
+{V}(15) . 
+{S}(16) . Fiesta de cumpleaños
+{D}(17) . [deadline] Quiz - Statistics for Data Science
+#
+--- 
+{L}(18) . 
+{M}(19) . 
+{M2}(20) . 
+{J}(21) . 
+{V}(22) . 
+{S}(23) . 
+{D}(24) . Navidad en casa de mi tía, tuve suerte de encontrar Uber
+--- 
+{L}(25) . 
+{M}(26) . 
+{M2}(27) . 
+{J}(28) . 
+{V}(29) . 
+{S}(30) . 
+{D}(31) . Año nuevo con la familia de Cecy y después en la casa de Moy
+--- 

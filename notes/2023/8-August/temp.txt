@@ -1,0 +1,130 @@
+# Breve semblanza
+No estoy afiliado a la prepa UDEM, pero estudié Licenciatura en Multimedia y Animación Digital para videojuegos en la UANL. Tengo carrera de 5 años como desarrollador de sistemas web y he cursado algunos cursos para la utilización de Unity.
+
+# Describe brevemente porqué te gustaría integrarte como profesor de Gaming Lab UDEM. 
+Soy muy paciente y me gusta mucho la docencia. Tengo la capacidad de enseñar los conceptos fundamentales de la programación y animar la creatividad bajo las relgas en la lógica de la programación. Me gustaría empezar a hacer curriculum como docente y practicar la pedagogía para impulsar la lógica y creativdad en futuras generaciones
+
+# Comentarios adicionales
+Enseñé programacion a mi hermano de 11 años con actividades mediante Scratch y Roblox Studio. Actualmente él disfruta de realizar mapas para "mini juegos" en Minecraft Java guiandose por Internet
+
+
+
+________________________________________________________________________
+
+
+## About the Laravel project (as API)
+
+"Laravel is accessible, powerful, and provides tools required for large, robust applications."
+
+This project not only uses basic concepts for CRUD operations with the ORM technology but also takes advantage of some strong features such as; Middlewares for saving cache, automatic pagination, and an easy way to integrate filter systems for the data response. The last one can be personalized for more complex queries if needed. All this uses guard security technology with a token key that only works for the user that is authenticated in the server (with a modifiable timer)
+
+## How to start de project
+
+As this project only works as an API server, you will need to use an API Platform such as Postman to test all the query routes.
+
+
+________________________________________________________________________
+
+
+Coppel
+    /password: zqFRfTZ*6KTds2_
+
+Agile (25 mil)
+
+Microservicios con Laravel, .Net
+Angular, React.js
+
+Matricula UANL: 1620814
+
+
+________________________________________________________________________
+
+Puntos a tratar para la mudanza con Emmanuel
+
+    Baño
+- Podría ser que usemos los 3 el mismo baño. Y si ocasionalmente se encuentra ocupado uno podría entrar al de Gera
+- Tambien podría ser que Emmanuel use el de Gera y se comprometa a limpiarlo 2 veces por mes. En caso de que no se haga podría pagarle a Gera 300 pesos o algo así
+
+
+    Weed
+- No debería de almacenar marihuana para vender o hacer encuentros cercas del departamento para la venta
+
+    Visitas
+- Dado que nosotros 3 ya sabemos que visitas suelen frecuentar ya hay una dinamica masomenos establecida, por lo que Emmanuel se tendría que adaptar a:
+    . Al menos una visita por semana (evitar que sea constante)
+    . Estar al pendiente de la visita; para el uso del baño por ejemplo
+
+    Cuartos 
+- Podríamos cambiar de cuartos ya que el de Gera es mucho mas grande. De esta manera tambien puede depurar algunas cosas o incluso tener listo algunas cajas en caso de que tenga que mudarse
+
+
+
+________________________________________________________________________
+
+Gerardo Sanchez Martinez
+Lic. en Derecho
+Desde 2016 (8 años)
+
+Sair Gonzalez Salaiz
+Lic. en Tecnología (6 años de exp)
+Desde 2019 (5 años)
+
+
+
+
+________________________________________________________________________
+
+
+
+IDSS - Monica November
+
+18 November
+1 October (pre work)
+
+
+
+________________________________________________________________________
+
+
+Proyecto: Arca Continental
+Por parte de la Facultad de Economía
+
+Asunto: GPS en tiempo real, Desarrollo web para mostrar los dispositivos.
+Tecnologías: 
+
+
+
+________________________________________________________________________
+
+
+Concreto y agregado (Cemex)
+Azure NEt de backend
+y Angular de Forntend
+
+
+
+
+________________________________________________________________________
+
+
+
+Cursos que realicé mientras aplicaba para trabajo
+
+
+These are few courses I do while I was looking for job:
+
+Single Page Application (SAP) using React.js Framework
+2023 March to April
+
+REST API with Node.js + Kubernate basics
+2023 May to June
+
+Bootstrap 4 basic to advance with SASS implementation
+2023 June
+
+.NET basic ORM with a CRUD functionality
+2023 June to Sept
+
+Python for Data Anlysis
+2023 Sept to October
+
