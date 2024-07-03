@@ -15,7 +15,15 @@
 {V}(12) . <Pago>
 {S}(13) . 
 {D}(14) . 
---- 
+---
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#
+#       Sufrí una descompostura en mi rutina; ya desde el mes pasado que no escribía con contuinidad debido a
+#       tener que levantarme a las 5:30 am. Seguido del robo de mi bicicleta.
+#       Desde entonces deje de escribir hasta apenas ahora (Martes 2 de Julio del mismo año), con un total de 3 meses sin registros
+#       Ahora que trabajo como programador y tengo acceso a mis notas de manera remota; seré capaz de seguir con mi Bitacora
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 {L}(15) . 
 {M}(16) . 
 {M2}(17) . 
@@ -26,11 +34,20 @@
 --- 
 {L}(22) . 
 {M}(23) . 
-{M2}(24) . 
+{M2}(24) . Roban mi bicicleta
 {J}(25) . 
 {V}(26) . <Pago>
 {S}(27) . 
 {D}(28) . 
 --- 
 {L}(29) . 
-{M}(30) . 
+{M}(30) . Entrevista para programador en "Colmena 29"
+
+Mayo
+
+{V}(10) . Primer día de trabajo como programador
+
+{V}(31) . Mi primera paga; $7,200
+# Posterior a eso, mi quincena es de $6,775
+
+
