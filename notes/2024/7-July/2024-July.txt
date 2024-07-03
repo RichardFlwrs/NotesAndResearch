@@ -1,7 +1,12 @@
 Mes: Julio 
+[ Reflexion inicial del mes ]
+- Llevo 1 mes con 22 días (casi 2 meses) en la empresa, Desde que empecé el proyecto: 20 dias (12 Junio) y siento que estoy trabajando muy lento en comparacion al inicio. Aunque ya me falta muy poco para tener la base, creo sinceramente que estoy avanzando muy lento.
+- Esto se une con mis recientes enfermedades con el estomago, fatiga y niebla mental
+- Necesito dejar el azucar, y hacer ejercicios de respiracion. Cardio de abdome, etc...
+
 
 {L}(1) . 
-{M}(2) . Regreso a la Bitacora despues de 3 meses sin registros
+{M}(2) . Regreso a la Bitacora despues de 3 meses sin registros | 
 {M2}(3) . 
 {J}(4) . 
 {V}(5) . 
