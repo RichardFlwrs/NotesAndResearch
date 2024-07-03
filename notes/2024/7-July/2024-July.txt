@@ -7,7 +7,7 @@ Mes: Julio
 
 {L}(1) . 
 {M}(2) . Regreso a la Bitacora despues de 3 meses sin registros | 
-{M2}(3) . 
+{M2}(3) . Junta para proyecto 911
 {J}(4) . 
 {V}(5) . 
 {S}(6) . 
