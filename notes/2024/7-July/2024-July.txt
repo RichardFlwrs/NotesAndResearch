@@ -8,9 +8,9 @@ Mes: Julio
 {L}(1) . 
 {M}(2) . Regreso a la Bitacora despues de 3 meses sin registros | 
 {M2}(3) . Junta para proyecto 911
-{J}(4) . 
-{V}(5) . 
-{S}(6) . 
+{J}(4) . Avanzo con los iconos / empiezo Ranma 1/2
+{V}(5) . junta para 911 / me dan una nueva laptop / aniversario con Cecy. restaurante Mon Paris
+{S}(6) . "rabbit hole", conspiracies / pilates para la espalda / comida con mi familia 
 {D}(7) . 
 --- 
 {L}(8) . 
