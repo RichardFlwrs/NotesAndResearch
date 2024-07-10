@@ -11,11 +11,11 @@ Mes: Julio
 {J}(4) . Avanzo con los iconos / empiezo Ranma 1/2
 {V}(5) . junta para 911 / me dan una nueva laptop / aniversario con Cecy. restaurante Mon Paris
 {S}(6) . "rabbit hole", conspiracies / pilates para la espalda / comida con mi familia 
-{D}(7) . 
+{D}(7) . Camino para el depa de Cecy, desayunamos huevo en salsa + hotcakes de plátano / Vemos Sakura y Hora de aventura / CONCIERTO DE MOLOTOV 
 --- 
-{L}(8) . 
-{M}(9) . 
-{M2}(10) . 
+{L}(8) . Junta para 911 / termino con los iconos / despensa para el trabajo 
+{M}(9) . Ranma en el trabajo / cenamos campechanas / documental del océano abisal
+{M2}(10) . dolor de espalda notorio / 
 {J}(11) . 
 {V}(12) . 
 {S}(13) . 
