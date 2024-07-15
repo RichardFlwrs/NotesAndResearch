@@ -18,8 +18,8 @@ Mes: Julio
 {M2}(10) . dolor de espalda notorio / Estoy varias horas solo en el trabajo. creo que me vigilan con las cámaras. Le ayudo a un compañero com un problema de Javascript 
 {J}(11) . empiezo a implementar UnitTestings para el frontend con React/ Me duele muchísimo e cuerpo en la noche, intento dormir en el piso
 {V}(12) . Hablo con Lucy / Vemos la casa, pero es muy chica para tener mascotas / duermo en mi depa mientras Cecy va a casa de Betty
-{S}(13) .  Cena con los amigos de Cecy / veo a Emmanuel en Buchakas 
-{D}(14) . 
+{S}(13) . vi un poco de la velada en el trabajo y termino de verla en mi depa / Cecy se deshidrata y nos quedamos viendo Sakura / voy patinando a su casa y me lastimo la espalda 
+{D}(14) . Dolor en la espalda baja todo el día. vamos a casa de sus papás y me prestan una faja y pican el dedo / Hora de aventura 
 --- 
 {L}(15) . 
 {M}(16) . 
