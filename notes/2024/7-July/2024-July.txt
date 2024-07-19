@@ -23,8 +23,8 @@ Mes: Julio
 --- 
 {L}(15) . Dolor todo el día. invierto en mi recuperación (te medicinal)
 {M}(16) . Ranma hasta las 10am, revivi la Velada hasta las 12. porfin investigo sobre Symfony. a partir de las 3pm no hago nada
-{M2}(17) . 
-{J}(18) . 
+{M2}(17) . Salgo 10 mins antes del trabajo y me siento muy bien / Platico con Emmanuel/ Y un poco con Gera sobre la mota
+{J}(18) . Curso de Symfony/ Taro y lluvia
 {V}(19) . 
 {S}(20) . 
 {D}(21) . 
