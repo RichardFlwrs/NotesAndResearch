@@ -26,8 +26,8 @@ Mes: Julio
 {M2}(17) . Salgo 10 mins antes del trabajo y me siento muy bien / Platico con Emmanuel/ Y un poco con Gera sobre la mota
 {J}(18) . Curso de Symfony/ Taro y lluvia
 {V}(19) . investigar sobre Kafka me motivo a estudiar sociología / hora de aventura con Cecy
-{S}(20) . explosion de carbs y caffeina en la mañana; me desconcerta.  / albercada con mi familia 
-{D}(21) . 
+{S}(20) . explosion de carbs y caffeina en la mañana; me desconcerta.  / albercada con mi familia, comemos carne asada y jugamos telestration
+{D}(21) . hotcakes y huevo con jamón + hora de aventura 
 --- 
 {L}(22) . 
 {M}(23) . 
