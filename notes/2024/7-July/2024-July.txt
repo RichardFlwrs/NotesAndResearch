@@ -27,9 +27,9 @@ Mes: Julio
 {J}(18) . Curso de Symfony/ Taro y lluvia
 {V}(19) . investigar sobre Kafka me motivo a estudiar sociología / hora de aventura con Cecy
 {S}(20) . explosion de carbs y caffeina en la mañana; me desconcerta.  / albercada con mi familia, comemos carne asada y jugamos telestration
-{D}(21) . hotcakes y huevo con jamón + hora de aventura 
+{D}(21) . hotcakes y huevo con jamón + hora de aventura / Limpiamos el escritorio de Cecy
 --- 
-{L}(22) . 
+{L}(22) . avanzamos el curso, aprendemos todo sobre rutas /
 {M}(23) . 
 {M2}(24) . 
 {J}(25) . 
