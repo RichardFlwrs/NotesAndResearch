@@ -29,8 +29,8 @@ Mes: Julio
 {S}(20) . explosion de carbs y caffeina en la mañana; me desconcerta.  / albercada con mi familia, comemos carne asada y jugamos telestration
 {D}(21) . hotcakes y huevo con jamón + hora de aventura / Limpiamos el escritorio de Cecy
 --- 
-{L}(22) . avanzamos el curso, aprendemos todo sobre rutas /
-{M}(23) . 
+{L}(22) . avanzamos el curso, aprendemos todo sobre rutas / chilaquiles+ Sakura y Berserk
+{M}(23) . Termino los Modelos, Videos de política / No puedo gastar ni un peso
 {M2}(24) . 
 {J}(25) . 
 {V}(26) . 
