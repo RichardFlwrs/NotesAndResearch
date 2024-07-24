@@ -30,8 +30,8 @@ Mes: Julio
 {D}(21) . hotcakes y huevo con jamón + hora de aventura / Limpiamos el escritorio de Cecy
 --- 
 {L}(22) . avanzamos el curso, aprendemos todo sobre rutas / chilaquiles+ Sakura y Berserk
-{M}(23) . Termino los Modelos, Videos de política / No puedo gastar ni un peso
-{M2}(24) . 
+{M}(23) . Termino los Modelos, Videos de política / No puedo gastar ni un peso. compré 1kg de papa en 50 
+{M2}(24) . Investigación sobre Normalización para las BD, y Model-driven engineering /
 {J}(25) . 
 {V}(26) . 
 {S}(27) . 
