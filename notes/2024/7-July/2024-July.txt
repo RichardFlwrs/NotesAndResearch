@@ -32,10 +32,10 @@ Mes: Julio
 {L}(22) . avanzamos el curso, aprendemos todo sobre rutas / chilaquiles+ Sakura y Berserk
 {M}(23) . Termino los Modelos, Videos de política / No puedo gastar ni un peso. compré 1kg de papa en 50 
 {M2}(24) . Investigación sobre Normalización para las BD, y Model-driven engineering /
-{J}(25) . 
-{V}(26) . 
-{S}(27) . 
-{D}(28) . 
+{J}(25) . empezemos a ver Berserk 
+{V}(26) . empiezo curso de typescript, no afuanto la espalda 
+{S}(27) . después del trabajo vamos al cine; Deadpool vs Wolverine/ Cecy se lastima el brazo izquierdo/ Duermo en su cama y desperté bien
+{D}(28) . omelette y hotcakes/ ella va con sus papás y yo juego con mi hermano 
 --- 
 {L}(29) . 
 {M}(30) . 
