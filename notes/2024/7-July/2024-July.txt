@@ -35,8 +35,10 @@ Mes: Julio
 {J}(25) . empezemos a ver Berserk 
 {V}(26) . empiezo curso de typescript, no afuanto la espalda 
 {S}(27) . después del trabajo vamos al cine; Deadpool vs Wolverine/ Cecy se lastima el brazo izquierdo/ Duermo en su cama y desperté bien
-{D}(28) . omelette y hotcakes/ ella va con sus papás y yo juego con mi hermano 
+{D}(28) . omelette y hotcakes/ ella va con sus papás y yo juego con mi hermano/ paso todo el día jugando LoL y escuchando noticias sobre Venezuela 
 --- 
-{L}(29) . 
-{M}(30) . 
-{M2}(31) . 
+{L}(29) . me regreso temprano por dolor en la espalda (1:30pm)
+{M}(30) . hago home office y me acuesto todo el día.  pero me lastimo la espalda otra vez por cargar la silla 
+{M2}(31) . instalo mi silla en la oficina 
+pero me duele mucho al hacer fuerza 
+/ voy con la doctora para que me inyecte y me diga que hacer
