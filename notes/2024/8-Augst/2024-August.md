@@ -1,0 +1,37 @@
+Mes: Agosto 
+
+{J}(1) . en mi primer dia con las nuevas pastillas ya me sentí mucho mejor
+{V}(2) . componentes para calendario/ Pastel en el trabajo por cumpleaños de Jessi / Compro 2 pantalones+ cerveza con Gera y Annie/ LoL hasta las 2am
+{S}(3) . llego temprano y desayuno boneless mas galletas / cuidamos la abuelita de Cecy
+{D}(4) . desayuno en Los Frijoles/ terminamos Adventure Time en mi depa / cocinamos carne para toda la semana 
+--- 
+{L}(5) . avanzo muchísimo a lo que falta de pantallas / hablo con mis jefes para un aumento/ llego a mi depa temprano y compro arena para gato / ejercicio con Cecy
+{M}(6) . casi no trabajo, me siento con mucho sueño/ solo gasto 50 pesos en galletas jeje / empiezo a salir a las 5 pm / Cecy se enoja por decir que yo votaría por Trump
+{M2}(7) . Cecy se da cuenta que lo de Trump no importa. Ella va a una junta de la iglesia / cerveza + tostadas con jamón 
+{J}(8) . vamos con la Dra Bere por un dolor de garganta y para ver métodos anticonceptivos para Cecy / Frank de la jungla y cocodrilos
+{V}(9) . la señora de limpieza me tira mi arroz / termino el componente de tabla con columnas modificables/ cecy va a una cena com el grupo de iglesia / yo ...
+{S}(10) . Despues del trabajo comemos tostadas siberias y vamos camino a las cabañas 
+{D}(11) . Regresamos de las cabañas y comemos en casa de la familia de Cecy
+--- 
+{L}(12) . Termino el trabajo de las columnas movibles para el trabajo   |   Vemos Sakura
+{M}(13) . Empiezo migración del proyecto a React puro   |   Cocinamos carne
+{M2}(14) . 
+{J}(15) . 
+{V}(16) . 
+{S}(17) . 
+{D}(18) . 
+--- 
+{L}(19) . 
+{M}(20) . 
+{M2}(21) . 
+{J}(22) . 
+{V}(23) . 
+{S}(24) . 
+{D}(25) . 
+--- 
+{L}(26) . 
+{M}(27) . 
+{M2}(28) . 
+{J}(29) . 
+{V}(30) . 
+{S}(31) . 
