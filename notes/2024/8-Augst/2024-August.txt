@@ -14,7 +14,7 @@ Mes: Agosto
 {D}(11) . Regresamos de las cabañas y comemos en casa de la familia de Cecy
 --- 
 {L}(12) . Termino el trabajo de las columnas movibles para el trabajo   |   Vemos Sakura
-{M}(13) . Empiezo migración del proyecto a React puro   |   Cocinamos carne
+{M}(13) . Empiezo migración del proyecto a React puro   |   Cocinamos carne / veo hunter x hunter y cecy se queda dormida
 {M2}(14) . 
 {J}(15) . 
 {V}(16) . 
