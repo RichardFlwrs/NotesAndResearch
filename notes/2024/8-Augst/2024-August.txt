@@ -14,23 +14,23 @@ Mes: Agosto
 {D}(11) . Regresamos de las cabañas y comemos en casa de la familia de Cecy
 --- 
 {L}(12) . Termino el trabajo de las columnas movibles para el trabajo   |   Vemos Sakura
-{M}(13) . Empiezo migración del proyecto a React puro   |   Cocinamos carne / veo hunter x hunter y cecy se queda dormida
-{M2}(14) . 
-{J}(15) . 
-{V}(16) . 
-{S}(17) . 
-{D}(18) . 
+{M}(13) . Elon Musk endorse Trump for president | Empiezo migración del proyecto a React puro   |   Cocinamos carne / veo hunter x hunter y cecy se queda dormida
+{M2}(14) . Quadrobics & Therians
+{J}(15) . Pizza y cerveza
+{V}(16) . Wateke por el cumple de Pam
+{S}(17) . Vemos depa en garcía / Peli: "Sing street" / Cecy va con su familia y yo me quedo a descansar
+{D}(18) . Desayuno omeletes, misa / Lavandería y comida con los papás de Cecy  |   Limpiamos la parte superiro del ropero
 --- 
-{L}(19) . 
+{L}(19) . Me duele mucho la espalda, aun así al lelgar al depa limpié la cocina y organizé la mesa del cuarto
 {M}(20) . 
-{M2}(21) . 
-{J}(22) . 
-{V}(23) . 
-{S}(24) . 
-{D}(25) . 
+{M2}(21) .
+{J}(22) . Salgo temprano, comemos pollo, movemos el mueble y hacemos ejercicio
+{V}(23) . Se cancela la carne asada y compramos charcutería
+{S}(24) . Luis me da ride hasta el Tec | Me quedo en el depa de Cecy mientras limpio y hago ejercico | en la noche nos visita Emmanuel
+{D}(25) . Me duele la panza por comer mucha harina (creo que desde el inicio de la semana)
 --- 
-{L}(26) . ayuno todo el día y practico la meditacion profunda    |   Ejercicios nuevos
-{M}(27) . 
+{L}(26) . ayuno todo el día y practico la meditacion profunda    |   Ejercicios nuevos  |   Cecy tiene sintomas de gripe
+{M}(27) . silencio matutino |   
 {M2}(28) . 
 {J}(29) . 
 {V}(30) . 
