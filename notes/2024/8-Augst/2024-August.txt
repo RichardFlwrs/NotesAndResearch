@@ -29,7 +29,7 @@ Mes: Agosto
 {S}(24) . 
 {D}(25) . 
 --- 
-{L}(26) . 
+{L}(26) . ayuno todo el día y practico la meditacion profunda    |   Ejercicios nuevos
 {M}(27) . 
 {M2}(28) . 
 {J}(29) . 
