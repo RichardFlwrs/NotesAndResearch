@@ -30,8 +30,8 @@ Mes: Agosto
 {D}(25) . Me duele la panza por comer mucha harina (creo que desde el inicio de la semana)
 --- 
 {L}(26) . ayuno todo el día y practico la meditacion profunda    |   Ejercicios nuevos  |   Cecy tiene sintomas de gripe
-{M}(27) . silencio matutino |   
-{M2}(28) . 
+{M}(27) . silencio matutino |   lavandería/ 🐸 Jacinta la rana / pizza de pollo / logró dormir sin pastillas para el dolor
+{M2}(28) . despierto cansado y con dolor de estómago... / me habla la doctora para preguntar por departamentos/ 
 {J}(29) . 
 {V}(30) . 
 {S}(31) . 
