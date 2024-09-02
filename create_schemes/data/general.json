@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Noticias",
+    "columns": [
+      [ "id", "id" ],
+      [ "title", "título" ]
+    ]
+  }
+]
