@@ -31,7 +31,7 @@ Mes: Agosto
 --- 
 {L}(26) . ayuno todo el día y practico la meditacion profunda    |   Ejercicios nuevos  |   Cecy tiene sintomas de gripe
 {M}(27) . silencio matutino |   lavandería/ 🐸 Jacinta la rana / pizza de pollo / logró dormir sin pastillas para el dolor
-{M2}(28) . despierto cansado y con dolor de estómago... / me habla la doctora para preguntar por departamentos/ 
-{J}(29) . 
-{V}(30) . 
-{S}(31) . 
+{M2}(28) . despierto cansado y con dolor de estómago... / me habla la doctora para preguntar por departamentos/ Recojo lavandería   |   Tierra para la ranita + café pesado (empieza mi locura por la comida)
+{J}(29) . Al salir del trabajo vamos a HEB y hacemos despensa   |   postre de manzana con nieve...
+{V}(30) . Pido la cama nueva. llegará el próx Viernes(6)    |  Chilaquiles muy pesados  |   Llego primero a mi depa para checar a las gatas |   De regreso con Cecy nos toca la tormenta en el carro    |   Al llegar cenamos algo y dormimos
+{S}(31) . Voy al trabajo y desayuno galletas + barra choco. Ademas del huevo con sopa...  |   Al llegar cocino todo el brocoli + betabel y me como la mitad de todo |   Aunque sí limpié y ordené la casa; volví a cenar con cerveza y no guardé el guiso por lo que se hechó a perder en la noche.

@@ -1,0 +1,10 @@
+// watchman watch-del-all
+// Delete node_modules and run yarn install
+// yarn start --reset-cache
+// [not-wroking] rm -rf /tmp/metro-*
+// react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+// ./gradlew assembleRelease -x bundleReleaseJsAndAssets
+
+// npx react-native start --reset-cache
+// cd android && ./gradlew clean && ./gradlew :app:bundleRelease
+// npx react-native run-android
