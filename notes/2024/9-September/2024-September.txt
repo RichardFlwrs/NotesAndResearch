@@ -2,10 +2,10 @@ Mes: Septiembre
 # [ Reflexion inicial del mes ]
 Ya son 5 meses en el trabajo, 
 
-{D}(1) . Me levanto a las 7 am y preparo el desayuno    |   Cecy se enoja conmigo por hecharle en cara su gasto del sábado, pero para las 10 se le quita    |   Le cepillo el pelo a Cecy con la cera de miel   |   Limpiamos un poco el carro por dentro   |   Tortas con suegros  |   Cenamos pepino con atun (super rico)
+{D}(1) . Me levanto a las 7 am y preparo el desayuno    |   Cecy se enoja conmigo por hecharle en cara su gasto del sábado, pero para las 10 se le quita    |   Le cepillo el pelo a Cecy con la cera de miel   |   Limpiamos un poco el carro por dentro   |   Tortas con suegros  |   Cenamos pepino con atun (super rico) / Me lastimo el chamorro derecho por estar mucho tiempo parado mal mientras lavo los traste...
 --- 
-{L}(2) . Despierto a las 6:20 y empiezo a forjar mi rutina matutina (despues de 5 meses jeje)   |   Desayuno medio pan budin y un cafe  |   Me lastimo la mandibula haciendo un ejercicio   |   Script to make schemes  |   HEB
-{M}(3) .  
+{L}(2) . Despierto a las 6:20 y empiezo a forjar mi rutina matutina (despues de 5 meses jeje)   |   Desayuno medio pan budin y un cafe  |   Me lastimo la mandibula haciendo un ejercicio   |   Script to make schemes  |   HEB + ejercicio de pierna y abodmen; me lastimo el muslo izquierdo tambien
+{M}(3) .  Como demasiado pan que me duele el estomago   |   Hago ejercicio de abdomen intenso   |   Me dan trabajo extra con honorarios de 1500 por semana extra por 12 horas a las semana (casi 2 horas diaras). Creo que vale la pena 💲💲💲  |   
 {M2}(4) . 
 {J}(5) . 
 {V}(6) . 
