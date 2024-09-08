@@ -5,12 +5,12 @@ Ya son 5 meses en el trabajo,
 {D}(1) . Me levanto a las 7 am y preparo el desayuno    |   Cecy se enoja conmigo por hecharle en cara su gasto del sábado, pero para las 10 se le quita    |   Le cepillo el pelo a Cecy con la cera de miel   |   Limpiamos un poco el carro por dentro   |   Tortas con suegros  |   Cenamos pepino con atun (super rico) / Me lastimo el chamorro derecho por estar mucho tiempo parado mal mientras lavo los traste...
 --- 
 {L}(2) . Despierto a las 6:20 y empiezo a forjar mi rutina matutina (despues de 5 meses jeje)   |   Desayuno medio pan budin y un cafe  |   Me lastimo la mandibula haciendo un ejercicio   |   Script to make schemes  |   HEB + ejercicio de pierna y abodmen; me lastimo el muslo izquierdo tambien
-{M}(3) .  Como demasiado pan que me duele el estomago   |   Hago ejercicio de abdomen intenso   |   Me dan trabajo extra con honorarios de 1500 por semana extra por 12 horas a las semana (casi 2 horas diaras). Creo que vale la pena 💲💲💲  |   
+{M}(3) .  Como demasiado pan que me duele el estomago   |   Hago ejercicio de abdomen intenso   |   Me dan trabajo extra con honorarios de 1500 por semana extra por 12 horas a las semana (casi 2 horas diaras). Creo que vale la pena 💲💲💲  |   Cocinamos camarones y hacemos ejercicio; Cecy se lastima las rodillas
 {M2}(4) . 
 {J}(5) . 
-{V}(6) . 
-{S}(7) . 
-{D}(8) . 
+{V}(6) . Esperamos el colchon mientras chismean en el depa los amigos de trabajo de Cecy    |   El colchón nunca llegó
+{S}(7) . Despierto enfermo del estomago, creo que fue por comer un chocolate justo despues de comer un taco de la Siberia   |   Me la paso acostado todo el día y eso hace que me duela la espalda...   |   Caldo de pollo en casa de suegros y me duermo 1 hora    |   Fiesta de los Mil Moys, solo tomo agua y electrolit. Me sentí muy bien sin tomar
+{D}(8) . Duermo solo 4 horas pero me siento con mucha energía (desde las 7:30 am)   |   Avanzo con el trabajo   |   
 --- 
 {L}(9) . 
 {M}(10) . 
