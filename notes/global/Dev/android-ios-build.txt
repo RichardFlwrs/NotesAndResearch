@@ -1,0 +1,18 @@
+
+# Clean up react-native app 
+    > npx react-native clean
+        - (optional) xed -b ios
+    > npm install && cd ios && pod update && cd ..
+    > npm start -- --reset-cache
+
+# Build apk instructions for Dev:
+    > keytool -genkey -v -keystore my-app-key.keystore -alias my-app-alias -keyalg RSA -keysize 2048 -validity 10000
+    > mkdir android/app/src/main/assets
+    > npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+        (This can be done on Andorid Studio better)
+    > cd android && ./gradlew assembleRelease
+    > adb install -r ./app/build/outputs/apk/debug/app-debug.apk
+
+    > Other option is
+        react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+

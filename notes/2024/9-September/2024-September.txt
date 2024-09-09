@@ -10,9 +10,9 @@ Ya son 5 meses en el trabajo,
 {J}(5) . 
 {V}(6) . Esperamos el colchon mientras chismean en el depa los amigos de trabajo de Cecy    |   El colchón nunca llegó
 {S}(7) . Despierto enfermo del estomago, creo que fue por comer un chocolate justo despues de comer un taco de la Siberia   |   Me la paso acostado todo el día y eso hace que me duela la espalda...   |   Caldo de pollo en casa de suegros y me duermo 1 hora    |   Fiesta de los Mil Moys, solo tomo agua y electrolit. Me sentí muy bien sin tomar
-{D}(8) . Duermo solo 4 horas pero me siento con mucha energía (desde las 7:30 am)   |   Avanzo con el trabajo   |   
+{D}(8) . Duermo solo 4 horas pero me siento con mucha energía (desde las 7:30 am)   |   Avanzo con el trabajo   |   Limpio la regadera y hago ejercicio de cardio!! |   Ayudo a Cecy a sentirse segura con el viaje
 --- 
-{L}(9) . 
+{L}(9) . Media hora tarde en el trabajo     |   
 {M}(10) . 
 {M2}(11) . 
 {J}(12) . 
