@@ -27,6 +27,13 @@ Ya son 5 meses en el trabajo,
 {V}(20) . 
 {S}(21) . 
 {D}(22) . 
+{L}(16) . 
+{M}(17) . 
+{M2}(18) . 
+{J}(19) . 
+{V}(20) . vamos por el colchón, dormimos hasta las 11:00pm
+{S}(21) . trabajo + traer cosas del depa/ instalo las repisas / hablamos sobre los gastos + chocolate caliente 
+{D}(22) . Voy al parque en la mañana y me sentí muy bien
 --- 
 {L}(23) . 
 {M}(24) . 
