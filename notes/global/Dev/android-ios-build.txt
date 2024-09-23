@@ -11,7 +11,7 @@
     > npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
         (This can be done on Andorid Studio better)
     > cd android && ./gradlew assembleRelease
-    > adb install -r ./app/build/outputs/apk/debug/app-debug.apk
+    > adb install -r ./android/app/build/outputs/apk/debug/app-debug.apk
 
     > Other option is
         react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res

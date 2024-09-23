@@ -16,14 +16,14 @@ Ya son 5 meses en el trabajo,
 {M}(10) . 
 {M2}(11) . 
 {J}(12) . 
-{V}(13) . 
-{S}(14) . 
-{D}(15) . 
+{V}(13) . Regresa Cecy de su viaje, llorando
+{S}(14) . Trabajo hasta las 2   |   Cena con mi familia mientras Cecy se duerme en casa
+{D}(15) . Despierto 10 am + Huevo & hotcakes    |   Espagueti y albondigas en casa suegros  |   Fiesta de la independencia en García
 --- 
-{L}(16) . 
-{M}(17) . 
-{M2}(18) . 
-{J}(19) . 
+{L}(16) . Despertamos a las 11 am   |   A las 3pm vams a HEB, Trabajo y cenamos; lentejas con carne
+{M}(17) . Despierto um poco cansado (ya quiero que legué la cama)   |   Descubro el pj: "Eduardo Verastegui"    |   Ejercicio GAP
+{M2}(18) . Estudio en el trabajo    |   Limpio casa y Emmanuel viene de visita 
+{J}(19) . Trabajo duro  |   Cine: "Beetlegeous 2"
 {V}(20) . 
 {S}(21) . 
 {D}(22) . 
