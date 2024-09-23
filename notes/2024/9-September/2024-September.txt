@@ -24,18 +24,11 @@ Ya son 5 meses en el trabajo,
 {M}(17) . Despierto um poco cansado (ya quiero que legué la cama)   |   Descubro el pj: "Eduardo Verastegui"    |   Ejercicio GAP
 {M2}(18) . Estudio en el trabajo    |   Limpio casa y Emmanuel viene de visita 
 {J}(19) . Trabajo duro  |   Cine: "Beetlegeous 2"
-{V}(20) . 
-{S}(21) . 
-{D}(22) . 
-{L}(16) . 
-{M}(17) . 
-{M2}(18) . 
-{J}(19) . 
 {V}(20) . vamos por el colchón, dormimos hasta las 11:00pm
 {S}(21) . trabajo + traer cosas del depa/ instalo las repisas / hablamos sobre los gastos + chocolate caliente 
-{D}(22) . Voy al parque en la mañana y me sentí muy bien
+{D}(22) . Voy al parque en la mañana y me sentí muy bien    |   En la tarde me sentí muy cansado y sin ganas de platicar    |   Cocinamos la comida de mañana
 --- 
-{L}(23) . 
+{L}(23) . No estiré en la noché y me dolió la espalda un poco   |   
 {M}(24) . 
 {M2}(25) . 
 {J}(26) . 
