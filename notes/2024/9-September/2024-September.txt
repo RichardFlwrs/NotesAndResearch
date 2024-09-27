@@ -29,10 +29,10 @@ Ya son 5 meses en el trabajo,
 {D}(22) . Voy al parque en la mañana y me sentí muy bien    |   En la tarde me sentí muy cansado y sin ganas de platicar    |   Cocinamos la comida de mañana
 --- 
 {L}(23) . No estiré en la noché y me dolió la espalda un poco   |   Estudio todo el día sobre sociología y economía |   Ejercicio 1 hora + Hotcakes de platano
-{M}(24) . Empanada Argentina    |    [gasolina]     |   
-{M2}(25) . 
-{J}(26) . 
-{V}(27) . 
+{M}(24) . Empanada Argentina    |    [gasolina]     |   LoL + dolor de espalda  
+{M2}(25) . Avanzo bien al nuevo diseño y aprendo mas sobre Material UI con React    |   Ejercicios de gluetos correctamente
+{J}(26) . Avanco mucho al trabajo con los fomularios para el Admin Page |   [dentista] |   Tomo 3 cervezas + 2 Subways  |   Batallo mucho en dormir por el ajusto de brackets
+{V}(27) . ME siento cansado todo el día |   Cena con Jonathan y Sam en Las Alitas
 {S}(28) . 
 {D}(29) . 
 --- 
