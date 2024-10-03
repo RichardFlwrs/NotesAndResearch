@@ -33,7 +33,8 @@ Ya son 5 meses en el trabajo,
 {M2}(25) . Avanzo bien al nuevo diseño y aprendo mas sobre Material UI con React    |   Ejercicios de gluetos correctamente
 {J}(26) . Avanco mucho al trabajo con los fomularios para el Admin Page |   [dentista] |   Tomo 3 cervezas + 2 Subways  |   Batallo mucho en dormir por el ajusto de brackets
 {V}(27) . ME siento cansado todo el día |   Cena con Jonathan y Sam en Las Alitas
-{S}(28) . 
-{D}(29) . 
+{S}(28) . Fiesta de Naty en García (funeral de sus 20's)
+{D}(29) . Mientras Cecy va con su familia yo me quiedo en mi depa empacando todas mis cosas y llevamos el escritorio al nuevo depa
 --- 
-{L}(30) . 
+{L}(30) . Trabajo normal y armo el escritorio
+
