@@ -8,15 +8,15 @@ Mes: Octubre
 {D}(6) . 
 --- 
 {L}(7) . 
-{M}(8) . 
+{M}(8) . Gasolina 
 {M2}(9) . 
 {J}(10) . 
-{V}(11) . 
-{S}(12) . 
-{D}(13) . 
+{V}(11) . Carnita asada en el depa, con donación de Chuy / Termino cansado 
+{S}(12) . Deje croquetas para las gatas / empezamos serie 'kaos'
+{D}(13) . maxichina + Palax + Tierra / Cecy va con sus papás. yo me quedo limpiando y con ejercicio / Cecy me ayuda a raparme la cabeza 
 --- 
-{L}(14) . 
-{M}(15) . 
+{L}(14) . cine: Robot salvaje con Chuy y Janis
+{M}(15) . [gasolina]
 {M2}(16) . 
 {J}(17) . 
 {V}(18) . 
