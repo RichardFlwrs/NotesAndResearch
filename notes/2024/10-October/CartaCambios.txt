@@ -1,0 +1,37 @@
+Carta
+    Agente_id fk_key
+    TipoDelito cambiar a TipoCarta => Enum "" | "" ... ;
+    TelefonoLlamada
+    Motivo => String
+    Origen => String
+    HechoRelevante Bool
+    DatosConifdenciales Bool
+    Geoubicacion bool
+    TipoIncidencia fk_key
+    SubTipoIncidencia fk_key
+    Participantes int unsigned
+    prioridad ENUM(baja, media, alta)
+    informacion // Para comentarios
+
+LocalizacionesCarta (tabla)
+    id
+    Localidad
+    Calle
+    Numero
+    Piso nullable
+    Cuerpo nullable
+    Ciudad
+    Estado
+    Hitos nullable
+    Lat nullable
+    Long nullable
+    Tipo ENUM(incidente, llamada)
+    carta_id
+
+ComentariosCarta 
+    id
+    Agente_id fk_key
+    fechaAlta
+    comentario
+
+
