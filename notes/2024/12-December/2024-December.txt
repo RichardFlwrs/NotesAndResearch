@@ -7,14 +7,14 @@ Mes: Diciembre
 {M2}(4) . Vamos a comprar el traje para la boda
 {J}(5) . 
 {V}(6) . 
-{S}(7) . 
+{S}(7) . Mientras Cecy está en una Obra | Vamos a la boda, regresamos a las 12 (una patrulla me regaña por pasarme el alto)
 {D}(8) . 
 --- 
-{L}(9) . 
+{L}(9) . Empiezo la dieta sin comer galletas
 {M}(10) . 
 {M2}(11) . 
-{J}(12) . 
-{V}(13) . 
+{J}(12) . Torta de pierna $200  |    DelSol, calcetines + regalos
+{V}(13) . <Pago> | Posada en compañeros de biblia con Cecy
 {S}(14) . 
 {D}(15) . 
 --- 
