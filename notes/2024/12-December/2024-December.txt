@@ -15,20 +15,20 @@ Mes: Diciembre
 {M2}(11) . 
 {J}(12) . Torta de pierna $200  |    DelSol, calcetines + regalos
 {V}(13) . <Pago> | Posada en compañeros de biblia con Cecy
-{S}(14) . 
-{D}(15) . 
+{S}(14) . Trabajé hasta medio día, comí pastel de queso e hice ejercicio de fuerza  |   Limpié las aspas del abanico y cocinamos carne con espinaca |   Me duele mucho la espalda lateral derecha   |   Me quedo en cama mientras Cecy va a la fiesta de Cesar
+{D}(15) . Despertamos a las 10 y trabajo por 3 horas    |   Cambiamos la caja de las ranas y desayunamos huevo con frijoles |   Jugamos lotería con la familia de Cecy, comemos gorditas, pastel y vemos un poco de futbol
 --- 
-{L}(16) . 
+{L}(16) . Juegos de mesa en casa de Nicole (trajimos a las ranitas)
 {M}(17) . 
 {M2}(18) . 
-{J}(19) . 
-{V}(20) . 
-{S}(21) . 
+{J}(19) . "Acción humana" De Ludwin Von Mises   |   Maxichina   |   ¿Mammals cry over feelings?
+{V}(20) . seguimos con la lectura   |   Cena con la familia de Cecy
+{S}(21) . Llego tarde altrabajo |   Voy con la Dra  |   Nos quedamos en casa cocinando y viendo tele
 {D}(22) . 
 --- 
-{L}(23) . 
-{M}(24) . 
-{M2}(25) . 
+{L}(23) . Posada al final del trabajo en restaurante "El Papalote", comí tacos y cerveza    |   Celebran "pre-navidad" en casa de Abuelita
+{M}(24) . Voy a la oficina por la laptop   |   Desayunamos barbacoa y cada quien se va con su familia para Navidad  |   Peli "La Momida (1999)" + tacos de carne    |   Me acuesto viendo la peli de "The Clober and the Thief"
+{M2}(25) . Llego al depa a las 11:00 am y vamos a la comida con la familia del padre de Cecy
 {J}(26) . 
 {V}(27) . 
 {S}(28) . 
