@@ -24,12 +24,12 @@ Mes: Diciembre
 {J}(19) . "Acción humana" De Ludwin Von Mises   |   Maxichina   |   ¿Mammals cry over feelings?
 {V}(20) . seguimos con la lectura   |   Cena con la familia de Cecy
 {S}(21) . Llego tarde altrabajo |   Voy con la Dra  |   Nos quedamos en casa cocinando y viendo tele
-{D}(22) . 
+{D}(22) . Me quedo en la casa mientras Cecy va con sus papás. Limpio la casa y hago estiramientos.
 --- 
 {L}(23) . Posada al final del trabajo en restaurante "El Papalote", comí tacos y cerveza    |   Celebran "pre-navidad" en casa de Abuelita
 {M}(24) . Voy a la oficina por la laptop   |   Desayunamos barbacoa y cada quien se va con su familia para Navidad  |   Peli "La Momida (1999)" + tacos de carne    |   Me acuesto viendo la peli de "The Clober and the Thief"
-{M2}(25) . Llego al depa a las 11:00 am y vamos a la comida con la familia del padre de Cecy
-{J}(26) . 
+{M2}(25) . Llego al depa a las 11:00 am y vamos a la comida con la familia del padre de Cecy    |   Vamos a la cafeteria de Nuevo Sur y despues vemos tele en casa
+{J}(26) . Llego a la oficina desde las 9 pero trabajo desde las 12pm    |   Hago mucha caminata y termino los pocos pendientes  |   Noche de Juegos en casa de Nicole
 {V}(27) . 
 {S}(28) . 
 {D}(29) . 
