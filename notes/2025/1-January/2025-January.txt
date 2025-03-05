@@ -30,8 +30,8 @@ Mes: Enero
 {S}(25) .
 {D}(26) . Le decimos a la mamá de Cecy que estamos viviendo juntos 
 --- 
-{L}(27) . 
-{M}(28) . 
-{M2}(29) . 
-{J}(30) . 
+{L}(27) . Posible estafa con inmuebles por la zona
+{M}(28) . Nueva IA "DeepSeek" 
+{M2}(29) . Cecy hace platica con niños de Kinder + comemos tacos
+{J}(30) . Choca una camioneta en frente al trabajo  |   Me quedo 3 horas extras en el trabajo
 {V}(31) . 
