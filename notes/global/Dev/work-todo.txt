@@ -1,0 +1,72 @@
+php83 bin/console doctrine:query:sql "SELECT * FROM rol_permisos"
+php83 bin/console doctrine:query:sql "DELETE FROM user_role_rol_permisos WHERE user_role_id = 5;"
+php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
+
++ Al intentar marcar, ahora se bloquea el boton en de envio mientras el campo se encuentre vacío
++ Escuchar audio se mantiene la ventana abierta
++ Se muestra con diferente color la fila en tabla del audio actual
++ 
+
+38) Crear un Rol con nombre "Operador" (sin comillas) que tenga por defecto y no se pueda borrar ni modificar los siguientes permisos:- 
+Funcion de operador
+[
+  10, // Ver sucesos cerrados
+  21, // Asociar sucesos
+  32, // Ver eventos
+  40, // Crear cartas de llamada
+  41, // Hacer llamadas grupales
+  42, // Hacer llamadas salientes
+  27 // Ver Historial de carta
+]
+
+
+
+39) Crear un Rol con nombre "Despachante" (sin comillas) que tenga por defecto y no se pueda borrar ni modificar los siguientes permisos:
+
+[
+  2, // Abrir sucesos abiertos 
+  5, // Editar Tipo/Subtipo en sucesos abiertos 
+  6, // Editar ubicación en sucesos abiertos 
+  10, // Ver sucesos cerrados 
+  17, // Permitir cierre parcial de sucesos (Espera de Cierre) 
+  20, // Agregar comentarios a sucesos de agencias permitidas 
+  21, // Asociar sucesos 
+  22, // Asignar/Desasignar recursos 
+  27, // Ver eventos 
+  36, // Ver PTT 
+  37, // Ver carta inversa 
+  41, // Hacer llamadas grupales 
+  40, // Hacer llamadas salientes 
+  46, // Editar agencia 
+  42 // Ver historial carta
+]
+
+
+{
+  "apiKey": "AIzaSyBn2cvMk6vkeTtqdgVKvcOk8vxpvRksuMM",
+  "authDomain": "hiperme-911.firebaseapp.com",
+  "databaseURL": "https://hiperme-911-default-rtdb.firebaseio.com",
+  "projectId": "hiperme-911",
+  "storageBucket": "hiperme-911.firebasestorage.app",
+  "messagingSenderId": "599111723361",
+  "appId": "1:599111723361:web:3184abf424edf2c575bd20"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
