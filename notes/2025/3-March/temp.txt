@@ -1,0 +1,47 @@
+1.2 The World of Patterns
+In the last couple of years, patterns have become one of the hottest topics in the
+object community. They are rapidly becoming the leading-edge fad, generating a
+huge amount of interest and the usual hype. We are also seeing internal battles
+over what fits into the community, including many arguments about exactly what
+a pattern is. Certainly it is difficult to find any common definition of pattern.
+DLKING独家制作, 欢迎访问我们的网站: www.dlking.com
+Introduction 5
+The roots of the patterns movement come from various sources. In recent
+years an increasing number of people felt that the software world was not very
+good at describing and proliferating good design practice. Methodologies
+abounded, but they defined a language for describing designs rather than
+describing actual designs. There was (and still is) a dearth of technical papers
+describing useful designs based on practice, which could be used to educate and
+inspire. As Ralph Johnson and Ward Cunningham put it: "Projects fail despite the
+latest technology for lack of ordinary solutions" [4],
+Patterns evolved from several initiatives. Kent Beck and Ward
+Cunning-ham, two of the pioneers of Smalltalk, came across the ideas of
+Christopher Alexander, who had developed a theory and collection of patterns
+in architecture. Bruce Anderson led workshops at OOPSLA in the early 1990s
+that investigated building a handbook for software architects. Jim Coplien's C++
+book [3] described idioms useful in C++. A number of these people formed the
+Hillside Group to explore these ideas further.
+A greater public knowledge of the movement was triggered by the publication
+of the seminal "Gang of Four" book [6] and the PLoP (Pattern Language of
+Programming) conference started by the Hillside group in 1994 [4].
+I had had very little contact with this growing community. I had long
+wanted to read books that described conceptual models, because I felt such
+books would give me good ideas. I didn't feel I could write about such things
+until I had enough models to form a worthwhile book. I was interested in the
+patterns movement and I found many of their principles appealing, but I was put
+off by the impression of a cliquey group that was obsessed with the architect
+Christopher Alexander and had a very stylized form of pattern writing. In the
+last year I have had more contact and attended the second PLoP. The most
+noticeable aspect of the patterns community is that it is quite a diverse group.
+Yes, there are those who seem to regard Alexander's works as sacred text, with
+alternative interpretations to be argued over. There are also plenty of those who
+dismiss Alexander as irrelevant. There are those who seem to see a mystical
+virtue in patterns, and those who can't stand the "touchy-feely" aspect of
+patterns. There are those who see patterns as overturning analysis and design
+methods, those who see conceptual modeling as a waste of time, and those who
+have encouraged me to produce this book to show what analysis, or conceptual,
+patterns can be like.
+The idea of software patterns is not confined to the object-oriented com-
+munity; David Hay has written a valuable book on data model patterns [7]. The
+models follow relational data modeling style, but they are very conceptual
+models. This makes the models valuable even if you are using object technology.
