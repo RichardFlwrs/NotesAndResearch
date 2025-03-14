@@ -14,7 +14,7 @@ Mes: Marzo
 {L}(10) . Termino muy cansado despues de planear la boda
 {M}(11) . 
 {M2}(12) . Tacos de trompo + llamada con mi abuelita
-{J}(13) . 
+{J}(13) . degustation de comida. Luna llena
 {V}(14) . 
 {S}(15) . 
 {D}(16) . 
