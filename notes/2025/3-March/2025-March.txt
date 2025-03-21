@@ -15,14 +15,14 @@ Mes: Marzo
 {M}(11) . 
 {M2}(12) . Tacos de trompo + llamada con mi abuelita
 {J}(13) . degustation de comida. Luna llena
-{V}(14) . 
-{S}(15) . 
-{D}(16) . 
+{V}(14) . Visitamos a mi Abuelita, mi papá nos lleva de regreso
+{S}(15) . Trabajo hasta las 3pm y en la noche vamos a jugar en casa de Betty
+{D}(16) . Descansamos todo el día y vamos por pan y chocolate en la noche
 --- 
-{L}(17) . 
-{M}(18) . 
+{L}(17) . <feriado> Vamos a comer y lavar ropa en casa de Cecy
+{M}(18) . Trabajo con SQL plano para optimizar la entrega de datos
 {M2}(19) . 
-{J}(20) . 
+{J}(20) . Starbucks 1/2 precio  |   Horas extras
 {V}(21) . 
 {S}(22) . 
 {D}(23) . 

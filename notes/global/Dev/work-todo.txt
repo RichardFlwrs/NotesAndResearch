@@ -1,4 +1,7 @@
-php83 bin/console doctrine:query:sql "SELECT * FROM rol_permisos"
+php83 bin/console doctrine:query:sql "SELECT carta_id, agencia_id 
+FROM carta_agencia 
+WHERE carta_id = 3120;"
+php83 bin/console doctrine:query:sql "SELECT @@VERSION"
 php83 bin/console doctrine:query:sql "UPDATE [operador] SET [user_role_id] = '2' WHERE [operador].[id] = 1"
 php83 bin/console doctrine:query:sql "DELETE FROM user_role_rol_permisos WHERE user_role_id = 5;"
 php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
@@ -9,33 +12,24 @@ php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.
 + Se crean Roles para Operadro Y Despachante que no se pueden editar permisos establecidos
 -- 12 mar
 + RolePage: Se agregó restricción para no poder borrarlo y sin opcion de "marcar" mas permisos
-+ 
+-- 20 mar
++ Se muestra la extension del usuario en la esquina superior izquierda 
++ Se produce un sonido de notificación al actualizar la tabla Cartas dado a un nuevo ingreso.
++ Boton para marcar al ANI en la PreCarta
++ Marcar un número mientras la llamada esta activa hace transferencia al número marcado
 
-{
-  "apiKey": "AIzaSyBn2cvMk6vkeTtqdgVKvcOk8vxpvRksuMM",
-  "authDomain": "hiperme-911.firebaseapp.com",
-  "databaseURL": "https://hiperme-911-default-rtdb.firebaseio.com",
-  "projectId": "hiperme-911",
-  "storageBucket": "hiperme-911.firebasestorage.app",
-  "messagingSenderId": "599111723361",
-  "appId": "1:599111723361:web:3184abf424edf2c575bd20"
-}
-
-
-
+crontab -e
+(opens Vim editor, type "i" and insert the following)
+* * * * * /usr/bin/php83 /home/rflorest/api911/bin/console app:update-expired-operadores >> /home/rflorest/api911/var/log/operador_update.log 2>&1
+("escape" and write ":wq" to save)
+crontab -l
+(see if is correctly stored)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
++ [BUG_4] Al cargar una pre carta y agregar otro centro de despacho mas, aparte del que viene preseccionado según la dirección. NUNCA llega la precarta al CD que se selecciona manualmente. Eso pasa en la precarta y carta.
++ [BUG_5] Al presionar el boton broma en la precarta, la comunicacion no se corta y queda la barra como tildada y si presionas el boton tontestar, te abre nuevamente una precarta de cero sin el ani. NO lo reenvia al audio de broma.
++ [BUG_6] Lo mismo sucede con los otros botones. Nunca se corta la comunicacion al presionar el boton de aceptar.
++ [BUG_7] AL ingresar una llamada y atenderla, aparece ´el mensaje:
++ [BUG_8] hay llamadas que se cortan aleatoriamente. Cuando lleno una precarta, y paso a la carta, la llamada se corto. Ejemplo carta Carta 115
++ RESUELTO PARCIAL la apertura de cualquier carta EN CUALQUIER ESTADO tarda de 2.5 a 3 segundos, es mucho tiempo. Por la poca cantidad de informacion que hay.
