@@ -1,0 +1,45 @@
+import { IzCarta } from "api/schemes/Carta.Schema";
+import { IzCartaEventos } from "api/schemes/CartaEventos.Schema";
+import { IzCartaMinimum } from "api/schemes/CartaMinimum.Schema";
+
+export interface CurrentCartaDetails {
+    carta: IzCarta | null | undefined,
+    eventos: IzCartaEventos[],
+    asociadas: IzCartaMinimum[],
+}
+
+export enum SetCurrentCartaCase {
+    carta = 'carta',
+    eventos = 'eventos',
+    asociadas = 'asociadas',
+}
+
+export const INITIAL_CTI_STATE: CurrentCartaDetails = {
+    carta: undefined,
+    eventos: [],
+    asociadas: [],
+};
+
+export type CTIAction =
+    | { type: SetCurrentCartaCase.carta; payload: IzCarta | null | undefined }
+    | { type: SetCurrentCartaCase.eventos; payload: IzCartaEventos[] }
+    | { type: SetCurrentCartaCase.asociadas; payload: IzCartaMinimum[] }
+
+export function getcartaDetailsReducer(
+    state: CurrentCartaDetails,
+    action: CTIAction
+): CurrentCartaDetails {
+    switch (action.type) {
+        case SetCurrentCartaCase.carta:
+            return { ...state, carta: action.payload };
+
+        case SetCurrentCartaCase.eventos:
+            return { ...state, eventos: action.payload };
+
+        case SetCurrentCartaCase.asociadas:
+            return { ...state, asociadas: action.payload };
+
+        default:
+            return state;
+    }
+}   

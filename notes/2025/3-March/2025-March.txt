@@ -23,9 +23,9 @@ Mes: Marzo
 {M}(18) . Trabajo con SQL plano para optimizar la entrega de datos
 {M2}(19) . 
 {J}(20) . Starbucks 1/2 precio  |   Horas extras
-{V}(21) . 
-{S}(22) . 
-{D}(23) . 
+{V}(21) . Mercado Libre |   Instalacion de repisas
+{S}(22) . Vemos plaza para evento de Boda | Fiesta en casa de moy
+{D}(23) . Vemos otra plaza para evento de Boda  |   
 --- 
 {L}(24) . 
 {M}(25) . 

@@ -1,8 +1,7 @@
-php83 bin/console doctrine:query:sql "SELECT carta_id, agencia_id 
-FROM carta_agencia 
+php83 bin/console doctrine:query:sql "SELECT * FROM agente_cti"
 WHERE carta_id = 3120;"
 php83 bin/console doctrine:query:sql "SELECT @@VERSION"
-php83 bin/console doctrine:query:sql "UPDATE [operador] SET [user_role_id] = '2' WHERE [operador].[id] = 1"
+php83 bin/console doctrine:query:sql "UPDATE [agente_cti] SET [email] = 'agente07.rionegro@hiperpbx.com' WHERE [agente_cti].[id] = 13"
 php83 bin/console doctrine:query:sql "DELETE FROM user_role_rol_permisos WHERE user_role_id = 5;"
 php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
 
@@ -17,6 +16,15 @@ php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.
 + Se produce un sonido de notificación al actualizar la tabla Cartas dado a un nuevo ingreso.
 + Boton para marcar al ANI en la PreCarta
 + Marcar un número mientras la llamada esta activa hace transferencia al número marcado
+-- 22 mar
++ Al ingresar una llamada y atenderla, aparece emnsaje "Primero debes terminar la Carta"
+-- 24 mar
++ Se aplica restricción para descargar Carta en PDF en base al permiso del usuario 
++ Se oculta datos confidenciales al descargar Carta en PDF
++ Se muestran todos los comentarios y eventos para Carta en PDF
++ Se muestra una imagen predefinida para el Login
+
++ Asociar una carta debe actualizar la tabla de Cartas asociadas
 
 crontab -e
 (opens Vim editor, type "i" and insert the following)
@@ -24,6 +32,16 @@ crontab -e
 ("escape" and write ":wq" to save)
 crontab -l
 (see if is correctly stored)
+
+
+Okay, Ill try that later
+
+Now I have a similar question
+
+How do I do a lazy load in my ts-react app with Vite??
+
+This is going to be a gigantic 
+
 
 
 
