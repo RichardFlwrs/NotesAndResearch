@@ -27,8 +27,8 @@ Mes: Marzo
 {S}(22) . Chocan a Cecy en avenida Constitucion | Vemos plaza para evento de Boda
 {D}(23) . Desayuno en Cafe Cacao | Vemos otra plaza para evento de Boda
 --- 
-{L}(24) . Muy cansado
-{M}(25) . 
+{L}(24) . Muy cansado | Pan y chocolate
+{M}(25) . Dinero del carro y cita para evento en 3 abuelas
 {M2}(26) . 
 {J}(27) . 
 {V}(28) . 

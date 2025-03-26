@@ -23,6 +23,16 @@ php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.
 + Se oculta datos confidenciales al descargar Carta en PDF
 + Se muestran todos los comentarios y eventos para Carta en PDF
 + Se muestra una imagen predefinida para el Login
+-- 25 mar
++ Se ha eliminado el modal con mensaje "Hay datos pendientes, ¿Deseas continuar llenado el formulario?". Se ha cambiado la logica para la recuperacion de datos.
++ El sistema checa si tienes alguna Carta Pendiente al momento de inciar sesion
++ En caso tener Pendiente, se muestra Carta Form Automaticamente. Y el Usuario no podrá cambiar de estatus a "Presente" hasta derviar o cerrar la carta.
++ Se agrega icono en formulario que muestra si el formulario provisional se ha guardado correctamente
++ No se podrá a Ingresar a PreCarta si la carta Pendiente ya había completado ese paso
+-- v0.1.35
++ Al llamar a un numero, si te cancelan. El sistema activa los botones como si se hubiera aceptado el llamado
+
+
 
 + Asociar una carta debe actualizar la tabla de Cartas asociadas
 
