@@ -31,8 +31,8 @@ Mes: Marzo
 {M}(25) . Dinero del carro y cita para evento en 3 abuelas
 {M2}(26) . 
 {J}(27) . 
-{V}(28) . 
-{S}(29) . 
-{D}(30) . 
+{V}(28) . Fiesta en casa de Nicole, les compramos una planta con maceta de cara
+{S}(29) . Me quedo en casa mientras Cecy va al teatro. Al regresar cenamos papa asada
+{D}(30) . Retiro de novios en la Iglesia (12 horas). Llegamos muy cansados
 --- 
-{L}(31) . 
+{L}(31) . Despensa & pastel. dormimos temprano

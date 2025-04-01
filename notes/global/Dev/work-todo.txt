@@ -30,10 +30,59 @@ php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.
 + Se agrega icono en formulario que muestra si el formulario provisional se ha guardado correctamente
 + No se podrá a Ingresar a PreCarta si la carta Pendiente ya había completado ese paso
 -- v0.1.35
++ Se cambia el proceso para Inicar sesion al sistema de llamadas
 + Al llamar a un numero, si te cancelan. El sistema activa los botones como si se hubiera aceptado el llamado
++ Actualizar imagen de Login
++ Permiso nuevo para "Exportar Carta completa a PDF"
+-- 28 Mar Viernes
++ [fix] Se guarda los datos iniciales (telefono) en "localstorage" al recibir llamada
++ [fix] Al cerrar una carta con "boton-rapido", se mostrabana los valores antiguos al abrir una carta nueva
++ Se muestra la extension del Usuario en sesión nuevamente
+---
++ Al dar de alta un nuevo usuario el formulario trae datos caragados(requerimiento vacío)
++ Notificación audible cuando una carta es despachada o derivada (Archivo wav)
++ Cuando se descarga archivo PDF se genera el evento
++ Cuando se descarga un audio se genera un evento
++ Cuando se reproduce una grabación se genera un evento
++ El visor de eventos no registra quien agrega un archivo. 
++ Las cartas que se cierran utilizando los botones de acceso directo Broma, No constituye Emergencia, Agradecimiento y llamada interna NO se ven en la bandeja de cartas cerradas
++ Modificación de la caja de texto de comentarios y eventos (ver imagen ) los comentarios salen de la caja de texto
+--- 
++ Cuando se descarga un archivo no se genera un evento
++ Validación para no permitir iniciar mas de una sesión por usuario
+--
 
 
 
+
++ BUG, al querer descargar un audio, se abre una nueva pantalla dentro de la pantalla de la carta:
++ BUG ERROR AL FINALIZAR la creacion de una carta.
++ "despachante" los centros de despachos pueden ver cartas de otros centros.
++ BUG Al estar logueado como operador y cambiar en la barra de direcicones el numero de carta, puedo acceder a cualquier carta, por mas que la tenga asignada una agencia.
++ BUG ahora se van las letras en eventos y SIGUEN con pocos caracteres el cuadro de texto. Como minimo duplicar la cantidad de caracteres en los cuadros de texto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[BLOQUEADO]
++ Mensaje de Datos pendientes no se cierra el formulario
++ No se cierra el cartel de cambio de Rol
++ Al quere derivar o despachar una carta al agregar mas de un centro manualmente la carcta llega al primero pero no al resto 
+
+
++ En caso de borrar todo el telefono del formulario, al recargar la página aparecerá nuevamente como llegó inicialmente en la llamada
++ Modificar CartaForm para poder editarla o completarla
++ Guardar registro de historial de llamadas (Solo Telefono) para el Operador
 + Asociar una carta debe actualizar la tabla de Cartas asociadas
 
 crontab -e
