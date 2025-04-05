@@ -1,10 +1,10 @@
 Mes: Abril 
 
-{M}(1) . 
-{M2}(2) . 
-{J}(3) . 
-{V}(4) . 
-{S}(5) . 
+{M}(1) . Trabajo constante | serie "Adolesencia" | No limpiamos nada
+{M2}(2) . Acabamos de ver Fionna And Cake
+{J}(3) . Ejercicio con Cecy
+{V}(4) . Finanzas + Compro flores para Cecy
+{S}(5) . Desayunamos temprano 
 {D}(6) . 
 --- 
 {L}(7) . 

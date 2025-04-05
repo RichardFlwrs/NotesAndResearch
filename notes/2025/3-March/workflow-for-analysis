@@ -3,11 +3,25 @@ Estoy haciendo un sistema de llamadas de emergencias tipo 911 para la recolecci�
 Describiré la siguiente rutina que debería manejar el sistema frontend con React y Typesctript con Vite.
 ---
 
-1) 
+### Notificacion de Alarma al recibir una nueva Carta
 
-2) 
+1) Se mostrará un cuadro de notificación por encima del todo con la información breve de la carta y boton de confirmación. El cuadro compartirá el espacio con las Noticias activas.
 
-3) 
+1.1) El diseño consiste 
+
+1.2) La alarma consiste de un sonido frecuncial como de ambulancia, el cual sonará durante 15 segundos o hasta que el usuario haya confirmado la notificacion
+
+2) Teniendo la sesion activa, el usuario deberá poder escuchar la alarmar de una nueva carta abierta sin importar en que sección de la plataforma se encuentre
+
+2.1) Si al iniciar sesión, el usuario tiene notificaciones de cartas pendientes también sonará la alarma
+
+3) El usuario solo escuchará la alarma si la nueva Carta abierta coincide con las agencias permitidas asignadas al usuario
+
+3.1) Por consiguiente, Si se crean cartas que pasan a estar "cerradas" automaticamente; como en el caso de las llamadas de bromas, etc. La Notificacion de Alarma no será registrada.
+
+4) Si el usuario se encuentra en llamada, solo la notificación será visible pero el sonido de alarma será omitido
+
+5) La notificación de Carta
 
 ---
 
@@ -17,3 +31,12 @@ Bien, quiero que revises las instrucciones y en base a eso escribe lo siguiente:
 
 Puedes agregar comentarios o mejoras en caso de que veas fallas en la logica del objetivo
 
+
+
+
+
+1) 
+
+2) 
+
+3) 

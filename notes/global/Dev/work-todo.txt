@@ -1,8 +1,9 @@
-php83 bin/console doctrine:query:sql "SELECT * FROM agente_cti"
+php83 bin/console make:entity 
+php83 bin/console doctrine:query:sql "SELECT * FROM user_role" --env=test
 WHERE carta_id = 3120;"
 php83 bin/console doctrine:query:sql "SELECT @@VERSION"
-php83 bin/console doctrine:query:sql "UPDATE [agente_cti] SET [email] = 'agente07.rionegro@hiperpbx.com' WHERE [agente_cti].[id] = 13"
-php83 bin/console doctrine:query:sql "DELETE FROM user_role_rol_permisos WHERE user_role_id = 5;"
+php83 bin/console doctrine:query:sql "SELECT * FROM carta_notification_read"
+php83 bin/console doctrine:query:sql "DELETE FROM carta_notification WHERE id = 3;"
 php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
 
 + Al intentar marcar, ahora se bloquea el boton en de envio mientras el campo se encuentre vacío
@@ -47,21 +48,37 @@ php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.
 + El visor de eventos no registra quien agrega un archivo. 
 + Las cartas que se cierran utilizando los botones de acceso directo Broma, No constituye Emergencia, Agradecimiento y llamada interna NO se ven en la bandeja de cartas cerradas
 + Modificación de la caja de texto de comentarios y eventos (ver imagen ) los comentarios salen de la caja de texto
---- 
+--- 1 Abr
 + Cuando se descarga un archivo no se genera un evento
 + Validación para no permitir iniciar mas de una sesión por usuario
---
-
-
-
-
 + BUG, al querer descargar un audio, se abre una nueva pantalla dentro de la pantalla de la carta:
-+ BUG ERROR AL FINALIZAR la creacion de una carta.
-+ "despachante" los centros de despachos pueden ver cartas de otros centros.
-+ BUG Al estar logueado como operador y cambiar en la barra de direcicones el numero de carta, puedo acceder a cualquier carta, por mas que la tenga asignada una agencia.
 + BUG ahora se van las letras en eventos y SIGUEN con pocos caracteres el cuadro de texto. Como minimo duplicar la cantidad de caracteres en los cuadros de texto.
++ BUG ERROR AL FINALIZAR la creacion de una carta.
+--
++ "despachante" los centros de despachos pueden ver cartas de otros centros. (Solo ocurría cuando el Supervisor cambiaba de rol a otro con menos permisos.)
+--- 3 Abr
++ Se corrige la irregularidad en la que se escuchaba el sonido de notifiacion
++ Se aplica nueva lógica para reproducir una alarma al recibir una nueva Carta abierta
++ «useAutoSave» estaba eliminando la copia de seguridad después de recargar la página en medio de una llamada.
++ BUG Al estar logueado como operador y cambiar en la barra de direcicones el numero de carta, puedo acceder a cualquier carta, por mas que la tenga asignada una agencia.
+--- 4 Abr
++ AL ABRIR UNA CARTA CERRADA SE QUEDA EN CARGANDO Y LUEGO DE 20 SEGUNDOS APROX., REGRESA A LA SOLAPA CARTAS CERRADAS
++ En el banner, mostrar primero las cartas y luego las noticias 
++ carrusel del banner, se recorría a primera posicion al borrar una notificacion
++ Noticia se agrega la opcion de "fecha indefinda"
++ Se actualiza el "banner" de noticias al agregar, activar o modificar una noticia
+---
++ update-password. valida la contraseña anterior y muestra mensaje de exito
 
 
+
++ Cerrar DropDown de Setting al cancelar cualquier rol
++ Correción de ortografía en Modal de confidencialidad
++ No aparece "3246" al tener mas de una agencia seleccionada
++ Borrar numero de telefono despues de transferiri en el FlaotingBox
++ Al cambiar de rol con diferente permiso para escuchar audio, no le deja escuchar audio. "Audio no encontrado"
++ Agregar evento de firebase para cerrar la sessión de otro usuario
++ 
 
 
 
