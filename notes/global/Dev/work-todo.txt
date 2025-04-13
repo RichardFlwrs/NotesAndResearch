@@ -1,8 +1,8 @@
 php83 bin/console make:entity 
-php83 bin/console doctrine:query:sql "SELECT * FROM user_role" --env=test
-WHERE carta_id = 3120;"
+php83 bin/console doctrine:query:sql "SELECT * FROM noticia" --env=test
 php83 bin/console doctrine:query:sql "SELECT @@VERSION"
-php83 bin/console doctrine:query:sql "SELECT * FROM carta_notification_read"
+php83 bin/console doctrine:query:sql "DELETE FROM carta_notification_read"
+php83 bin/console doctrine:query:sql "DELETE FROM [agencia] WHERE [agencia].[nombre] = 'CD SIARME Viedma'"
 php83 bin/console doctrine:query:sql "DELETE FROM carta_notification WHERE id = 3;"
 php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
 
@@ -14,7 +14,7 @@ php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.
 + RolePage: Se agregó restricción para no poder borrarlo y sin opcion de "marcar" mas permisos
 -- 20 mar
 + Se muestra la extension del usuario en la esquina superior izquierda 
-+ Se produce un sonido de notificación al actualizar la tabla Cartas dado a un nuevo ingreso.
++ Se produce un sonido de    notificación al actualizar la tabla Cartas dado a un nuevo ingreso.
 + Boton para marcar al ANI en la PreCarta
 + Marcar un número mientras la llamada esta activa hace transferencia al número marcado
 -- 22 mar
@@ -69,27 +69,78 @@ php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.
 + Se actualiza el "banner" de noticias al agregar, activar o modificar una noticia
 ---
 + update-password. valida la contraseña anterior y muestra mensaje de exito
-
-
-
-+ Cerrar DropDown de Setting al cancelar cualquier rol
 + Correción de ortografía en Modal de confidencialidad
-+ No aparece "3246" al tener mas de una agencia seleccionada
++ Cerrar DropDown de Setting al cancelar cualquier rol
 + Borrar numero de telefono despues de transferiri en el FlaotingBox
-+ Al cambiar de rol con diferente permiso para escuchar audio, no le deja escuchar audio. "Audio no encontrado"
-+ Agregar evento de firebase para cerrar la sessión de otro usuario
++ Al agregar mas agencias a una carta solo toma en cuenta la primera selección al mostrarse en el tablero de Cartas
++ Al cambiar de rol con diferente permiso para escuchar audio, aparece mensaje: "Audio no encontrado". Cuando mas bien debe mostrar mensaje: "No tienes permisos para escuchar audio
+---
++ Tablero de Operadores ahora muestra apartado de "operadores eliminados" con la opción de restaurar datos borrados
++ Detalle de la Carta muestra los datos inluso si el Operador fué eliminado
++ La Alarma solo debe escucharse si el roleLogin es tipo "despachante" 
++ Si un usuario ingresa session desconectará automaticamente las anteriores sesiones activas
+---
++ Se corrige "timezone" para el funcionamiento correcto del filtro: "ultimas 2 horas"
++ Se muestra correctamente las cartas cerradas al crear cartas tipo BROMA, etc...
+---
+04) el visor de eventos no deja plasmado quien abrio o visualizo la carta. Esto es muy importante.
+05) ( Cambiar tipo de delito muestar el valor elegido correctamente ) / Error al rectificar tipo de delito en carta abierta (te pase el video)
+09) ( Se debe enviar la notifiacion para recargar los datos al cerrar cartas ) / La bandeja de entrada del despachante no se actualiza. Al cerrar una carta desde cualquier usuario, la bandeja de entrada del despachante sigue sin refresacar por mas de tres minutos.
+08) ( Comnetario de PreCarta no se puede modificar ) / Al cambiar el relato en la carta, cambia relato en precarta. Esta mal. El relato de la precarta siempre tiene que quedar
++ Relato es campo Obligatorio
++ Los eventos de la Carta se actualzan en tiempo real
++ Se crea notificacion de desarga PDF cuando no tiene permiso
+10) Modificación de la caja de texto de comentarios y eventos (ver imagen ) los comentarios salen de la caja de texto. AUTOSCROLL
++ Paginacion de Eventos y Comentarios mejorado, solo se muestran 7 paginas a mover a la vez
+---
++ Operador no debe escuchar la alarma de nueva Carta
+03) Aleatoriamente la sesion de ingreso al sistema se cierra de forma automatica (te pase el video)
++ Corregir la timezone 
+---
++ Relato solo se valida despues de Precarta
++ En la selección de carta para asociar ahora permite tomar cartas cerradas de mas de 48 horas
+----
++ Boton rápido no requiere de comentarios para cerrar
++ Se muestran tipo y subitpo incidente en el evento del cambio
++ Notificaciones de Cartas Abiertas solo se deben mostrar a "despachantes" y que coincida con las agencias del despachante (Anteriormente solo aplicaba para el sonido de alarma)
++ Relato no es requerido cuando ya viene de la PreCarta
+---
++ Se muestra evento en el intento fallido de descargar Carta Completo en PDF
++ Al completar la Carta, se actualizan los datos al usuario que esté viendo la Carta
+---
++ Al pasar una Carta a "en proceso", se debe eliminar automaticamente la notificación y el sonido de alarma. Tambien ocurre al cerrar la carta con los botones rápidos
+---
++ al cambair de rol siempre irte a la bandeja
++ no hay forma de quitar sonido si se actualiza la carta. (validación extra para evitar sonar la alarma en caso de ya haber sido enviada antes)
+---
++ Tablero de Cartas, inciar con solapa "abierta" al hacer login o al cambiar de rol
++ Carta Salud, documento,sintoma restricción en longitud de texto a 255
++ Se guardan los datos de Bombero correctamente
++            Prevent errors after adding new TabEntity
++ Se corrige error al agregar una nueva entidad (Victima, Polcia, etc) para las solapas de Carta
++ Se muestran las demás entidades en el detalle de Carta
++ al transfeirir tarda un minuto en colgar la llamada
+---
++ Noticias updated realtime
++ [PROD] Sonido de Alarma no se escucha
++ [BUG] User Madeline17, cant have agencies...
 + 
 
+[PENDING]
++ En el detalle de la Carta, falta actualizar en tiempo real si alguien cambia el estado de la Carta (ejemplo: de "abierta" a "en procesos" )
+
+[LATER]
+13) Se pueden abrir al mismo tiempo la carta de un mismo centro de despacho con usuarios diferentes
+
+[REFACTORS]
+Relato/Comentarios on different component
 
 
 
 
-
-
-
-
-
-
+---
+* * * * * * * *
+---
 
 [BLOQUEADO]
 + Mensaje de Datos pendientes no se cierra el formulario

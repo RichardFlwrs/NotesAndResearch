@@ -1,33 +1,25 @@
 Estoy haciendo un sistema de llamadas de emergencias tipo 911 para la recolección de datos, cuyo cada llamada es almacenado como "Carta".
 
-Describiré la siguiente rutina que debería manejar el sistema frontend con React y Typesctript con Vite.
+Describiré la siguiente rutina que debería manejar el sistema frontend con React y Typescript con Vite.
 ---
 
 ### Notificacion de Alarma al recibir una nueva Carta
 
-1) Se mostrará un cuadro de notificación por encima del todo con la información breve de la carta y boton de confirmación. El cuadro compartirá el espacio con las Noticias activas.
+1) Al generarse una Carta Nueva se envian notificación con sonido de alarma a todos los usuarios con Rol "Despachante"
 
-1.1) El diseño consiste 
+2) El sonido y notificación serán eliminados cuando un usuario entre al detalle de la Carta
 
-1.2) La alarma consiste de un sonido frecuncial como de ambulancia, el cual sonará durante 15 segundos o hasta que el usuario haya confirmado la notificacion
+2.1) Por lo que internamente se rige ante la lógica de:
+Mientras la carta tenga un evento de "Visto". Se evitará enviar mas notificaciones de la misma
 
-2) Teniendo la sesion activa, el usuario deberá poder escuchar la alarmar de una nueva carta abierta sin importar en que sección de la plataforma se encuentre
-
-2.1) Si al iniciar sesión, el usuario tiene notificaciones de cartas pendientes también sonará la alarma
-
-3) El usuario solo escuchará la alarma si la nueva Carta abierta coincide con las agencias permitidas asignadas al usuario
-
-3.1) Por consiguiente, Si se crean cartas que pasan a estar "cerradas" automaticamente; como en el caso de las llamadas de bromas, etc. La Notificacion de Alarma no será registrada.
-
-4) Si el usuario se encuentra en llamada, solo la notificación será visible pero el sonido de alarma será omitido
-
-5) La notificación de Carta
+3) Si un usuario "despachante" entra al sistema solo deberá escuchar y ver las notificaciones de Cartas abiertas que no han sido "vistas" por otros usuarios
 
 ---
 
 Bien, quiero que revises las instrucciones y en base a eso escribe lo siguiente:
-+ Documento de requerimientos, separados por Funcionales y No Funcionales
+
 + Casos de usos que ayuden a separar y entender la lógica de negocio
++ Ideas de Interfaces con Typescript para implementar el caso de uso
 
 Puedes agregar comentarios o mejoras en caso de que veas fallas en la logica del objetivo
 
@@ -40,3 +32,9 @@ Puedes agregar comentarios o mejoras en caso de que veas fallas en la logica del
 2) 
 
 3) 
+
+---
+
++ Documento de requerimientos, separados por Funcionales y No Funcionales
++ Casos de usos que ayuden a separar y entender la lógica de negocio
++ Ideas de Interfaces con Typescript para implementar el caso de uso
