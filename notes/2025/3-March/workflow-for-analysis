@@ -14,6 +14,10 @@ Mientras la carta tenga un evento de "Visto". Se evitará enviar mas notificacio
 
 3) Si un usuario "despachante" entra al sistema solo deberá escuchar y ver las notificaciones de Cartas abiertas que no han sido "vistas" por otros usuarios
 
+4) En caso de editar la agencia receptora se deberá mandar la notificación de alarma nuevamente, a excepción del usuario que editó el campo.
+
+5) 
+
 ---
 
 Bien, quiero que revises las instrucciones y en base a eso escribe lo siguiente:

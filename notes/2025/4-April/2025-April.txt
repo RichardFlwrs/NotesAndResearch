@@ -13,9 +13,9 @@ Mes: Abril
 {J}(10) . 
 {V}(11) . 2 horas extras
 {S}(12) . Como demasiado azucar
-{D}(13) . hora extra | 
+{D}(13) . hora extra | Todo el día en casa Cecy
 --- 
-{L}(14) . 
+{L}(14) . Me llevop el carro
 {M}(15) . 
 {M2}(16) . 
 {J}(17) . 

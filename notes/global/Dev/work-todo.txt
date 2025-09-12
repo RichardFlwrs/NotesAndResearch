@@ -1,10 +1,23 @@
 php83 bin/console make:entity 
-php83 bin/console doctrine:query:sql "SELECT * FROM noticia" --env=test
+php83 bin/console doctrine:query:sql "SELECT agente_cti FROM operador"
+php83 bin/console doctrine:query:sql "DELETE FROM recurso WHERE sub_tipo_recurso_id IN (22, 25, 26, 27, 28, 29, 30 )"
+php83 bin/console doctrine:query:sql "TRUNCATE table agente_cti"
+php83 bin/console doctrine:query:sql "SELECT * FROM carta_agencia where carta_id = 2063"
 php83 bin/console doctrine:query:sql "SELECT @@VERSION"
-php83 bin/console doctrine:query:sql "DELETE FROM carta_notification_read"
+php83 bin/console doctrine:query:sql "DELETE FROM user_role where user_role.id = 7"
 php83 bin/console doctrine:query:sql "DELETE FROM [agencia] WHERE [agencia].[nombre] = 'CD SIARME Viedma'"
-php83 bin/console doctrine:query:sql "DELETE FROM carta_notification WHERE id = 3;"
+php83 bin/console doctrine:query:sql "UPDATE agente_cti SET operador_user_id = null where id = 29"
+php83 bin/console doctrine:query:sql "UPDATE operador SET contrasena = '$2y$13$IUnL/eYmopjkIwtIZv3lw.s0pTbRWv/aQ.1FvuYSevO0M/5hM3YCq' WHERE operador.id = 1031;"
+// $2y$13$IUnL/eYmopjkIwtIZv3lw.s0pTbRWv/aQ.1FvuYSevO0M/5hM3YCq
+php83 bin/console doctrine:query:sql "DELETE FROM operador WHERE operador.usuario ='dummyTest1'"
+
+
 php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
+
+"INSERT INTO carta_notification (carta_id, created_at) VALUES (4445, '2025-04-15 20:05:09.787186')"
+php83 bin/console doctrine:query:sql "DELETE from localizaciones_carta where id = 4797"
+
+TODO: AuthForm, Unit Testing for "check the gather agencies", "disabling buttons", "show image"
 
 + Al intentar marcar, ahora se bloquea el boton en de envio mientras el campo se encuentre vacío
 + Escuchar audio se mantiene la ventana abierta
@@ -120,61 +133,205 @@ php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.
 + Se corrige error al agregar una nueva entidad (Victima, Polcia, etc) para las solapas de Carta
 + Se muestran las demás entidades en el detalle de Carta
 + al transfeirir tarda un minuto en colgar la llamada
++ En el detalle de la Carta, falta actualizar en tiempo real si alguien cambia el estado de la Carta (ejemplo: de "abierta" a "en procesos" )
 ---
 + Noticias updated realtime
 + [PROD] Sonido de Alarma no se escucha
 + [BUG] User Madeline17, cant have agencies...
-+ 
+---
 
-[PENDING]
-+ En el detalle de la Carta, falta actualizar en tiempo real si alguien cambia el estado de la Carta (ejemplo: de "abierta" a "en procesos" )
++ Al derviar no suena la alarma
 
-[LATER]
+
+
++  En caso de editar la agencia receptora se deberá mandar la notificación de alarma nuevamente
++ Si el usuario se encuentra viendo una Carta que repentinamente cambia de Agencia. Se validará si el usuario puede permancer ahí o será enviado al tablero de Cartas
+---
++ Al desactivar un valor en tablas NO permanceía el nuevo valor al cambiar de índice 
++ Se evita poder crear roles con nombres ya predefinidos y bloqueados ("Supervisor" y "Operador")
++ Al editar una agencia receptora. Solo le enviará la notificación a los demas usuarios a excepción del usurio que hizo el cambio
++ Los demás usuarios que se encuentren en el detalle de la Carta que fue modificada recibirán la notificación visual, pero se evitará escuchar la alarma
+---
+
++ Se cambia el texto "Telefonica" por "Movistar Empresas" junto con imagen del Login
++ Los roles con nombre de "Supervisor" te permite entrar a todas las secciónes del Supervisor. Pero se validará la agencia seleccionada del Rol
++ Se borra el cache del tablero Operadores al modificar un campo en el form del mismo
+
+
+[Tomer_Sucesos]
++ Ver todas las cartas
++ Crear Carta/PreCarta
++ Editar estado de carta
+
+
+
+DBCC CHECKIDENT ('carta', RESEED, 0);
+or
+TRUNCATE TABLE table_name
+
 13) Se pueden abrir al mismo tiempo la carta de un mismo centro de despacho con usuarios diferentes
++ Al entrar a una sala (conferencia), cartaForm.telLLamada es sobreescrito con el numero de la conferencia
++ Al transferir, cti-estatus se pasa a "presente" cuando aún no terminado la Carta
 
-[REFACTORS]
-Relato/Comentarios on different component
+
+
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+--------- --------- --------- --------- --------- --------- --------- --------- 
+/**
+*<   Pre-prod     >
+*/
++ Optimización de carga de datos en el detalle de las Cartas.
++ Se mantiene el estatus en "En espera" si al terminar la llamada aún sigue llenando datos en la Carta  // [fix] Sending break on call
++ Al entrar a una sala (conferencia), cartaForm.telLLamada es sobreescrito con el numero de la conferencia
++ Al transferir, cti-estatus se pasa a "presente" cuando aún no terminado la Carta
++ Al cambiar de rol, se agregan mensajes de éxito o de error. (Al cambiar de Rol a "", se queda trabado)
+
++ Función para hacer llamada se integra para las 'tabs' de Agenda; Personal y Globales.
++ De la solapa Globales y Personal, sacar el icono de CHAT
++ Agregar el icono de chat en la solapa Activos, ya que entiendo que funcionara con los usuarios que esten conectados al sistema
++ Ocultar valor "No encotrado" en estatus de Cartas
++ Agenda-contactos, filtro de busqueda tambien debe filtrar por número de telefono
+---
++ maps/api/geocode/json?address=1600+Amphitheatre+Parkway, +Mountain+View,+CA&key=TU_API_KEY
+---
+
++ (B06) Agregar validación al "asociar cartas" que ya estan asociadas con mensaje de error 
++ (F01) Opción para Ir al detalle de Carta desde el Número en Tablero
++ (G01) Cambiar "ANI" for "N° Teléfono"
++ (G02) En "# de carta" y "numero de carta" poner el fondo de color llamativo 
++ (F02) Cuando el despachante abra una carta despachada o derivada por primera vez, que el estado pase a "En proceso" de forma automática y se genere el evento. Salvo que ya tenga la tipificación "en proceso"
++ (B07) Se evita error al cargar datos de audio con el manejo de caché interno en el detalle de Carta // Tambien se agrega validación para evitar 'sobre escribir' el audio en caso de entrar en conferencia
+|=====|=====|=====|      After_Implementation_BUGS       |=====|=====|=====|
++ (bug) Al derivar la carta en form completo, se regresa el estatus a "Abierta"
++ Al cambiar la dirección, se actualizan las coordenadas al final, se evita hacer llamadas inecesarias para reducir costos
++ GooglePlacesInput, por defecto restringe los resultados de busqueda a Rio Negro. Pero se agrega "checkbox" para liberar la restricción a toda Argentina.
+---
++ "winter y san luis" no registra la dirección
++ Error Asociar Carta, hacer mas grande la letra
+
++ Al despachar (cambiar la agencia de) una carta, el despachante no recibe la alarma ni notificación.
+    Agregar una nueva tabla con las agencias seleccionadas de la carta que ya fueron enviadas como validación para sonar la alarma o no?
+    + The sound works, but the CartaNotification is not. I must mmodify the logic to use the "taken" propery
+
+
+    
+
+
+
+
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+--------- --------- --------- --------- --------- --------- --------- --------- 
+
+
+PROD
+
++ Al colgar llamada, el estatus pasa a "Presente" cuando aún no ha terminado de llenar la carta // [fix]: Se mantiene en "En espera"
++ Al transferir, cti-estatus se pasa a "presente" cuando aún no terminado la Carta // [fix]: Se mantiene en "En espera"
++ Al entrar a una sala (conferencia), carta.telefonoLlamada es sobreescrito con el numero de la conferencia // [fix]: Se mantiene con el número original
++ Al cambiar de rol, se agregan mensajes de éxito o de error. (Al cambiar de Rol a "", se queda trabado)
+---
+
+
 
 
 
 
 ---
-* * * * * * * *
----
-
-[BLOQUEADO]
-+ Mensaje de Datos pendientes no se cierra el formulario
-+ No se cierra el cartel de cambio de Rol
-+ Al quere derivar o despachar una carta al agregar mas de un centro manualmente la carcta llega al primero pero no al resto 
 
 
-+ En caso de borrar todo el telefono del formulario, al recargar la página aparecerá nuevamente como llegó inicialmente en la llamada
-+ Modificar CartaForm para poder editarla o completarla
-+ Guardar registro de historial de llamadas (Solo Telefono) para el Operador
-+ Asociar una carta debe actualizar la tabla de Cartas asociadas
-
-crontab -e
-(opens Vim editor, type "i" and insert the following)
-* * * * * /usr/bin/php83 /home/rflorest/api911/bin/console app:update-expired-operadores >> /home/rflorest/api911/var/log/operador_update.log 2>&1
-("escape" and write ":wq" to save)
-crontab -l
-(see if is correctly stored)
-
-
-Okay, Ill try that later
-
-Now I have a similar question
-
-How do I do a lazy load in my ts-react app with Vite??
-
-This is going to be a gigantic 
+"INSERT INTO agencia (nombre, activa) 
+VALUES ('SIARME Bariloche', 1), ('SIARME Cipolletti', 1), ('SIARME General Roca', 1);"
 
 
 
 
-+ [BUG_4] Al cargar una pre carta y agregar otro centro de despacho mas, aparte del que viene preseccionado según la dirección. NUNCA llega la precarta al CD que se selecciona manualmente. Eso pasa en la precarta y carta.
-+ [BUG_5] Al presionar el boton broma en la precarta, la comunicacion no se corta y queda la barra como tildada y si presionas el boton tontestar, te abre nuevamente una precarta de cero sin el ani. NO lo reenvia al audio de broma.
-+ [BUG_6] Lo mismo sucede con los otros botones. Nunca se corta la comunicacion al presionar el boton de aceptar.
-+ [BUG_7] AL ingresar una llamada y atenderla, aparece ´el mensaje:
-+ [BUG_8] hay llamadas que se cortan aleatoriamente. Cuando lleno una precarta, y paso a la carta, la llamada se corto. Ejemplo carta Carta 115
-+ RESUELTO PARCIAL la apertura de cualquier carta EN CUALQUIER ESTADO tarda de 2.5 a 3 segundos, es mucho tiempo. Por la poca cantidad de informacion que hay.
+
+
+
+
+
+
+
+
+
+GET /cgi-bin/configManager.cgi?action=getConfig&name=Encode HTTP/1.1
+Accept: application/x-ms-application, image/jpeg, application/xaml+xml, image/ gif, image/pipeg, application/x-ms-xbap, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/
+4.0; SLCC2; -NET CLR 2.0.50727; •NET CLR 3.5.30729; -NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3)
+Accept-Encoding: gzip, deflate
+Host: 172.23.19.72
+Connection: Keep-Alive
+Cookie: username=admin; DhWebVideoPath1=C%3A%5CUsers%5C46987%5CWebDownload
+%5CLiveSnapshot; DhWebVideoPath2=C%3A%5CUsers%5C46987%5CWebDownload
+%5CLiveRecord; DhWebVideoPath3=C%3A%5CUsers%5C46987%5CWebDownload
+%5CPlaybackSnapshot; DhWebVideoPath4=C%3A%5CUsers%5C46987%5CWebDownload
+%5CP1aybackRecord; DhWebVideoPath5=C%3A%5CUsers%5C46987%5CWebDown1oad
+%5CVideoClips; DhWebVideoPath6=C%3A%5CUsers%5C46987%5CWebDownload%5CHeatMap;
+DhWebVideoPath7=C%3A%5CUsers%5C46987%5CWebDownload%5CAroudWifiSearch;
+DhWebVideoPath8=C%3A%5CUsers%5C46987%5CWebDownload%5CPlaybackDownload; secure
+
+
+
+
+
+
+GET /cgi-bin/configManager.cgi?action=getConfig&name=Encode HTTP/1.1
+Accept: application/x-ms-application, image/jpeg, application/xaml+xml, image/ gif, image/pipeg, application/x-ms-xbap, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/
+4.0; SLCC2; -NET CLR 2.0.50727; .NET CLR 3.5.30729; NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; •NET4.0E; InfoPath.3)
+Accept-Encoding: gzip, deflate
+Host: 172.23.19.72
+Connection: Keep-Alive
+Cookie: username=admin; DhWebVideoPath1=C%3A%5CUsers%5C46987%5CWebDownload
+%5CLiveSnapshot; DhWebVideoPath2=C%3A%5CUsers%5C46987%5CWebDownload
+%5CLiveRecord; DhWebVideoPath3=C%3A%5CUsers%5C46987%5CWebDownload
+%5CPlaybackSnapshot; DhWebVideoPath4=C%3A%5CUsers%5C46987%5CWebDownload
+%5CPlaybackRecord; DhWebVideoPath5=C%3A%5CUsers%5C46987%5CWebDownload
+%5CVideoClips; DhWebVideoPath6=C%3A%5CUsers%5C46987%5CWebDownload%5CHeatMap;
+DhWebVideoPath7=C%3A%5CUsers%5C46987%5CWebDownload%5CAroudWifiSearch;
+DhWebVideoPath8=C%3A%5CUsers%5C46987%5CWebDownload%5CPlaybackDownload; secure
+
+
+
+
+
+
+GET /cgi-bin/configManager.cgi?action=getConfig&name=Encode HTTP/1.1
+Accept: application/x-ms-application, image/jpeg, application/xaml+xml, image/gif, image/pjpeg, application/x-ms-xbap, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword,
+*/*
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64;
+Trident/4.0; SLCC2; -NET CLR 2.0.50727; .NET CLR 3.5.30729; -NET CLR
+3.0.30729; Media Center PC 6.0; NET4.0C; •NET4.0E; InfoPath. 3)
+Accept-Encoding: gzip, deflate
+Host: 172.23.19.72
+Connection: Keep-Alive
+Authorization: Digest username="admin"', realm="Login to
+172be7f93d6b9b161c8абc43c5d3248d",nonce="25105827",uri="/cgi-bin/
+configManager.cgi?
+action=getConfig&name=Encode", cnonce="5408ed2fbaad00018b02804ee53c27db*), nc=00
+000001, response="752fab2820c0dd90193d00d50d3а7732"
+',gop="auth"
+', opaque="87505e7
+9dd7b67a4ffa687a62a50ad2a1aa2041b"
+Cookie: secure; username=admin; DhWebVideoPath1=C%3A%5CUsers %5C46987%5CWebDownload%5CLiveSnapshot; DhWebVideoPath2=C%3A%5CUsers
+%5C46987%5CWebDownload%5CLiveRecord; DhWebVideoPath3=C%3A%5CUsers
+%5C46987%5CWebDownload%5CPlaybackSnapshot; DhWebVideoPath4=C%3A%5CUsers
+%5C46987%5CWebDown1oad%5CP1aybackRecord; DhWebVideoPath5=С%ЗA%5CUsers
+%5C46987%5CWebDown1oad%5CVideoClips; DhWebVideoPath6=C%3A%5CUsers
+%5C46987%5CWebDownload%5CHeatMap; DhWebVideoPath7=C%3A%5CUsers
+%5C46987%5CWebDownload%5CAroudWifiSearch; DhWebVideoPath8=C%3A%5CUsers
+%5C46987%5CWebDownload%5CPlaybackDownload; secure
+
+
+
+
+
+Digest username="system", realm="f689ed 8c43530d68bf7d6e95a62f7f87", nonce="f4192b0549a74760", uri="/admin/api/v1.1logi n", algorithm="MD5", qop=auth, nc=000000 05, cnonce="0a4f113b", response="7eb8ab
+8ffbde51cf65f6a5265cc9153b"

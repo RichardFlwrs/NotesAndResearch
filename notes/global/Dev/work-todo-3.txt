@@ -1,0 +1,367 @@
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              COMMANDS
+--------- --------- --------- --------- --------- --------- --------- --------- 
+http://10.10.2.1:8003
+symfony serve --allow-http --port=8003 --listen-ip=10.10.2.1
+php83 bin/console make:entity 
+php83 bin/console make:migration
+php83 bin/console make:migration
+php83 bin/console cache:clear
+
+php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
+
+php83 bin/console doctrine:query:sql "UPDATE global_settings SET carta_colors = '' where id = 1"
+php83 bin/console doctrine:query:sql "SELECT carta_colors FROM global_settings where id = 1"
+    php83 bin/console doctrine:query:sql "SELECT role_login_id FROM operador where id = 1022"
+php83 bin/console doctrine:query:sql "UPDATE carta_times SET carta_end = null WHERE carta_id = 34"
+
+### For new Operadores with CTI Account
+php83 bin/console doctrine:query:sql "SELECT id FROM operador WHERE usuario IN ('operadordemo', 'supervisordemo', 'despachantedemo');"
+
+php83 bin/console doctrine:query:sql "SELECT operador_user_id, email, password from agente_cti where password IN ('#UsuarioRionegro97', '#AgenteRionegro97','#UsuarioRionegro98', '#AgenteRionegro98','#UsuarioRionegro99', '#AgenteRionegro99')"
+
+php83 bin/console doctrine:query:sql "SELECT id FROM operador WHERE usuario IN ('operadordemo', 'supervisordemo', 'despachantedemo');"
+
+php83 bin/console doctrine:query:sql "UPDATE agente_cti SET operador_user_id = 292 WHERE id IN (193, 194)"
+php83 bin/console doctrine:query:sql "UPDATE agente_cti SET operador_user_id = 291 WHERE id IN (195, 196)"
+php83 bin/console doctrine:query:sql "UPDATE agente_cti SET operador_user_id = 293 WHERE id IN (197, 198)"
+
+
+
+97, 98, 99
+
+
+DBCC CHECKIDENT ('global_settings', RESEED, 0);
+or
+TRUNCATE TABLE table_name
+
+
+
+
+
+
+
+
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              Iteracion 2.5   
+--------- --------- --------- --------- --------- --------- --------- --------- 
+
++ Al ingresar una nueva carta tanto despachada como derivada, las solapas Abiertas, pendiente / en proceso (según corresponda) tienen que parpadear de color rojo hasta que el usuario seleccione la pestaña que parpadea color rojo, una vez que la selecciono, tiene que dejar de parpadear y volver al color habitual. Esto NO aplica a las cartas cerradas.
++ En la bandeja de entradas de cartas, la última carta que es derivada o despachada tiene que parpadear, solo la última carta. En consonancia con la pestaña.
+    [implementacion] Las cartas nuevas o las despachadas (cambio de agencia) parpadean en rojo en toda la fila. Lo mismo ocurre para las solapas
+    [reglas] el parpadeo desaparece a todos los usuarios cuando cualquier usuario entra a la carta.
+
+
++ Las cartas que estén en la bandeja de entrada de las cartas tienen que estar dividas por color, según prioridad: Prioridad Baja – color verde, Prioridad media – color amarilla Prioridad alta – color rojo. Con excepción de las cartas que son tipificadas como: VIOLENCIA FAMILIA, la cual tiene que estar de color rosa. / / / En este caso, tiene que tener una opción el Administrador para poder configurar el color customizado según requerimiento del cliente de las prioridades de baja, media, alta y violencia de genero.
+    [implementacion] Se agrega apartado en Configuración -> Notificaiones y Carta para el ajuste de los colores para las tipificaciones de Carta-Prioridad. 
+    [pendiente] pintar las cartas con tipo: "VIOLENCIA FAMILIA"
+
+
+
+
+
+.  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .
+---
+| Quick FIXES : Lunes 16 Junio
+
++ DescargaMultiples, se obtiene el PDF de las cartas asociadas.
++ Al cambiar estatus por segunda vez se evita sobre escribir el valor de la fecha
++ [fix] Al pasar la intersección desde PreCarta a CartaForm no se separa
++ [fix] permiso "DescargaMultiples" no esta habilitado
+---
++ [fix] Al bajarla en PDF todavía no se ve la entrecalle o intersección
++ [fix] Se deshabilita boton de "Terminar Carta" al dar click para evitar datos duplicados (comentarios duplicados)
+---
++ cambiar nombre de archivo "manifest.txt" a "codigos_hash.txt"
++ [fix] botones para "descarga multiple" no son ocultados mediante el permiso
++ Se agrega cancelación automática al momento de salir de lá pagina de Cartas // Tambien se agrega botón para cancelar manualmente.
+
+---
++ Se agrega validación para cancelar las descargas multiples
++ Se agrega límite de descargas multiples a solo 100 cartas
++ Se agrega boton para limpiar filtro básico de Cartas
++ Se pintan las cartas en tablero de color rosa en el semaforo de colores
++ [fix] Al derviar carta (cambiar agencia) y despues cambiar estatus, no se ajustaba el color de la fila en tabla correctamente
++ Las notifiaciones de "cartas pendientes" solo deben mostrarse a los "despachantes"
++ [bug] No se registraba el cambio en BD para el ajuste de los colores para el tipo de Cartas.
++ Se muestra Notificacion azul (igual al despachador), aplicando a las Cartas derivadas por Despachantes. Cuando algun usuario entre al detalle de la Carta, se borraran las notificaciones para los supervisores tambien.
+
++ Se detecta si el cambio de agencias es distinto al orignal para prevernir enviar las notificaciones.-- En los eventos ahora tambien se muestra todas las agencias que fueron agregadas o eliminadas.
+---
+
++ Se agrega nuevo sonido para la alarma de "carta inversa" para supervisores
++ Al agregar agencias a la carta, se debe evitar marcar las cartas en rojo a las agencias anteriormente establecidas.
++ 
+
+
+---
+
++ Al cambiar de rol, no se registraba correctamente la propiedad "esAdmin". el cual se usa para validar si el usuario puede escuchar la alarma para supervisores (nueva carta inversa);
+
++ Al crear PreCarta sí parpadea para otros usuarios, pero al momento de terminar la Carta completa. Ya no parpadea.
+
++ Si un Supervisor entra a las cartas nuevas, NO hará desaparecer las notificaciones para los despachadores.
+
++ Nuevo color en semaforo para Cartas; azul para las PreCartas que aun no han sido asignadas con con una prioridad.
+
+
+---
+
+
++ Se deshabilita Botón: "Descarga múltiple de cartas" cuando se estan descargando los datos, para eveitar multiples eventos en caso hacer click en él múltiples veces.
+
++ Optimización para el tablero de Operadores, ahora debe tardar mucho menos en traer los datos.
+
++ Se evita pasar a estado "Presente" cuando aún tienes datos pendientes por enviar en Carta
+
++ Carta Inversa, Alarma para supervisor se escucha correctamente.
+
++ Filtro de Cartas en Tablero muestra grafico de que aún esta cargando los datos.
+
+---
+
++ [pendiente] Optimización para la busqueda de cartas por Número de Carta.
+
+---
+
+#159 .- Falta probarlo, pero tiene que probarse en ambiente de PRE con Base de Datos equivalente al de Producción
+#165 .- Se debería resolver con los nuevos cambios a PRE
+#166 .- Mismo caso de 165
+#131 .- Pendiente
+#129 .- Pendiente
+#122 .- Ya resulto, se esvita re-escribir el valor al cambiar de estado a Carta
+#125 .- Pendiente (No es un bug, mas bien es un requerimiento que se dejó para después)
+#48 .- Se debería resolver con los nuevos cambios a PRE
+#23 .- Funcionamiento correcto: Dado que los navegadores necesitan que el usuario interactue con la página para poder emitir sonido.
+#101 .- Ya está implementado en PRE, pero falta subir a producción
+
+---
+# Version 0.2.18 -  Viernes 4 Julio
+---
+
++ [bug] No se muestran los eventos de la carta.
++ Tablero de Operadores se muestra signo al ordenar datos en columnas y se muestra efecto visual de "cargando datos"    
++ Tablero de Operadores es aún más óptimo; no se experimenta tiempo de carga al pasar a la siguiente página de Operadores
++ Correción al detectar las cartas pendientes de información.
+
+---
+# Version 0.2.19 -  Lunes 7 Julio
+---
+
++ [bug] Cuando la llamada finaliza en una PreCarta pendiente, al salir del formulario pasa a estado "Presente" / / / Se ha corregido
++ [bug] Tablero de Cartas no se muestra el página actual correctmanete
+
+
+#  -  Martes 8 Julio
+
++ [bug] No se mostraba extension del Operador en Eventos de Carta
++ [bug] Descarga Multiple - Al cancelar la descarga en se segunda fase, no hace nada y termina descargando los archivos.
+
+
+#  -  Vierenes 11 Julio
+
++ Descarga Multiple - Al descargar con filtro activo, la opción de cancelar descargar ahora se muestra directamente del botón, sin tener que selecionar dentro de tooltip
+
+
+# - Miercoles 15 Julio
+
+[ERROR_1]  PreCarta muestra datos anteriores 
+[ERROR_2]  Operador al recibir un llamado en lugar de abrir PreCarta, se le abre Carta completa ya despacahda de un llamado anterior
+[ERROR_3]  Registrar Cartas manuales se guardan con datos de otras cartas, inclusive el audio.
+
++ [BUG] Supervisor no suena alarmar cuando un despachante crea una carta inversa.
+
+---
+# [MINUTA_DEL_DIA]
+
+- ALERTA VISUAL A TODOS LOS SUPERVISORES POR 24 HORAS HASTA QUE SE CIERRE LA CARTA
+
+- PERMISO PARA SUPERVISORES DE VER TODAS LAS ALERTAS DE CARGA INVERSA VISUALES Y AUDIBLES DESDE QUE SE CREA X 36 HORAS
+- PERMISO PARA SUPERVISOR SELECCIONADO AGENCIA LAS ALERTAS DE CARGA INVERSA VISUALES Y AUDIBLES DESDE QUE SE CREA X 36 HORAS
+
+- Al hacer transferencia (conferencia), hay que evitar abrir precarta cuando viene ANI: "sip:Unknown@172.19.9.10".
+- 
+
+
+# - Miercoles 15 Julio
+
++ Alerta a supervisores, se muestra independiente a su un operador/despachador ya abrió la carta
++ Ventana de Operadores como pop-up
++ Se muestra cuantos operadores están en llamada
++ Inputs para modificar rango de metricas
++ Validacion si la llamada viene de sala de conferencia, no abrir precarta (sip:Unknown@172.19.9.10)
+
++ 
+
+
+
+
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              Iteracion 3   (Reportes)  
+--------- --------- --------- --------- --------- --------- --------- --------- 
+
+# Valores utilizados desde la API:
+{
+    "incomingCalls": "Son todas las llamadas que fueron ingresadas a la cola, ya que siempre es la suma de de las otras llamadas.",
+    "attendedCalls": "Llamadas que fueron respondidas.",
+    "abandonCalls": "Abandonadas (¿Quiere decir que el operador colgó?)",
+    "unAttendedCalls": "Perdidas (Ningun operador pudo responder)",
+    "avgCalls": "Duracion promedio de las llamadas (dependiendo del filtro actual, por default es 8 horas)",
+    "transferCalls": "Cantidad de llamadas transferidas",
+    "avgWaitCalls": "Duracion promedio de espera para que las llamadas sean respondidas",
+    "totalTime": "Tiempo total de llamada, se utilizó para hacer el promedio de llamada, pero este valor ya te lo dá la API.",
+}
+
+# Puntos terminados
+
++ Se muestran el total de Usuarios en Plataforma (Logueados)
++ Llamadas en cola (No encontré la propiedad que muestre el número de llamadas en cola) Y Tiempo promedio de espera  ('avgWaitCalls')
++ Llamdas procesadas en los últimos n míns. (attendedCalls / (incomingCalls - abandonCalls)) * 100 
+    Esto siempre será 100% mientras no haya abandanadas...
++ 
+
+
+
+
+
+# - Lunes 21 Julio
+
++ [ACTUAL] Lógica para registrar los tiempos de las fases de la Carta (desde PreCarta, hasta la Carta finalizada)
+
+
+
+# - Martes 22 Julio
+
++ Notificacion para Supervisor (Visual) no aparece cuando se crea carta inversa desde Despachante
++ Ingreso a las Métricas desde otro Menu, ya que posteriormente se mostrarán mas opciones
+
+
+
+# - Miercoles 23 Julio
+
+
+Nuevos eventos
+-Cuando se abre la precarta ó carga inversa manual
+-Cuando la precarta es despachada
+-Cuando la carta es terminada
+-Cuando la llamada es finalizada indicando quien la finaliza
+-Cuando la llamada es transferida indicando a que usuario y extensión es transferida
+Estos eventos se deben generar para usuario de cualquier Rol que interactúe con la carta
+
+
+# - Viernes 24 Julio
+
++ [fix] Ya no puede haber casos de "Cartas perdidas" debido a errores con LocalStorage.
++ [fix] La selección de "Tipificacion de Incidencias" ya no se pierde en caso de reinicio inseperado.
++ [fix] Se evita relizar llamadas caundo el panel CTI aún no está listo en el "Marcado rápido" desde la Carta.
++ [fix] Dado que el Id se resgistra desde que se ingresa Tel. de Llamada, el Id ya no se puede perder. // Ahora se muestra el Id desde la PreCarta tambien.
++ Temporizador ahora esta "anclado" al tiempo de inicio registrado en la Carta.
+
+
++ [fix] Al finalizar el Autoguardado, se borran los datos escritos en el último segundo 
++ ReporteMapa, siempre debe llevar filtro de fecha + Se muestra icono de "Cargando datos"
++ Mapa se centra en Argentina al entrar a la página
+
+
+.
+---
+
+
+
+# - Lunes 28 Julio
+
++ [fix] Temporizador no se incia en PreCarta hasta que se reinicia la pagina.
++ Resultado de Filtro para MapaCalor solo muestra Cartas de tipo Emergencia (ignora tipo Broma, etc)
++ Opción de agregar columnas para las fechas de cambio de estado en Tablero de Cartas.
+
+
+# - Martes 29 Julio 
+
+
+# - Miercoles 30 Julio
+
++ Mostrar Eventos por separado; Creación de PreCarta, Carta terminada de llenar datos /// eventos pendientes: Llamada terminada, Llamada transferida
++ Mostrar el tiempo promedio de llenado de Pre-Cartas/Cartas en Métricas de Operador.
++ [FIX] Al terminar una Pre-Carta, el temporizador no se transfiere correctamente (se reinicia). En esos mismos casos, al volver a abrir la Pre-Carta, los datos escritos anteriormente no aparecen. Es necesario reiniciar la página para que se muestren.
++ [FIX] La notificación visual para el Supervisor no aparece cuando se crea una carta inversa desde el Despachante con el rol de Operador por defecto.
++ La tabla de Operadores se separa de las Métricas de Operadores.
+
++ Mostrar evento en Carta: Llamada terminada.- Tambien muestra si el que colgó fue el agente o el llamante.
++ Mostrar evento en Carta: Llamada trasnferida.- 
+
+
+
+---
++ Agregar tooltip con nombre de los Operadores Activos. /// Tambien se agrega tooltip para cada uno de los estatus.
++ Ocultar barra Noticia en Metricas
++ Borrar texto "llamadas salientes"
++ MIN MAX, cambiar a "TIEMPO MINIMO", "TIEMPO MÁXIMO".
++ Metricas-Estados son solo para Operadores
++ En Métricas hacer menos espacio
++ En apertura de llamada.- El timer debe empezar a contar.
++ Operador, Estatus en "En Llamada". Funciona correcto al estar en llamada
++ [fix] Carta Inversa, no muestra descripcion correcta en el evento
+
++ TIEMPO PROMEDIO CARTA: Debe tomar el tiempo desde el inicio de Carta
+// + Carta Manual, no muestra descripcion correcta en el evento
+
++ Metricas-Estados, mostrar Operadores totales.
++ MetrciasUsuarios, ignorar usuarios con estado: "Desconectado"
+
+
+---
+
++ Agregar Comentarios en tiempo real en el detalle de la Carta.
++ Agregar reloj para Métricas.
++ 
+
++ [FIX] Comentarios no se borran de la Carta anterior despupés de crear una nueva
++ Monitoreo, evitar sonar alarma en esa pestaña
++ Agrega input de fecha con horas para establecer tiempo anclado (remplazar el input de horas)
++ Hacer tooltip mas ancho
++ Cambiar aritmetrica de las llamadas procesadas
+
+
+
++ reloj dinamico
++ AMB de colores
++ Evento, no muestra Extension del Usuario correspondiente al role activo en plataforma
++ Evento, extension debe imprimir coherente al rol activo y no cambiar
++ No permitir cambiar de estatus (manual) si tiene una carta pendiente
++ Al terminar Carta, el esatus del Operador queda como "Ocupado" en lugar de "Presente"
+
+
+---
+
+[MINUTA] Jueves 7 Agosto
+
++ [fix] FiltroMultiple, no muestra Cartas de Broma, etc. 
++ Resolver el tema de comentarios nuevos que son remplazados cuando Operador termina la Carta
++ Carta Id not defined al intentar agregar Comentario. Solo con cartas creadas por Operador / / / Ya no se presentó mas.
++ Al poner estado "Descanso", no debería cambiar de estado automático. Agregar validación.
+
+
++ Carta Chipolleti, se ve a todas las agencias (despues de ser editado)
++ Random.- se navega a "dashboard" mientras navegas.
+
++ Bug curl firebase, mensaje de error que incomodan al usuario pero no parece tener efecto negativo al sistema
++ Corte de la llamada (4:00 am) / / / Mandar mensaje de error de Janus al Back
++ Filtro Multiple, no se muestra con todas las incidencias
++ Parpadeo de Carta Inversa para Supervisor
++ Fecha y Hora en columna independiente
+
+
+
+
+Unable to connect to the API:
+cURL error 35: OpenSSL
+SSL connect:
+SSL ERROR SYSCALL in connection to hiperme-911-default-rtdb.firebaseio.com:443
+(see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for
+https://hiperme-911-default-rtdb.firebaseio.com/operador-notifications.json

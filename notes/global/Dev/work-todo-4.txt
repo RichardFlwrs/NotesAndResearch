@@ -1,0 +1,316 @@
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              COMMANDS
+--------- --------- --------- --------- --------- --------- --------- --------- 
+http://10.10.2.1:8003
+symfony serve --allow-http --port=8003 --listen-ip=10.10.2.1
+php83 bin/console make:entity 
+php83 bin/console make:migration
+php83 bin/console doctrine:migrations:migrate
+php83 bin/console cache:clear
+
+php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
+
+php83 bin/console doctrine:query:sql "UPDATE global_settings SET carta_colors = '' where id = 1"
+php83 bin/console doctrine:query:sql "SELECT carta_colors FROM global_settings where id = 1"
+    php83 bin/console doctrine:query:sql "SELECT role_login_id FROM operador where id = 1022"
+php83 bin/console doctrine:query:sql "UPDATE carta_times SET carta_end = null WHERE carta_id = 34"
+
+php83 bin/console doctrine:query:sql "SELECT * FROM doctrine_migration_versions"
+php83 bin/console doctrine:query:sql "DELETE doctrine_migration_versions where version = 'DoctrineMigrations\Version20250912174451'"
+
+
+
+### For new Operadores with CTI Account
+php83 bin/console doctrine:query:sql "SELECT id FROM operador WHERE usuario IN ('operadordemo', 'supervisordemo', 'despachantedemo');"
+
+
+php83 bin/console doctrine:query:sql "SELECT operador_user_id, email, password from agente_cti where password IN ('#UsuarioRionegro152', '#AgenteRionegro153','#UsuarioRionegro154', '#AgenteRionegro155','#UsuarioRionegro156', '#UsuarioRionegro157')"
+php83 bin/console doctrine:query:sql "SELECT usuario, nombre FROM operador WHERE id IN (284, 285, 286, 287, 288, 289);"
+
+php83 bin/console doctrine:query:sql "SELECT is_read_committed_snapshot_on FROM sys.databases WHERE name = 'APP_911_RN_HPBX_bkp';"
+php83 bin/console doctrine:query:sql "SELECT * FROM sys.dm_db_file_space_usage"
+
+
+php83 bin/console doctrine:query:sql "SELECT cerrada_at FROM carta where id = 5119"
+php83 bin/console doctrine:query:sql "SELECT * FROM access_log;"
+
+
+php83 bin/console doctrine:query:sql "UPDATE agente_cti SET operador_user_id = 292 WHERE id IN (193, 194)"
+php83 bin/console doctrine:query:sql "UPDATE agente_cti SET operador_user_id = 291 WHERE id IN (195, 196)"
+php83 bin/console doctrine:query:sql "UPDATE agente_cti SET operador_user_id = 293 WHERE id IN (197, 198)"
+
+
+
+97, 98, 99
+
+
+DBCC CHECKIDENT ('global_settings', RESEED, 0);
+or
+TRUNCATE TABLE table_name
+
+
+
+
+[MINUTA] Jueves 7 Agosto
+
+
++ Carta Chipolleti, se ve a todas las agencias (despues de ser editado)
++ Random.- se navega a "dashboard" mientras navegas.
+
++ Bug curl firebase, mensaje de error que incomodan al usuario pero no parece tener efecto negativo al sistema
++ Corte de la llamada (4:00 am) / / / Mandar mensaje de error de Janus al Back
++ Filtro Multiple, no se muestra con todas las incidencias
++ Parpadeo de Carta Inversa para Supervisor
+
++ [IMPLEMENTADO] Fecha y Hora en columna independiente
+
+
+
+
+Unable to connect to the API:
+cURL error 35: OpenSSL
+SSL connect:
+SSL ERROR SYSCALL in connection to hiperme-911-default-rtdb.firebaseio.com:443
+(see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for
+https://hiperme-911-default-rtdb.firebaseio.com/operador-notifications.json
+
+
+
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              Iteracion 2.5   
+--------- --------- --------- --------- --------- --------- --------- --------- 
+
+# .- Jueves 7 Agosto
+
++ [fix] FiltroMultiple, no muestra Cartas de Broma, etc. 
++ Resolver el tema de comentarios nuevos que son remplazados cuando Operador termina la Carta
++ [NO_SE_REPLICO] Carta Id not defined al intentar agregar Comentario. Solo con cartas creadas por Operador
++ Al poner estado "Descanso", no debería cambiar de estado automático. Agregar validación.
++ [NO_SE_REPLICO] Random.- se navega a "dashboard" mientras navegas.
+
+
+# .- Viernes 8 Agosto
+
++ Mostrar en Agenda de los Usuarios activos con info: 
+    1. Nombre Y Apellido (+ Extension)
+    2. Rol; Agencias (excepto rol Operador)
+
++ Nueva tabla para registrar los multiples correos de los Usuarios en Plataforma
++ Nuevo permiso para poder agregar ó modificar los correos del Operador
++ Form para la modificacion de los multiples correos, visible en Agenda y FormOperador
+
+
+# .- Sabado 9 Agosto
+
+[BUGS]
++ Random.- Al terminar carta, no te deja cambiar de estado a Presente, tienes que reiniciar
++ Carta Chipolleti, se ve a todas las agencias despues de ser editado (antes: No Constituye Emergencia)
+
+
+[Pendiente]
++ CartaFiltro 1, Agrega validación para las agencias permitidas del despachador
++ CartaFiltro 2, Buscar solución de "freeze" al seleccionar todos los estados sin rango de fechas.
+
+
+# .- Lunes 11 Agosto
+
++ CartaFiltro 1, Agrega validación para las agencias permitidas del despachador
++ Mostrar Llamadas en Cola en tiempo real
+
+
+# .- Martes 12 Agosto
+
+[iteracion4]
++ Orden de solapas: Activos, Globales, Personal
++ "glitch" de tarjeta de Agenda, texto parpadea
++ Llamar en Agenda, modal, quitar texto repetido
++ Agenda como ventana flotante
+
+. 
+---
+
+[iteracion3]
++ [fix] Se sigue bloqueando el panel de estados CTI al terminar una Carta.
++ [fix] Comentarios repetidos (hasta 8 veces)
++ Agregar logs de los eventos de Janus para backend
+
+
+
+# .- Miercoles 13 Agosto
+
++ [fix] Al terminar Cartas, su tipificación regresa a "Emergencia".
++ [iteracion4] Contactos con Email multiples
+
+
+
+# .- Jueves 14 Agosto
+
++ Grafico de Perdidas igual para Abandonadas
++ Obtener el max de tiempo de llamada en Cola
++ [fix] NewCarta-Notification, al actulizar se hace reset de la pág actual a: 1
+/* + Comentarios en Tiempo Real */
+
++ SSL Error.
+
+
+# .- Lunes 18 Agosto
+
++ Input de busqueda para agenda, usuarios activos.
+
+
+
+# .- Martes 19 Agosto
+
++ Realizar llamadas a Contactos desde Agenda
++ Comentarios y Eventos con Extension estática.
++ [FIX] Carta Inversa en Form Completo, se crean comentarios dobles.
++ Carta Inversa, mostrar notifiacion nuevamente al Supervisor cuando se modifica la agencia de Carta
+
+
+
+
+---
+
+# .- Miercoles 20 Agosto
+
++ Permisos para Ver las agendas.
++ Modificar Rango de prioridad al cambiar de tipificacion
++ Comentarios en tiempo real
+
++ Carta tiempo máximo.- Hay una carta con mas de 3 dias de tiempo
+
+---
+
+
++ Telefono multiple
++ Optimizacion para Cartas Agencias
+
++ Si el usuario entra a la carta antes de que el Despachante termine la precarta, puede generar comentario doble por parte del despachante.
+
+--
+
++ [fix] No se envían los comentarios en tiempo real al pasar de PreCarta a Carta, hasta que se actualicen otros campos.
+
++ Si se recarga la pagina en CartaCompleta, después de pasar de PreCarta, la sección de Comentario de PreCarta desaparece
+
+
++ [query] Usuarios que se logearon en un rango de fecha y hora
+    usuario.loginAt between '6-7-2025' to '12-7-2025'
+
+
++ Agregar tipos de Descanso para las métricas
+
+
+public function getDescription(): string{    return '';     }
+
+public function isTransactional(): bool{    return false;  // Disable transaction for this migration    }
+
+public function up(Schema $schema): void
+{
+    // Temporarily set to single-user mode to avoid connection conflicts (rollback any active transactions)
+    $this->addSql("ALTER DATABASE APP_911_RN_HPBX_bkp SET SINGLE_USER WITH ROLLBACK IMMEDIATE;");
+
+    // Enable the setting
+    $this->addSql("ALTER DATABASE APP_911_RN_HPBX_bkp SET READ_COMMITTED_SNAPSHOT ON;");
+
+    // Restore multi-user mode
+    $this->addSql("ALTER DATABASE APP_911_RN_HPBX_bkp SET MULTI_USER;");
+}
+
+public function down(Schema $schema): void
+{
+    // Reverse: Set to single-user, disable, restore multi-user
+    $this->addSql("ALTER DATABASE APP_911_RN_HPBX_bkp SET SINGLE_USER WITH ROLLBACK IMMEDIATE;");
+    $this->addSql("ALTER DATABASE APP_911_RN_HPBX_bkp SET READ_COMMITTED_SNAPSHOT OFF;");
+    $this->addSql("ALTER DATABASE APP_911_RN_HPBX_bkp SET MULTI_USER;");
+}
+
+
+
+266 - Descripción
+Puesto 10.79.12.103
+
+Usuario: BELENS
+
+Ext.: 1122
+
+Cartas duplicadas: 72913/14/15/16
+La operadora genera carta manual, completa todos los datos necesarios, en el casillero de "numero de telefono" tipea "000" e intento con otros números tambien. y al momento de despachar toca el botón para despachar y se queda en gris. la carta tarda en despachar y cuando logra despacharse se ven reflejadas 4 cartas consecutivas iguales con los IDs mencionados.
+ 
+
+---
+
+
+262 - en el despacho de viedma tuvieron inconvenientes para derivar una carta inversa.
+les aparecia un cartel de error: "No se ha encontrado tiempos de carta con el id: 722209"
+estuve viendo y el despachante en el casillero de número de teléfono tipeó "0000" ya que le exige un número. lo borre y puse cualquier otro numero con mas caracteres, y en ese momento me aparece el cartel de "Carta guardada exitosamente" pero con otro id diferente. luego de que se guardó, cambiamos el numero de nuevo y se pudo derivar/terminar la carta.
+actualmente sigue pasando, de hecho hice una prueba en mi PC.
+Puesto despacho viedma: 10.79.13.102
+Usuario: gonzalesj
+Ext. 2075
+Fecha y hora: 19/08/2025 - 10:15Hs aprox.
+
+
+---
+
+
+261: Prioridad/Semaforo de carta no funciona correctamente
+
+232: ANI aparece sipanonymous
+
+
+---
+
+
+8080 | 443 
+DSS v8 o Express
+
+
+en cola + en llamada , el mas alto
+
+número máx de llamadas
+
+
++ Registrar el númeor maximo de llamadas activas diario, en turnos de 6 horas.
++ Zolper. 9011 fallback.
++ 
+
+
+
+
+// pendientes para reportería
++ Desbordamiento durante retención (Zoiper) cola 9011
++ Desbordamientos durante timbre (Cantidad de veces que una llamada timbró a un operador y no se atendió y se pasó a otro)
++ Llamadas atendidas sin espera /// se obtiene de SLA, periodo 5 y 10 segundos
++ Llamadas atendidas con espera /// se obtiene de SLA, periodo despues de 10 segundos
++ 
+
+
++ como operador a una pre carta se le dió cierre directo por "no constituye emergencia" y como supervisor se volvió a abrir esa carta. la pueden visualizar todos los CD independientemente de la agencia que tenga asignada la carta. 
+    El caso solo ocurre cuando se re abre la carta sin modificar el Tipo de Incidencia, dado que se mantiene como BROMA, NO-EMERGENCIA, etc, entonces se queda visible para todos.
+    De momento se agregó validación para marcar la Carta como Emergencia en este tipo de casos para que solo sea visble a sus correspondientes CD, aún así es necesario seleccionar el nuevo tipo de incidencia manualmente.
+
+
+
+
+
+Access_Log, nuevos campos
+Extension
+Rol
+Agencia
+
+
+---
+
+
+--- 
+Mover Metricas debajo de "Mapa de calor"
+
+
+Reporte de Cartas, campos:
+
+5491136516007

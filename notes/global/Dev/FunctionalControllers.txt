@@ -1,0 +1,254 @@
+# ---- . ---- . ---- . ---- . ---- . ---- . ---- . ---- 
+# .  React Hook as Use Case Format
+# ---- . ---- . ---- . ---- . ---- . ---- . ---- . ---- 
+
+import { AuthContext } from "contexts/AuthProvider";
+import { Dispatch, useContext, useEffect } from "react";
+import { useAgenteContext } from "../context";
+import { JanusRefsContext } from "../context/janusRefsContext";
+import { editOperadorEstatus } from "api/services/Operador.REST";
+import { OperadorEstatus } from "enums";
+import { useCheckPopUpWindow } from "utils/useEffectHooks";
+import { CTIAction } from "../lib";
+
+/**
+    Descripción: El agente inicia sesión en el sistema para comenzar a 
+    recibir llamadas de emergencia.
+
+    Precondiciones:
+    El agente tiene acceso a un navegador compatible.
+    Firebase está operativo y contiene la información del agente.
+ */
+export function LoginAgentUseCase(dispatch: Dispatch<CTIAction>) {
+    const { usuario, setUserCallExtention } = useContext(AuthContext);
+    const { startJanusSession } = useContext(JanusRefsContext);
+    const { isPopUpOpen } = useCheckPopUpWindow()
+
+    // El agente accede a la interfaz de inicio de sesión.
+    const alreadyLoggedIn = usuario.roleLogIn !== null;
+
+    // El sistema solicita la "información de agente" (extensión, dominio, contraseña) a Firebase.
+    // TODO: Extract "initializeController" form useAgentController to be called here.
+    const { agentData, services, loading } = useAgenteContext()
+
+    useEffect(() => { doUseCase(); }, [alreadyLoggedIn, agentData, loading]);
+
+    const doUseCase = async () => {
+        if (!alreadyLoggedIn || loading || !agentData || isPopUpOpen) return;
+
+        // At this point, the agent is logged in and has the necessary information to initialize the Janus session.
+        try {
+            // Se obtiene la extension del agente y se guarda en AuthContext
+            setUserCallExtention(agentData);
+
+            // Firebase responde con la información y el estado actual del agente.
+            const { isOnline } = await services.isAgentOnline();
+
+            // Borramos sesión previa de Janus
+            await services.deletePreviousSession();
+
+            // Una vez activado, el sistema inicializa la sesión de Janus con las credenciales obtenidas.
+            const janusSession = await startJanusSession();
+
+            // Enviamos la sesión de Janus a Hiperme para ser guardada
+            await services.saveNewSession(janusSession);
+
+            // Si el estado es "inactivo", el sistema envía una solicitud a Firebase para activar al agente.
+            await activateAgent(isOnline);
+
+            // El semáforo cambia de amarillo a verde, y el panel de acciones se habilita.
+            await enableActionsPanel();
+        } catch (error) {
+            console.error("LoginAgentUseCase failed:", error);
+        }
+    }
+
+    const activateAgent = async (isActive: boolean) => {
+        if (!isActive) {
+            await services.loginAgent();
+        }
+
+        return Promise.resolve();
+    }
+
+    const enableActionsPanel = async () => {
+        console.log('AGENT LOGIN FINISHED');
+
+        // set User Estatus to "Presente"
+        editOperadorEstatus(usuario.id, OperadorEstatus.Presente).then((res) => {
+            if (res) {
+                console.log('Presente');
+                dispatch({ type: "SET_ALL_READY", payload: true })
+            }
+        });
+    }
+}
+
+
+
+
+
+# ---- . ---- . ---- . ---- . ---- . ---- . ---- . ---- 
+# .  Context Wrapper for the Class Controller
+# ---- . ---- . ---- . ---- . ---- . ---- . ---- . ---- 
+
+import { createContext, useContext } from "react";
+import { IzOperador } from "api/schemes/Operador.Schema";
+import { useAgentController } from "../controller";
+import { AgentControllerServices, AgentControllerState } from "../lib/types";
+import { UserCredential } from "firebase/auth";
+
+type AgenteContextType = {
+    services: AgentControllerServices,
+    firebaseUser: UserCredential | undefined
+} & AgentControllerState
+
+const AgenteContext = createContext<AgenteContextType | undefined>(undefined);
+
+
+export const AgenteProvider = (P: { usuario: IzOperador, children: React.ReactNode }) => {
+    const {
+        states,
+        firebaseUser,
+        services
+    } = useAgentController(P.usuario);
+
+    return <AgenteContext.Provider
+        value={{
+            ...states,
+            firebaseUser,
+            services,
+        }}
+    > {P.children}</AgenteContext.Provider >;
+};
+
+export const useAgenteContext = () => {
+    const context = useContext(AgenteContext);
+    if (!context) {
+        throw new Error("useAgenteContext must be used within a AgenteProvider");
+    }
+
+    return context;
+};
+
+
+# ---- . ---- . ---- . ---- . ---- . ---- . ---- . ---- 
+# .  Controller, containing core logic. 
+# .  But using Functional Paradigm instead of Class
+# ---- . ---- . ---- . ---- . ---- . ---- . ---- . ---- 
+
+import { useState, useEffect } from "react";
+import { IzOperador } from "api/schemes/Operador.Schema";
+import { fetchAgentTokens, fetchAgentData } from "../Services";
+import { AgentControllerServices, AgentControllerState, JanusSessionData } from "../lib/types";
+import { deletePreviousSession, loginAgent, saveNewSession, sendBreakAction, sendLogoutAction, sendUnbreakAction } from "../Services/HipermeActions";
+import { getFirebaseUserAuth } from "../Services/firebase";
+import { checkIfAgentIsOnlineOnce } from "../Services/firebase/CheckIfAgentIsOnlineOnce";
+import { getFirebaseUserAuthAsync } from "../Services/firebase/FirebaseAuth";
+import { DEACTIVATE_JANUS } from "store/globals";
+import { fetchQueueStatus } from "../Services/GetAgentData";
+
+const InitialState = {
+    firebaseToken: null,
+    hipermeToken: null,
+    agentData: null,
+    loading: false,
+    janusServerCleaned: false,
+    error: null,
+}
+
+export function useAgentController(usuario: IzOperador) {
+    const [state, setState] = useState<AgentControllerState>(InitialState);
+    const [alreadyInit, setAlreadyInit] = useState(false);
+
+    const initializeController = async () => {
+        setAlreadyInit(true);
+        setState((prev) => ({ ...prev, loading: true, error: null }));
+
+        try {
+            // Fetch tokens
+            const { customToken, token } = await fetchAgentTokens(usuario);
+            setState((prev) => ({
+                ...prev,
+                firebaseToken: customToken,
+                hipermeToken: token,
+            }));
+
+            // Fetch agent data
+            const response = await fetchAgentData(token);
+            setState((prev) => ({
+                ...prev,
+                agentData: response.data,
+                loading: false,
+            }));
+
+
+            // const queueStatus = await fetchQueueStatus(token);
+            // console.log("QUEUE STATUS", queueStatus);
+
+        } catch (error) {
+            console.error(error);
+
+            setState((prev) => ({
+                ...prev,
+                loading: false,
+                error: error instanceof Error ? error : new Error("Unknown error"),
+            }));
+        } finally {
+            setAlreadyInit(false);
+        }
+    };
+
+    useEffect(() => {
+        if (!usuario.roleLogIn || alreadyInit || DEACTIVATE_JANUS) {
+            setState(InitialState);
+            return;
+        }
+
+        initializeController();
+    }, [usuario.roleLogIn]);
+
+    const { firebaseUser } = getFirebaseUserAuth({
+        token: state.firebaseToken, agenteData: state.agentData, janusRegistered: true
+    });
+
+    function httpActionWithThrow<T>(action: (token: string) => Promise<T>) {
+        if (!state.hipermeToken) throw new Error("Hiperme token not available");
+        return action(state.hipermeToken);
+    }
+
+    const services: AgentControllerServices = {
+        deletePreviousSession: () => httpActionWithThrow(deletePreviousSession)
+            .then((res) => {
+                setState((prev) => ({ ...prev, janusServerCleaned: true }));
+                return res
+            }),
+        loginAgent: () => httpActionWithThrow(loginAgent),
+        saveNewSession: (session: JanusSessionData) => {
+            const action = (token: string) => saveNewSession(token, session)
+            return httpActionWithThrow(action)
+        },
+        sendBreakAction: () => httpActionWithThrow(sendBreakAction),
+        sendUnbreakAction: () => httpActionWithThrow(sendUnbreakAction),
+        sendLogoutAction: () => httpActionWithThrow(sendLogoutAction),
+        getFirebaseUserAsync: () => {
+            const { firebaseToken, agentData } = state;
+            if (!firebaseToken || !agentData) throw new Error("Firebase token or agent data not available");
+            return getFirebaseUserAuthAsync(firebaseToken, agentData)
+        },
+        getFirebaseUser: () => {
+            if (firebaseUser) return firebaseUser;
+            else throw new Error("Firebase user not found");
+        },
+        isAgentOnline: async () => {
+            if (state.agentData) return checkIfAgentIsOnlineOnce(state.agentData)
+            else throw new Error("Agent data not found")
+        }
+    }
+
+    return {
+        states: state,
+        services,
+        firebaseUser
+    };
+}

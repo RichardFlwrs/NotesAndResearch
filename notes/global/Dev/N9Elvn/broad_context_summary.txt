@@ -1,0 +1,284 @@
+# Context:
+I'm developing a 911 Emergency System (in Spanish language) to recollect data using Symfony 7 with SQL server.
+Also, Front Project uses Janus lib to handle calls. Production uses DNS and Virtual Machines that way sensitive data cannot be stolen.
+
+## Nomenclature:
++ PreCarta - A simplify DataSheet that is filled in the first 2 mins of the call with critical info. After completion, the "Full Carta Form" is visible to complete any necesary details of the call
++ Carta - This is the "Full Carta Form" from the call.
++ Agente - User with Role either Operador or Despachador.
++ Operador - User that handles the incoming calls and processes Cartas.
++ Despachador - Handle Cartas created and call to "Resources", like patrol, ambulance, etc.
++ Supervisor - Checks if all Agents (Operador/Despachador) do not have any problems. Also, they watch Metrics to find any critical issue.
+
+
+# QUESTION:
+Currently, when the form is blank and the user start writing telLLamada, the moment is greater than 3, the input got interrupted. So a couple of digits got missed. I try something different, but the new Issues was worst
+Note: Is not problem of input not being focus, is about the formData being set instantly after the validations is true. So the debounce is not working the first time
+Why is this happeningn? Analyze the code:
+
+
+import { IzCartaDTO } from "api/schemes/Carta.Schema";
+import { useCartasUtils } from "contexts/Carta/CartasUtilsContext";
+import { debounce, isEqual } from "lodash";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
+import { toast } from "react-toastify";
+import { CartaFormContext } from "screens/Home/views/Carta/context/CartaForm.Context";
+import { CartaTimeStages } from "enums";
+import { sendCartaStage } from "api/services/Carta.REST";
+import { AuthContext } from "contexts/AuthProvider";
+import { SetAuthCase } from "contexts/Session/lib";
+import { setIdsFromCartaInProgress } from "./lib/setIds";
+
+type Prop = {
+    // This is useful for "full-carta" stage, where we don't want to auto-save
+    // Until complete Form is fully render and filled with previous data
+    // Only then we want to auto-save
+    preventSaving?: boolean
+}
+export const useAutoSaves = ({ preventSaving = false }: Prop = {}) => {
+    const [currentStage, setCurrentStage] = useState<CartaTimeStages | null>(null);
+    const [cartaId, setCartaId] = useState<number | null>(null);
+    const [savingInProgress, setSavingInProgress] = useState(false);
+    const prevFormDataRef = useRef<IzCartaDTO | null>(null);
+    const latestFormDataRef = useRef<IzCartaDTO>({} as IzCartaDTO);
+    const [alreadyStoredWithId, setAlreadyStoredWithId] = useState(false);
+
+    const { setformDataFull, formData, isFormBuildingMemo } = useContext(CartaFormContext);
+    const { authStates, updateAuthState } = useContext(AuthContext);
+    const { setUnfinishedCartaToLS } = useCartasUtils();
+
+    // Create a ref to store AbortController
+    const abortControllerRef = useRef<AbortController | null>(null);
+
+    // Utility to check if formData is empty or invalid
+    const isFormDataValid = (data: IzCartaDTO): boolean => {
+        return Object.keys(data).length > 0 && !!data.telefonoLlamada && data.telefonoLlamada.length > 3;
+    };
+
+    // Update latestFormDataRef whenever formData changes
+    useEffect(() => {
+        latestFormDataRef.current = formData;
+
+        if (formData.id && !alreadyStoredWithId) {
+            setAlreadyStoredWithId(true);
+        }
+
+    }, [formData]);
+
+    // Function to send updates to the backend
+    const sendToBackend = async (stage?: CartaTimeStages) => {
+
+        if (preventSaving) return console.log("Skipping backend save: preventSaving is true");
+
+        const dataToSend = latestFormDataRef.current;
+        if (!isFormDataValid(dataToSend)) {
+            console.warn("Skipping backend save: formData is empty or invalid", dataToSend);
+            return;
+        }
+
+        if (abortControllerRef.current) {
+            abortControllerRef.current.abort();
+        }
+
+        abortControllerRef.current = new AbortController();
+
+        console.log("Sending to backend:", { formData: dataToSend, stage });
+        try {
+            setSavingInProgress(true);
+
+            let _dto = { ...dataToSend };
+            if (stage) _dto.stage = stage;
+            const response = await sendCartaStage(_dto, abortControllerRef.current.signal);
+
+            // Using this approach, casuses the input (from telLLamada) to be interrupted. So a couple of digits got missed.
+            // but only happens on the first time. Later times, none of the input is not interrupted.
+            const updateRes: IzCartaDTO = { ..._dto, ...response };
+            setformDataFull(updateRes);
+
+            // This approach solves that Issue, but cause to create 2 data-rows of IzCartaDTO on Backend, which is worse.
+            // let updateRes: IzCartaDTO = { ...latestFormDataRef.current };
+            // updateRes = setIdsFromCartaInProgress(updateRes, response);
+            // setformDataFull(updateRes);
+
+            console.log("Response from backend:", updateRes);
+            if (stage) setCurrentStage(stage);
+            if (updateRes.id && !cartaId) setCartaId(updateRes.id);
+
+            if (!alreadyStoredWithId)
+                toast.success("Carta guardada exitosamente", { autoClose: 2000 });
+        } catch (error) {
+            console.error("Error sending to backend:", error);
+            toast.error("Error al guardar la Carta. Intenta de nuevo.");
+        } finally {
+            setSavingInProgress(false);
+            updateAuthState({
+                type: SetAuthCase.hasUnfinishedCarta,
+                payload: true,
+            })
+        }
+    };
+
+    // Debounced auto-save function, memoized to ensure a single instance
+    const debouncedAutoSave = useMemo(
+        () =>
+            debounce((formDataToSave: IzCartaDTO) => {
+                if (!isFormDataValid(formDataToSave)) {
+                    console.warn("Skipping debounced save: formData is empty or invalid", formDataToSave);
+                    return;
+                }
+                console.log(isEqual(prevFormDataRef.current, formDataToSave));
+                if (!isEqual(prevFormDataRef.current, formDataToSave)) {
+                    sendToBackend();
+                    prevFormDataRef.current = { ...formDataToSave };
+                }
+            }, 1000),
+        [preventSaving, alreadyStoredWithId]
+    );
+
+    // Auto-save when formData changes
+    useEffect(() => {
+        if (isFormBuildingMemo || savingInProgress || !isFormDataValid(formData)) {
+            console.log("Auto-save effect skipped:", {
+                isFormBuilding: isFormBuildingMemo,
+                savingInProgress,
+                formData,
+                isFormValid: isFormDataValid(formData)
+            });
+            return;
+        }
+        console.log("Checking condition:", {
+            flag: currentStage && !isEqual(prevFormDataRef.current, formData),
+            currentStage,
+            formData,
+            prevFormData: prevFormDataRef.current,
+            isEqual: isEqual(prevFormDataRef.current, formData),
+        });
+
+        if (currentStage && !isEqual(prevFormDataRef.current, formData)) {
+            debouncedAutoSave(formData);
+        }
+    }, [formData, isFormBuildingMemo, currentStage, savingInProgress, debouncedAutoSave]);
+
+    // Detect PreCarta start
+    useEffect(() => {
+        if (
+            isFormBuildingMemo ||
+            savingInProgress ||
+            !formData.telefonoLlamada ||
+            formData.telefonoLlamada.length < 3
+        ) {
+            return;
+        }
+
+        if (currentStage === null) {
+            sendToBackend(CartaTimeStages.pre_carta_start);
+            prevFormDataRef.current = { ...formData };
+        }
+
+    }, [formData, isFormBuildingMemo, savingInProgress]);
+
+    // Detect when FullCarta starts (ONLY HAPPENS AFTER PRE-CARTA IS DONE)
+    useEffect(() => {
+
+        if (!authStates.cartaInProgess || preventSaving) return
+
+        if (authStates.cartaInProgess.stage === CartaTimeStages.carta_start) {
+
+            setCurrentStage(CartaTimeStages.carta_start);
+            setCartaId(authStates.cartaInProgess.id);
+            setformDataFull(authStates.cartaInProgess);
+
+            // Only set prevFormDataRef if it’s null, preserving previous state if any
+            if (!prevFormDataRef.current) {
+                prevFormDataRef.current = { ...authStates.cartaInProgess };
+            }
+        }
+    }, [authStates.cartaInProgess, preventSaving])
+
+    // Cleanup: Cancel debounced save on unmount
+    useEffect(() => {
+        return () => {
+            debouncedAutoSave.cancel();
+        };
+    }, [debouncedAutoSave]);
+
+    // Optional: Save to local storage as a fallback
+    const saveTempForm = (form: IzCartaDTO) => {
+        return setUnfinishedCartaToLS(form);
+    };
+
+    return {
+        currentStage,
+        cartaId,
+        savingInProgress,
+        isSaving: () => savingInProgress,
+        updatePrevFormData: (form: IzCartaDTO) => {
+            prevFormDataRef.current = { ...form };
+        }
+    };
+};
+
+
+--- . ---- . ---- . --- . ---- . ---- . --- . ---- . ---- . --- . ---- . ---- . --- . ---- . ---
+.   
+#                   USE CASES
+---
+
+
+# CASO DE USO
+# DESCRIPCION
+Se debe guardar los datos de la Carta de manera que el Usuario no sea afectado mientras sigue llenando los datos.
+
+# PRECONDICION
+El usuario se encuentra en página "preCarta" o "carta-form"
+Debe existir un mecanismo para esperar unos segundos hasta enviar el formulario, pero tampoco puede depender de que su ejecución sea hasta que el usuario termine de escribir. Tiene que ser enviado cada 10 segundos independientemente de si el usuario escribe o no.
+
+Pasos:
+
++ Una vez el usuario o el sistema agrega el Número de telefono en formulario (con mayor a 4 digitos) se envia la carta por primera vez. Y se registrar el id de la carta por siempre, hasta que la carta es termianda.
+NOTA: Se debe evitar a toda costa que se creen 2 Cartas por error por culpa del sistema.
++ Mientras la Carta ya con ID asigando no haya sido finalizada, estará ligado al Usuario, Y no podrá recibir llamadas hasta que termine de cerrar todas las cartas pendientes que tenga
++ Al terminar PreCarta, el usuario es transferido a la pagina del Formulario Completo con los datos ya escritos previamente
++ Durante el llenado de FullCarta, el funcionamiento es normal
++ Una vez terminado la Carta, el Usuario ya no debe tener esa Carta con ID como pendiente
+
+
+.
+---
+
+
+
+
+# USE CASE (NON-TECHNICAL)
+# DESCRIPCIÓN:
+Almacenar marcas de tiempo UTC para las diferentes etapas: preCartaStart, preCartaEnd, cartaStart, cartaEnd, generadas por el backend en función del estado de la Carta.
+
+# PRECONDICIONES:
+El usuario (Operador) está autenticado, en la página de "PreCarta" y ha comenzado a ingresar datos.
+
+Pasos:
+
++ El frontend envía una solicitud al backend indicando el estado pre_carta_start cuando el usuario comienza a escribir en el formulario de PreCarta.
++ El backend crea un nuevo modelo de Carta, genera la marca de tiempo UTC para preCartaStart, y devuelve el ID de la Carta con los datos relacionados, incluyendo la marca de tiempo generada.
++ El frontend captura silenciosamente esta respuesta, mostrando un pequeño ícono para informar al usuario que la Carta ha sido almacenada.
++ El frontend envía una solicitud al backend indicando el estado pre_carta_end al completar la acción de "Finalizar PreCarta". El backend genera la marca de tiempo UTC para preCartaEnd y actualiza el modelo. Después de finalizar la PreCarta, el backend puede establecer automáticamente la marca de tiempo para cartaStart y enviarla al frontend
++ Si se utiliza la opción 2, el frontend envía una solicitud con el estado carta_start cuando el usuario comienza a escribir en el Formulario Completo de Carta. El backend genera la marca de tiempo UTC para cartaStart, actualiza el modelo y muestra un ícono para informar al usuario que la Carta ha sido guardada.
++ Al hacer clic en el botón "Finalizar Carta", el frontend envía una solicitud con el estado carta_end. El backend genera la marca de tiempo UTC para cartaEnd, actualiza el modelo y confirma la finalización.
+
+
+
+
+.
+---
+
+
+# DESCRIPTION: 
+    Remove "almost empty" Cartas, in the rare case that User writes on form by accident, and requires to cancel the Carta
+# PRECONDITIONS: 
+    The Carta must be already stored with ID and only one field with data.
+
+Steps:
++ After pressing "Cancel" button, we send a query to BACKEND to "remove" the Carta
++ Backend will archive the Carta with tag "CREATED_BY_MISTAKE"
+
+

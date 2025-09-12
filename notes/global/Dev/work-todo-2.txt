@@ -1,0 +1,248 @@
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              COMMANDS
+--------- --------- --------- --------- --------- --------- --------- --------- 
+
+
+php83 bin/console make:entity 
+php83 bin/console make:migration
+
+php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
+
+php83 bin/console doctrine:query:sql "UPDATE carta SET recording_name = 'some-value' where id = 2219"
+php83 bin/console doctrine:query:sql "SELECT * FROM carta_notification WHERE target_role = 'ALL_ROLES'"
+
+c.name = 'cerrada_at'
+
+
+
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              Iteracion 2   
+--------- --------- --------- --------- --------- --------- --------- --------- 
+
++ (F05) En la localización del incidente, tiene que estar limitada las direcciones a la provincia de rio negro. Actualmente cuando se ingresa la dirección, aparecen direcciones similares de todo el mundo. En este caso, también tiene que tener un switch o un tilde, que cuando el operador corre o tilda esa opción, tiene que permitirle ingresar direcciones FUERA de la provincia de Rio Negro.
+    [+] Ya está implementado en "prod"
+
++ (F01) Poner buscador para buscar usuarios dados de alta
+    [implementacion] Se agrega input para búsqueda de operadores por; nombre, apellido ó usuario.
+
++ (F02) Cuando se agregan los eventos actualmente figura fecha hora, y usuario que realizo la acción, también agregar número de extensión
+    [implementacion] La extensión se registra una vez que se inicia sesión, entonces será visible en la tabla de eventos. Sólo se debe registrar una vez para mostrarse en la tabla. Mientras no inicie sesion en CTI, se imprimirá "No registrado".
+
++ (F03) En la carta y precarta, tiene que tener un switch o tilde en formulario alado del "nombre" *, que cuando el llamante informa que es anónimo, el operador tilda o corre el switch y el campo nombre tiene que autocompletarse con: "ANONIMO - El llamante no desea brindar datos" (sin comillas). Generando el evento correspondiente en el visor de eventos
+    [implementacion] Se agrega "checkbox" para establer anonimato. En caso de escribir cualquier nombre antes de activar anonimato, se guarda el nombre y apellido para restablecerlo en caso de cancelar el anonimato
+    El evento solo será visible hasta derivar la Carta
+
++ (F04) En la bandeja de entrada de las cartas, se debe poder desplazar y ver que cartas están asociadas.
+    [implementacion] Al apuntar sobre el estatus, ahora aparecerá un "tooltip" (Descripción emergente) con el estatus y los id's de las Cartas asociadas
+
++ (G03) Al ingresar un llamado, el botón de la barra CTI de atender tiene que ponerse en color verde. Al atender el llamado, e. botón de la barra CTI de atender color verde, tiene que disminuir el color y se tiene que habilitar el botón colgar de la barra CTI en color rojo. Al ingresar un llamado, el sonido de ingreso del llamado tiene que salir por el parlante de la PC
+    [pendiente] Sonido tiene que salir por parlante de PC
+
+
+---
+--- PENDIENTE
+--- 
+
++ (F06) cuando se crea una carta inversa, al guardarse tiene que enviar una alerta a los usuarios supervisores. Mantener lógica de enviar alerta visual a todos los usuarios supervisor y el primero que toma la alerta (abre la carta) desaparece
+    [implementacion] Las alertas ahora tambien aparecerán a los supervisores 
+    [duda_1] ¿Se debe escuchar la alarma también, o sólo la notificación?
+    [duda_2] ¿Si un supervisor abre la Carta, implica que le desaprece la 'alerta' a todos los usuarios también?
+    [duda_3] ¿Solo debe aplicarse a las cartas inversas?
+
++ (F07) Al ingresar una nueva carta tanto despachada como derivada, las solapas Abiertas, pendiente / en proceso (según corresponda) tienen que parpadear de color rojo hasta que el usuario seleccione la pestaña que parpadea color rojo, una vez que la selecciono, tiene que dejar de parpadear y volver al color habitual. Esto NO aplica a las cerradas.
+
+
+
+
+
+
++ Notificación de "Alguien ha tomado el número de carta actual. El nuevo id se ha actualizado a: {nuevoId}"
+    [Procedimiento] Usuario se encuentra en formulario llenando los datos. Cuando el sistema detecta una nueva carta, el usuario es notificado con el nuevo Id asignado.
+    [Reglas]
+    - Las Cartas que vienen de PreCarta ya tienen ID registrado en BD, por lo que estos casos no mostrarán estas notificaiones.
+    - Solo funciona en el formulario completo de Carta (en PreCarta no se muestra el número).
+    - La nueva carta ID es registrado para evitar imprimir el mismo mensaje 2 veces.
+    - El operador no debe ver el mensaje si él mismo terminó la Carta.
+    - El usuario debe cerrar manualmente la notificación.
+    - El mensaje de notificación es actualizado en caso de que el número de carta haya cambiado otra vez.
+    [FuturasConsideraciones]
+    Se podría implementar el registro del ID de la Carta una vez el usuario haya escrito algo en la Carta y así evitar multiples veces el mensaje.
+    Pero esto podría causar varias "cartas vacias" si el usuario agrega un valor por error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              BUGS  
+--------- --------- --------- --------- --------- --------- --------- ---------
+
++ Al asociar carta: se cambian las agencias en tablero. // Se estaban duplicando los valores en tablero, se corrigió.
++ Carta manual, poner en break. // Al entrar a la página del formulario para la Carta o PreCarta. Si no estas en llamada, entraras en break. Al salir de la página siempre vuelves a estar "en presencia"
+
++ [_cancelado_] Alertas: Algún rol de "despachante" no le llega la alarma al cambiar de rol.
++ 
+
+
+
+
+--------- --------- --------- --------- --------- --------- --------- --------- 
+ * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *   * * * *  |
+ *                              Iteracion 2.1     Jueves, 5 Junio
+--------- --------- --------- --------- --------- --------- --------- --------- 
+
++ (G03_pendiente) Selección de salida de audio ("speaker") para el ingreso de llamadas
+    [Procedimiento] Al iniciar sesión aparecerá una ventana para la selección de dispositivo con opción para probar el sonido. / / / El ajuste de la misma se encuentra dentro de: "opciones de usuario"; donde se puede cambiar el rol y contraseña,
+    [Consideraciones] Si el usuario cambia el "speaker" desde el sistema (Windows), esto le afectará al navegador, por lo que el usuario tendrá que seleccionar nuevamente el "speaker" dentron de la página web.
+
++ G01: Agregar el campo en la solapa cerrada fecha y hora del cierre
++ G02: Agregar el campo en la solapa pendientes/en proceso fecha y hora según se modificó; "en proceso" y "pendiente de cierre"
+    [implementacion] Se agregan las fechas para cada estatus, que se actualiza cada vez que se cambia el estatus respectivamente. / / / Por default, "FECHA" y "HORA" corresponde al estatus de cuando se modificó. Se agrego "tooltip" para el campo fecha y mostrar todos sus cambios.
+    [extra] En la pestaña "Cerradas", las cartas se organizan según su fecha de cierre en las últimas 48 horas. Anteriormente, el orden se basaba en la fecha de creación.
+    [pendiente] Mostrar las fechas como columnas independientes. Esto tomaría un par de días en implementar
+
+
+// winter y san luis
++ [bug] al crear una carta o precarta con la direccion interseccion o entre calles, al abrir la carta creada unicamente se observa 1 sola calle. Se tienen que visualizar ambas calles o ambas intersecciones en la carta que fue creada y luego despachada.
+    [fix] Se muestra intersección correctamente en tablero y detalle
+
+
+.  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .
+---
+| Quick FIXES : Viernes 6 Junio
+
++ Error al mostrar detalle de Carta (se ocultaron valores que causan error en  detalle) / / / Queda pendiente revisar porque no trae esos valores
+
++ Navegador pide permiso para poder seleccioar disp. audio
+
++ Interseccion calle se anexa con "y"
+
++ Limpiando el cache se ha ruesleto el error de setExtention, y el error con las fechas para las cartas
+---
++ Mostrar extension del usuario en los comentarios
+
++ Se agregó la extensión tambien al momento de descargar el PDF
+---
++ 
+
+
+
+
+
+
+
+.  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .
+---
+
++ (F09) Se necesita bajar varias cartas con el pdf y los audios al mismo tiempo. Ejemplo: bajar carta de la 80 a la 100 y me baje los pdf y audios de cada una de ellas junto a las asociadas en archivo comprimido y hash, los mismo para carta única con audio. Poder agregar esta función con un icono en la bandeja de entrada. Con el permiso para bajar cartas y audios en cantidad y con el registro del evento informando que se baiaron las cartas y audios seleccionados
+    
+    [Implementación] La lógica reside en nuevo botón encima del tablero de Cartas, con texto: "Descargar cartas". El procedimiento inicial se divide en 2, dependiendo de si tiene filtro activado.  / / /  Se agrega el nuevo permiso: "Descarga múltiple de Cartas".
+
+    [SinFiltro] Al dar click al botón, se abrirá ventana para ingresar el rango de cartas para descargar, ejemplo: "Del núm. 2000 al 2200".
+
+    [ConFiltro] Las cartas que se visualizan, será la selección de cartas para descargar. Se mostrará ventana de confirmación con la cantidad de Cartas a descargar.
+
+    [ProcedimientoFinal] Al tener la selección de cartas, se iniciará la obtención de datos y posteriormente la creación de archivos PDF y finalmente se decarga en archivo .zip ("cartas-descargadas-año-mes-dia-minutos.zip")
+    Se mostrará el porcentuaje del proceso hasta que termine.
+    Cada carta tendrá su propia carpeta con su pdf y audio correspondiente (incluyendo las asociadas a la carta), ejemplo:
+    > 2178 (carpeta)
+        - Carta_2178.pdf
+        - carta-audio-2178.mp3
+        - asociada-audio-2177.mp3
+        - asociada-audio-2176.mp3
+
+    [Eventos] Todas las cartas que fueron descargadas se agrega el evento: "Incluido en paquete de cartas" - "Esta carta forma parte de un paquete que se ha descargado", en su respectivo historial de eventos. Tambien aplica a los audios de las cartas asociadas
+
+    [HashValidation] La carpeta zip, incluye el archivo "manifets.txt" que contiene el listado de todos los archivos con su código hash (SHA-256). Al dar click al boton "Verificar Cartas", se abrirá una ventana para insertar la carpeta descomprimida.
+    La respuesta de la validación indicará a cada archivo los siguientes estados:
+        - Verificado: El contenido del archivo coincide con el hash esperado
+        - Alterado: El contenido del archivo no coincide con el hash esperado
+        - Faltante: Archivo no encontrado en la carpeta seleccionada
+        - Extra: Archivo no listado en manifest.txt
+    
+
+    [Extra] Se agregó una carpeta dentro del zip llamado "errors", contiene logs con el fin de ser analizados.
+
+    [Reglas]
+    - Sólo visible para el Tablero príncipal y en "Filtros múltiples".
+    - No debería ser visible para el tablero de "Cartas Asociadas" en detalle de Carta
+    - El botón tampoco será visible si el usuario no cuenta con el permiso para la descarga múltiple
+    - El usuario puede cerrar/abrir el modal mientras se descargan los datos, pero NO debe salir de la página donde se encuentre, esto cancelará el proceso.
+    - Si no hay selección de Cartas, mostrar mensaje de error.
+
+
+
+.  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .
+---
+| Quick FIXES : Lunes 9 Junio
+
++ No se muestra lista completa de cartas asociadas en tablero
+
++ En monitor de cliente, al cambiar de Rol no se registra el rol seleccionado
+
++ Botones para exportar a PDF, etc. se desplazan a la izquierda al filtrar cartas
+
++ La selección de dispositivo de audio tambien le afecta a la notificación de alarma / / / El rin solo debe sonar en bocina cuando es se recibe un llamado, y no cuando se hace el marcado.
+
+
+
+
+.  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .
+---
+
+
+[Implementacion]Cada carta tendrá su propia carpeta con su pdf y audio correspondiente (incluyendo las asociadas a la carta), ejemplo:
+> 2178 (carpeta)
+    - Carta_2178.pdf
+    - carta-audio-2178.mp3
+    - asociada-audio-2177.mp3
+    - asociada-audio-2176.mp3
+
+[Eventos] Todas las cartas que fueron descargadas se agrega el evento: "Incluido en paquete de cartas" - "Esta carta forma parte de un paquete que se ha descargado", en su respectivo historial de eventos. Tambien aplica a los audios de las cartas asociadas
+
+[HashValidation] La carpeta zip, incluye el archivo "manifets.txt" que contiene el listado de todos los archivos con su código hash (SHA-256). Al dar click al boton "Verificar Cartas", se abrirá una ventana para insertar la carpeta descomprimida.
+    La respuesta de la validación indicará a cada archivo los siguientes estados:
+    - Verificado: El contenido del archivo coincide con el hash esperado
+    - Alterado: El contenido del archivo no coincide con el hash esperado
+    - Faltante: Archivo no encontrado en la carpeta seleccionada
+    - Extra: Archivo no listado en manifest.txt
+
+
+
+.  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .  _  .
+---
+| Quick FIXES : Lunes 16 Junio
+
++ DescargaMultiples, se obtiene el PDF de las cartas asociadas.
++ Al cambiar estatus por segunda vez se evita sobre escribir el valor de la fecha
++ [fix] Al pasar la intersección desde PreCarta a CartaForm no se separa
++ [fix] permiso "DescargaMultiples" no esta habilitado
+---
++ [fix] Al bajarla en PDF todavía no se ve la entrecalle o intersección
++ [fix] Se deshabilita boton de "Terminar Carta" al dar click para evitar datos duplicados (comentarios duplicados)
+---
++ cambiar nombre de archivo "manifest.txt" a "codigos_hash.txt"
++ [fix] botones para "descarga multiple" no son ocultados mediante el permiso
++ Se agrega cancelación automática al momento de salir de lá pagina de Cartas // Tambien se agrega botón para cancelar manualmente.
+
+
+---
+
+
+
