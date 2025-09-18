@@ -312,5 +312,5 @@ Mover Metricas debajo de "Mapa de calor"
 
 
 Reporte de Cartas, campos:
-
 5491136516007
+

@@ -1,0 +1,33 @@
+
+Datos faltantes:
+
++ Desbordamiento durante retención (Zoiper) cola 9011
++ Llamadas atendidas con espera
++ Llamadas atendidas sin espera (llamadas en menos de 5 segundos)
++ Tiempo total de conversación.   (Se debe sumar el tiempo total de llamadas + el tiempo de espera)
+
+
++ Desbordamientos durante timbre (Cantidad de veces que una llamada timbró a un operador y no se atendió y se pasó a otro)
++ Llamadas atendidas por un agente liberadas antes del umbral (short call 5 segundos) // ¿Cómo se difernecia del dato anterior?
++ Timbre sobre agente (?) // Cantidad de llamadas de los usuarios (llamantes) que cuelgan después de que ya le timbró al agente
++ Tiempo total de timbre: Segundos hasta que fueron atendidos
++ Tiempo medio de timbre: Promedio: Duracion / cantidad de llamadas
++ Tiempo total de espera (De llamadas que sí fueron atendidas)
++ Duración *total* de la espera de las llamadas abandonadas // Es decir, segundos hasta que el llamante colgó
++ Duración *media* de la espera de las llamadas abandonadas
++ Tiempo total de tratamiento de llamada (respuesta: 'totalTime')
++ Espera máxima // El tiempo máximo en segundos que tardó en ser atendida una llamada en el día
++ Nivel de atencion
++ Recursos activos (Número total de Agentes logueados en ese día)
++ Llamadas transferidas hacia un agente: 'transferCalls'
+
++ cambiar Med a "promedio"
++ Agregar Agencia al Excel
+---
+Desbordamiento durante retención (Zoiper) cola 9011
+Redistribución ACD. (Desborde de cola 9011 fallback) 
+> ¿Es esto lo mismo que el Zoiper?
+
+Llamadas atendidas sin espera
+Llamadas atendidas por un agente liberadas antes del umbral (short call 5 segundos)
+> ¿Cómo se difernecia del dato anterior?, segun entiendo sería el mismo valor siempre
