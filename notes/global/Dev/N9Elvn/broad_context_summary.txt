@@ -3,20 +3,20 @@ I'm developing a 911 Emergency System (in Spanish language) to recollect data us
 Also, Front Project uses Janus lib to handle calls. Production uses DNS and Virtual Machines that way sensitive data cannot be stolen.
 
 ## Nomenclature:
++ Agencia - A delimited area designed to handle the emergency received, assigned by the "Despachador" or "Supervisor".
 + PreCarta - A simplify DataSheet that is filled in the first 2 mins of the call with critical info. After completion, the "Full Carta Form" is visible to complete any necesary details of the call
 + Carta - This is the "Full Carta Form" from the call.
 + Agente - User with Role either Operador or Despachador.
 + Operador - User that handles the incoming calls and processes Cartas.
-+ Despachador - Handle Cartas created and call to "Resources", like patrol, ambulance, etc.
++ Despachador - Handle Cartas created and call to "Resources" (according to the Agencia), like patrol, ambulance, etc.
 + Supervisor - Checks if all Agents (Operador/Despachador) do not have any problems. Also, they watch Metrics to find any critical issue.
-
 
 # Code Context:
 Chech this logic for the Autosave of a Carta
 
 ### From Backend
 #[Route('/sendCartaStage', methods: ['post'])]
-public function sendCartaStage(
+public function sendCartaStage(it
     CartaService $cartaService,
     Request $request,
     SerializerInterface $serializer,

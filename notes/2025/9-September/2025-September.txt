@@ -19,18 +19,18 @@ Mes: Septiembre
 {L}(15) . 
 {M}(16) . 
 {M2}(17) . Cecy se cae y se lesiona el tobillo | Salgo temprano del trabajo y limpio a Hoppy
-{J}(18) . Documento- JSON para ReporteLlamadas
-{V}(19) . 
-{S}(20) . 
-{D}(21) . 
+{J}(18) . Documento- JSON para ReporteLlamadas | Quesadillas gigantes
+{V}(19) . Empiezo AgenciaController | 
+{S}(20) . Llevo a Hoppy al Vet para vacuna de Rabia | Limpio trastes
+{D}(21) . Cecy se enferma del estomago | Lavamos ropa | Hoppy juega con otro perro en el parque
 --- 
-{L}(22) . 
-{M}(23) . 
-{M2}(24) . 
+{L}(22) . Hablo con Cecy para tener tiempo a solas | HEB + Hamburguesa ($200)
+{M}(23) . Lavandería, cortan el pasto afuera.   |   Espagueti con tocino
+{M2}(24) . <HO> Acompaño a Cecy al evento del birriete  |   Empiezo a trabajar desde las 2pm  | Limpio patio y a Hoppy
 {J}(25) . 
-{V}(26) . 
-{S}(27) . 
-{D}(28) . 
+{V}(26) . Me lastimo el costado derecho | Hamilton en el Cine
+{S}(27) . Silverio | Fiesta de Naty
+{D}(28) . Juego con Arthur a Terraria pt.2
 --- 
-{L}(29) . 
+{L}(29) . Sierra Madre con Gera
 {M}(30) . 
