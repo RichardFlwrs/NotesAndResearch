@@ -314,3 +314,30 @@ Mover Metricas debajo de "Mapa de calor"
 Reporte de Cartas, campos:
 5491136516007
 
+
+
+---
+
+
++ Se muestra el grafico de "Llamadas Procesadas" para las tablas de métricas.
++ PilotosRT, muestra pilito 911 y todos los campos visibles por default
++ Modificar y Borrar Agencia
+
+
++ Ocultar Paginador en PiltosRT
++ Ocultar los "sort" options en Tabla Lateral
++ Quitar boton de borrar para las Agencias.
++ Agenda, filtro por agencias, se ve muy corto.
++ DespachadoresRT agregar Carrusel, solo para la info, y mostrar el grafico como encabezado.
+
++ Tooltip a cada campo con las descripciones del Excel
++ Al cerrar ventana, se debe registrar que el usuario cerró sesion.
++ Opcion para poner el orden de las columnas al estado original (default)
+
+
+---
+
+
+TED_TALK
+
+1) Me piden 

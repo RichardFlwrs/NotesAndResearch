@@ -16,7 +16,7 @@ Mes: Septiembre
 {S}(13) . 
 {D}(14) . 
 --- 
-{L}(15) . 
+{L}(15) . o
 {M}(16) . 
 {M2}(17) . Cecy se cae y se lesiona el tobillo | Salgo temprano del trabajo y limpio a Hoppy
 {J}(18) . Documento- JSON para ReporteLlamadas | Quesadillas gigantes
