@@ -7,11 +7,17 @@
 
 php83 bin/console make:entity 
 php83 bin/console make:migration
+php83 bin/console doctrine:migrations:migrate
+
+symfony serve --allow-http --port=8003 --listen-ip=10.10.2.1
+php bin/console cache:clear
 
 php83 bin/console doctrine:query:sql "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'"
+php83 bin/console doctrine:query:sql "SELECT * FROM access_log'"
+php83 bin/console doctrine:query:sql "UPDATE carta SET is_in_active_call = false;"
 
 php83 bin/console doctrine:query:sql "UPDATE carta SET recording_name = 'some-value' where id = 2219"
-php83 bin/console doctrine:query:sql "SELECT * FROM carta_notification WHERE target_role = 'ALL_ROLES'"
+php83 bin/console doctrine:query:sql "UPDATE carta SET is_in_active_call = false;"
 
 c.name = 'cerrada_at'
 
@@ -72,13 +78,6 @@ c.name = 'cerrada_at'
     [FuturasConsideraciones]
     Se podría implementar el registro del ID de la Carta una vez el usuario haya escrito algo en la Carta y así evitar multiples veces el mensaje.
     Pero esto podría causar varias "cartas vacias" si el usuario agrega un valor por error.
-
-
-
-
-
-
-
 
 
 
@@ -244,5 +243,218 @@ c.name = 'cerrada_at'
 
 ---
 
++ MetricasDespachadores - Tooltip para llamadas Procesadas
++ Cambiar orden de Fecha para Desarga Multiple
++ Filtro para Mapa Calor: 
+   + En tiempo real: Agregar input para agregar fecah y hora
+   + Centro de Despacho
+   + Estados de la Carta
++ Mostrar el tipo de Descanso para "AgenteAgencia" y "Operadores Metricas RT"
++ AgenteAgencia: Separar Operadores
+
++ Carta Geo: Encontrar mejor las ubicacion por parte de google
 
 
+
+--- 
+
++ Agregar evento de conferenica para las Cartas. 
+
++ Carta Detalle: Agregar tiempode arribo de mvil o recurso.
+
++ Usar tiemstamp desde el "logeo firstTime" para mostrar en AgenteAgencia
+
++ Viernes:
+ Agenda: Se muestra extension incorrecta al hacer cambio de Rol
+ 
+ ---
+
++ Registro correcto de 'logs' para el reinicion del sistema en el fallo de Janus
++ Se muestra Alias en el detalle de la Carta
++ Se muestra el temporizador de llamada activa para los Usuarios en panel Agente-Agencia RT
++ Corrección de valor; "Número máximo de llamadas simultáneas". Se separa en 2 columnas:
+ maxCalls: "Número máximo de llamadas en cola de espera."
+ inCurseCalls: "Número máximo de llamadas simultáneas en curso."
+> Se cambian los tooltip tambien para cada uno de ellos
+
+
++ Color asignado para cada uno de los tipos de Descanso
+
++ Tiempo de llamada total, se muestra en formato de tiempo para el reporte de Excel
++ al generar los reportes en el periodo de tiempo de la imagen arroja ese error, no asi en periodos de tiempo mas chicos (Error: 'undefined incomingCalls')
++ Se muestran las juridcciones como poligonos en un mapa.
+
+
+REPORTE DE EXCEL
++ Agregar lista usuarios para Excel
++ Prioridad Multiple 
++ Fecha, asignar hora 00 por default
++ Coordenadas
++ Ciudad
+// Englobar los 2 en una sola consulta  
++ Calle
++ Numero
+
+---
+
+#133 Capas de Jurisdicciones Falta:
+
+1 Que tenga una capa mas el mapa de calor y que se pueda habilitar para ver a simple vista que incidencias hay mas por jurisdiccion
+
+2 Que de alguna forma o pasando el mouse por arriba o en un lateral segn color informe qu ejuri es
+
+3 Que en la carta te diga a que juri corresponde la comisaria, segun la direccion
+
+4 que selecicone de acuerdo a la direccion ---> juri el centro de despacho que correpsonde
+
+---
+
++ Se agregan los siguientes campos para el Reporte de Cartas:
+    - Ciudad
+    - Calle y Numero
+    - Latitud
+    - Longitud
+
++ MapaCalor, se agrega opción para mostrar las zonas de jurisdicciones. Al hacer click en un area se muestra tooltip con el los datos de la zona.
++ Cuando se crea un carta, dependiendo de las coordeandas se asigna a una jurisdicción, esta zona se verá marcada en el detalle de la Carta.
++ Selección Múltiple en los filtros de Cartas ahora es más visible el input para buscar.
+
+
+
+---
+
++ Nueva presentación compacta para las direcciones de la Carta con tooltip
++ [fix] No se muestra la segunda Zona de jursidiccion de un punto
+
++ [fix] Busqueda por comentarios en Carta Reporte, resuelto
++ [fix] Error al guardar Carta, derivado a 'already_calc_jursidction', resuleto
++ Carta Detalle: al quitar el checkbox de "Mostrar llamada", tambien se olculta la zona de jurisdiccion
+
++ Excel, Carta Reporte: mostrar Lat y Lng | Y se muestra: los usuarios involucrados separados por coma.
+
+---
+
++ capas de jurisdicción, no funciona el dibujado si esto está activo.
++ 
+
+---
+
+[CARTAS_CON_LLAMADA_ACTIVA]
+
++ Nueva implementación para poder ajustar coordeanadas en tiempo real con "Firebase messages"
+// Se usará tercera posicion para identificar la Carta y en base a eso ajustar coordenadas
+
++ Pruebas con conferencia con Jorge
+
+/ Viernes 2
++ AgenteAgencia Metricas, se muestra correcto el tiempo total que lleva en una llamada activa.
++ Llamadas Procesadas se muestra correctamente en el Reporte de Llamadas
++ [fix] subtipo incidencia no se filtra en base al padre, Carta Reporte
++ [fix] SeleccionMultiple, texto de busqueda: no se limpia presionar boton de "x"
+
+/ Viernes 9
+Filtros, Agencia: agregar "receptora" y "creadora"
+Ocultar campos para Filtro Multiple
+Cancelar descarga
+
+/ Lunes 12
+Carta Reporte en ventana aparte
+Mostrar fecha de tooltip para Cartas asocidadas en detalle de Carta
+
+
+/ Martes 13
+Mapa de Calor: Ocultar puntos para heatmap con la opcion "ocultar" activo.
+Mapa Calor, Mostrar cantidad de Cartas de la zona jurisdicción
++ Nuevo input para el filtro para la selcción de Jurisidicción.
+
+/ Miercoles 14
++ Nueva opción para ocultar Cartas asociadas "hijas"
+mostrar zonas de jurisdccion regionales
+
+
+
+
+// Liunes 19
+Sub grupos para la selección de subtipos de Incidencia
+
+// 20 Martes
+Agregar Descarga de Reporte de Cartas usando Poligono en Mapa de Calor
+Poder dibujar muitple poligonos
+
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+ *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+// 20 Martes (HOY)
++ Probar, cerrar carta con llamda activa, debería borrarse en el mapa
++ REPORTE DE LLAMADAS - Error en barra de loading
++ 
+
+// 21 Miercoles
++ Nueva opción para ocultar Cartas asociadas "hijas"
+Timestamp de logueo
+AgenteAgencia, mostrar "Logueado" desde la BD con el Operador
+
+// 22 Jueves
+Agregar Descarga de Reporte de Cartas usando Poligono en Mapa de Calor
+Poder dibujar muitple poligonos
+
+// 23 Viernes
+Roles con buscador
+{LabelComponent('Salientes', metrics?.calls_total?.outgoing)}
+
+
+// 26 Lunes
++ Listar llamadas sin direccion correcta para las llamadas activas (458)
++ Tooltip para llamada activa con mas datos (#Carta, operador, link para entrar, fecha y hora)
++ Historial (últimas 10): Fecha hora, Operador, Gravedad
+
+// 27 Martes
+Sub grupos para la selección de subtipos de Incidencia
+
+// 28 Miercoles
+ASC / DESC Carta comentarios en el Detalle
+    1er comentario siempre visible
+
+
+// 29 Jueves
+Capas de Jursidiccion pendientes
+
+
+// 2 Febrero
+Clonar operadores como plantilla
+
+// 9 Febrero
+Atachar nuevos audios a la Carta
+
+
+// 16 Febrero
+Desplazar movil - 2 botones
+1.- enviar: no movil, tipo (bombero, poli), personal. INFO VA A COMENTARIOS
+2.-arrivó: automaticamente termina el "temporizador"
+Se debe guardar los tiempos de cada acción.
+
+
+// 
+Reporte de Operadores sobre las cartas realizadas
++ Número de Cartas
++ Tiempos de realizacion de Cartas
++ 
+
+// 23 Febrero
+Llamada interna, mostrar quien le marca.
+Hostorial de llamadas interna
+   Break.- Registra llamadas miesntras estas en break o ocupado.
+
+
+
+---
+
+FEBRERO
+
++ Atachar audio a Carta con nuevas llamadas
++ Cambiar el estado de la Carta, cuando un Operador entra a la carta.
++ Movil, despachante, botón para empezar cronometro con evento. Hasta que movil llega y se comunica, para el timer.
++ ABM de agencias (con piloto)
++ Modulo Offline

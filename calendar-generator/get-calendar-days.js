@@ -1,45 +1,53 @@
 const fs = require("fs");
+const path = require("path");
 
 const monthNames = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 const dayNamesPrefixes = ["D", "L", "M", "M2", "J", "V", "S"];
+
+const year = new Date().getFullYear();
+const yearDir = path.join(__dirname, String(year));
+fs.mkdirSync(yearDir, { recursive: true });
 
 /**
  * Creating a different file for every month
  *
  */
 function createFileMonth(monthNumber) {
-  const now = new Date(monthNumber + "-01-" + new Date().getFullYear());
-  const month_name = monthNames[now.getMonth()];
-  const _year = now.getFullYear();
-  const _month = now.getMonth();
+  const monthIndex = monthNumber - 1;
+  const month_name = monthNames[monthIndex];
   const listOfDays = [];
-  const endOfMonth = new Date(_year, _month + 1, 0);
-  const dateInit = new Date(_year, _month, 1);
-  const dateInit_clome = new Date(_year, _month, 1);
+  const endOfMonth = new Date(year, monthNumber, 0);
+  const dateInit_clome = new Date(year, monthIndex, 1);
 
-  console.log(`${dateInit.getMonth() + 1}-${month_name}.txt`);
+  const monthDirName = `${monthNumber}-${month_name}`;
+  const monthDir = path.join(yearDir, monthDirName);
+  fs.mkdirSync(monthDir, { recursive: true });
 
-  // using the clone_object we fill the days od the current month iteration
-  for (dateInit_clome; dateInit_clome <= endOfMonth; dateInit_clome.setDate(dateInit_clome.getDate() + 1)) {
+  const fileName = `${year}-${month_name}.txt`;
+  const filePath = path.join(monthDir, fileName);
+  console.log(path.join(monthDirName, fileName));
+
+  // using the clone_object we fill the days of the current month iteration
+  for (; dateInit_clome <= endOfMonth; dateInit_clome.setDate(dateInit_clome.getDate() + 1)) {
     listOfDays.push(new Date(dateInit_clome));
   }
 
-  // Template: 1-Enero , 2-Febrero , 3-Marzo ... etc.
-  const stream = fs.createWriteStream(`${dateInit.getMonth() + 1}-${month_name}.txt`);
-  stream.once("open", (fd) => {
+  // Template: 1-January/2026-January.txt , 2-February/2026-February.txt ... etc.
+  const stream = fs.createWriteStream(filePath);
+  stream.once("open", () => {
     stream.write(`Mes: ${month_name} \n`);
     stream.write(`\n`);
 
