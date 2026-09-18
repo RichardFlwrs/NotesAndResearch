@@ -16,10 +16,10 @@ Mes: Septiembre
 {D}(13) . Plática en la mesa
 --- 
 {L}(14) . Pasear a Hoppy, no hice otro ejercicio    | 10am -> 12pm Twtich   | Investigación con Go para transferencia de datos en LAN    | Me dule la panza por comer mucho cacahuate   | MrBrown en el parque con Hoppy (6 meses de casados)
-{M}(15) . 
-{M2}(16) . 
-{J}(17) . 
-{V}(18) . 
+{M}(15) . <9am:trabajo>  | <12pm:juego> BaityJuegos | Bicep + 100 saltos | 2pm:Junta con Adrian |   Me dolió la panza.
+{M2}(16) . *PUENTE* Despierto a las 9, desayuno yogurth con cereal + mollete con chilorio   |   <11am:trabajo>, Lavadora | <4pm:juego>   | 5pm HEB para pasta    | Peli:"Otto" + pasta cacera y chocolatin almendrado
+{J}(17) . <7am:juego>  8am, yogurth con cereal y platano | <9am:trabajo> Junta911 |    Carne en mole y arroz   |   <1pm:Juego> Pierna y Abs    |   
+{V}(18) . <7am:caminar> sin internet | <8am:juego> Necesse  | 10am Silverio-trabajo, burrito + moka |   2pm JuntaAdrian
 {S}(19) . 
 {D}(20) . 
 --- 
@@ -31,6 +31,6 @@ Mes: Septiembre
 {S}(26) . 
 {D}(27) . 
 --- 
-{L}(28) . 
+{L}(28) . *REVISAR UNADM*
 {M}(29) . 
 {M2}(30) . 

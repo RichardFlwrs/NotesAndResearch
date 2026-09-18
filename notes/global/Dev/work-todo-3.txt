@@ -43,27 +43,13 @@ WHERE c.estatus IN ('abierta', 'reasignada', 'en proceso', 'cierre parcial')
   );
 "
 
-php bin/console doctrine:query:sql "UPDATE c
-SET
-    c.estatus = 'cerrada',
-    c.cerrada_at = COALESCE(c.cerrada_at, SYSDATETIME()),
-    c.updated_at = SYSDATETIME()
-FROM carta c
-LEFT JOIN tipo_incidente tInci ON c.tipo_incidencia_id = tInci.id
-WHERE c.estatus IN ('abierta', 'reasignada', 'en proceso', 'cierre parcial')
-  AND c.created_at <= DATEADD(HOUR, -24, SYSDATETIME())
-  AND (
-    c.tipo_carta IN (
-      'broma',
-      'no-emergencia',
-      'NO CONSTITUYE EMERGENCIA'
-    )
-    OR tInci.nombre IN (
-      'broma',
-      'no-emergencia',
-      'NO CONSTITUYE EMERGENCIA'
-    )
-  );"
+php83 bin/console doctrine:query:sql "
+SELECT ac.id, ac.email, ac.password, ac.operador_user_id, o.usuario
+FROM agente_cti ac
+INNER JOIN operador o ON o.id = ac.operador_user_id
+WHERE o.usuario = 'arcajoj';
+
+"
 
 php83 bin/console doctrine:query:sql "UPDATE carta SET is_in_active_call = 0 where is_in_active_call = 1"
 php bin/console doctrine:query:sql "UPDATE operador
@@ -362,6 +348,36 @@ Nota.- La previsualización está pendiente de implementar para archivos de Exce
 > (454) MapaUsers, Se sigue abriendo en la misma ventana la carta con la barra CTI
 
 > (545) Evento de Cenferencia a la Carta s
+
+[Offline]
+
++ Se agrega lógica para buscar la última actualización del frontend. Ahora que se descarga la página para su uso Offline, es necesario presionar el boton de "Nueva versión disponible, Actualizar" para los nuevos despliegues.
+
++ Permite entrar a PreCarta y llenar la informacion y almacenarla en local hasta que vuelva el internet para poder enviarlo
+
+
+[ConferenciaEvento]
+
+HiperMe no informa, al contestar, quién inició la conferencia. Para cubrir ese dato se usa la tabla conferencia_pending_request, donde queda registrado el operador que está esperando respuesta.
+
+En el flujo normal, al atender la conferencia se registra en la Carta el evento del Despachante que la aceptó. Solo si hay dos operadores pendientes al mismo tiempo, el Despachante elige la Carta con la que está trabajando, para no asociar la atención a otra conferencia.
+---
+<!-- Después de la junta del 17 Sept -->
+---
+
+[Reportes]
++ Excel para Agente
+
+[Offline]
++ Marcar Cartas que hayan sido enviadas como offline y mostrar en los Reportes
++ 
+
+
+[Extra]
+(Martes 22)
++ Agrega imagenes para Noticias 
+(Miercoles 23)
++ Seleccion personalizada sonido de ring. Agregar 3 sonidos por defecto y poder agregar 3 más
 
 
 

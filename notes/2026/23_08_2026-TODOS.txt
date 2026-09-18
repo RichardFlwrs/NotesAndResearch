@@ -9,12 +9,14 @@ Leyendas:
 Banco:
 
 + {*} (1 h) Curso de LLM en Udemy
-+ (1 h) Renovar el CV.
-+ (45 mins) Proyecto de Invitaciones
-+ [X] (4 horas) Ir por los muebles en casa de Abuelita
++ (2 h) Renovar el CV.
++ {*} (45 mins) Proyecto de Invitaciones
 + (45 mins) Ir al Maxihome por un Cable
 
 + (1 h) Junta con Adrian para su proyecto
 + (30 mins) Seguir con el proceso de Admision para UNADM
 
+
+<!-- TERMINADO -->
 + [X] (4 h) Salir con Emmanuel
++ [X] (4 horas) Ir por los muebles en casa de Abuelita

@@ -1,0 +1,5 @@
+
+
+[POS_MENU]
+
++ Menu QR -> evitar pedir el # de mesa
