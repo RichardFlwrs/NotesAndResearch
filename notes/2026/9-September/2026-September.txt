@@ -13,17 +13,17 @@ Mes: Septiembre
 {J}(10) . 
 {V}(11) . 
 {S}(12) . 
-{D}(13) . Plática en la mesa
+{D}(13) . Cecy:Plática en la mesa
 --- 
 {L}(14) . Pasear a Hoppy, no hice otro ejercicio    | 10am -> 12pm Twtich   | Investigación con Go para transferencia de datos en LAN    | Me dule la panza por comer mucho cacahuate   | MrBrown en el parque con Hoppy (6 meses de casados)
-{M}(15) . <9am:trabajo>  | <12pm:juego> BaityJuegos | Bicep + 100 saltos | 2pm:Junta con Adrian |   Me dolió la panza.
-{M2}(16) . *PUENTE* Despierto a las 9, desayuno yogurth con cereal + mollete con chilorio   |   <11am:trabajo>, Lavadora | <4pm:juego>   | 5pm HEB para pasta    | Peli:"Otto" + pasta cacera y chocolatin almendrado
-{J}(17) . <7am:juego>  8am, yogurth con cereal y platano | <9am:trabajo> Junta911 |    Carne en mole y arroz   |   <1pm:Juego> Pierna y Abs    |   
-{V}(18) . <7am:caminar> sin internet | <8am:juego> Necesse  | 10am Silverio-trabajo, burrito + moka |   2pm JuntaAdrian
-{S}(19) . 
-{D}(20) . 
+{M}(15) . </9am:trabajo>  | </12pm:juego> BaityJuegos | Bicep + 100 saltos | 2pm:Junta con Adrian |   Me dolió la panza.
+{M2}(16) . *PUENTE* Despierto a las 9, desayuno yogurth con cereal + mollete con chilorio   |   </11am:trabajo>, Lavadora | </4pm:juego>   | 5pm HEB para pasta    | Peli:"Otto" + pasta cacera y chocolatin almendrado
+{J}(17) . </7am:juego>  8am, yogurth con cereal y platano | </9am:trabajo> Junta911 |    Carne en mole y arroz   |   </1pm:Juego> Pierna y Abs    |   Duermo temprano + Masaje en las piernas
+{V}(18) . </7am:caminar> sin internet, yogurth con cereal y platano | </8am:juego> Necesse  | 10am Silverio-trabajo, burrito + moka | cancion de Caifanes |   2pm JuntaAdrian |   KKO con Achi + plática sobre pedagogía. |   Netlify + Firebase + JS | Noche fuerte | Deltarune weird route | Desvelo con proyecto de Firebase (</3am>)
+{S}(19) . Auron+Rubius stream   | Mollete de carne con mole | cine:Coyote Acme, a la 4pm (palomitas) + Zara ropa    | Primera rutina ejercicio Cecy    |   peli:Rock of Ages + LedZeppelin Documental  | Maderoterapia
+{D}(20) . </9am:caminar> | 10am Omelete + Lavar ropa | </12pm:juego>,  |     |   FamCecy
 --- 
-{L}(21) . 
+{L}(21) . </:caminar> | </:trabajo>   |   COSTCO    |
 {M}(22) . 
 {M2}(23) . 
 {J}(24) . 
