@@ -8,7 +8,7 @@ Mes: October
 {L}(5) . </9am:desayuno> Pan almendrado, pan de elote   |  Caminar con Hoppy    |   Proyecto de Adrian  |   Hablamos del Infonavit y planes de comprar la casa
 {M}(6) . Actualizo mi CV y envio un par |   Conflicto interno por dejar de jugar    |   
 {M2}(7) . Duermo casi todo el día, empiezo keto-diet   |   </3pm:desayuno> omelete de pollo | Vuelvo a dormir  |   Cenamos ensalada de pollo   |   </11pm:dormir>
-{J}(8) . 
+{J}(8) . </9am:flores> + limpieza de cocina | Lavo ropa y estiramientos |   </11am:desayuno> omelette de pollo y empiezo a trabajar en el proyecto de Adrian 
 {V}(9) .    |   Nicole (?)
 {S}(10) . 
 {D}(11) . 

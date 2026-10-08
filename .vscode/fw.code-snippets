@@ -21,6 +21,12 @@
 		"body": "________________________________________________________________________"
 	},
 
+	"time": {
+		"prefix": "p-time",
+		"body": "</${1:1}${2:am}:${3:desayuno}>",
+		"description": "Time marker"
+	},
+
 	"todo": {
 		"prefix": "todo",
 		"body": "!# TODO: "
