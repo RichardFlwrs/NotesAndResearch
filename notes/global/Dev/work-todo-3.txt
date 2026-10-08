@@ -375,9 +375,12 @@ En el flujo normal, al atender la conferencia se registra en la Carta el evento 
 
 [Extra]
 (Martes 22)
-+ Agrega imagenes para Noticias 
++ Agrega imagenes para Noticias
 (Miercoles 23)
 + Seleccion personalizada sonido de ring. Agregar 3 sonidos por defecto y poder agregar 3 más
+
+
+
 
 
 

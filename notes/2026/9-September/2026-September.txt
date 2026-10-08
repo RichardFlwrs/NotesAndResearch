@@ -21,16 +21,16 @@ Mes: Septiembre
 {J}(17) . </7am:juego>  8am, yogurth con cereal y platano | </9am:trabajo> Junta911 |    Carne en mole y arroz   |   </1pm:Juego> Pierna y Abs    |   Duermo temprano + Masaje en las piernas
 {V}(18) . </7am:caminar> sin internet, yogurth con cereal y platano | </8am:juego> Necesse  | 10am Silverio-trabajo, burrito + moka | cancion de Caifanes |   2pm JuntaAdrian |   KKO con Achi + plática sobre pedagogía. |   Netlify + Firebase + JS | Noche fuerte | Deltarune weird route | Desvelo con proyecto de Firebase (</3am>)
 {S}(19) . Auron+Rubius stream   | Mollete de carne con mole | cine:Coyote Acme, a la 4pm (palomitas) + Zara ropa    | Primera rutina ejercicio Cecy    |   peli:Rock of Ages + LedZeppelin Documental  | Maderoterapia
-{D}(20) . </9am:caminar> | 10am Omelete + Lavar ropa | </12pm:juego>,  |     |   FamCecy
+{D}(20) . </9am:caminar> | 10am Omelete + Lavar ropa | </12pm:juego> Necesi   |   FamCecy, hamburguesas y nieve   | </6pm:curso> AI |
 --- 
-{L}(21) . </:caminar> | </:trabajo>   |   COSTCO    |
-{M}(22) . 
-{M2}(23) . 
+{L}(21) . </11am:desayuno>, sandwich de carne con huevo, gameplay de "Despelote"    |   </2pm:juego> Necesi    |   Lavar ropa, se me olvidó cerrar la llave del agua durante 1 hora-   |   Cecy va con Mary, llega hasta a las 7pm  |   Cenamos carne con ñoquis    |   Juego Minecraft bedrock con Gera hasta las 11pm, Cecy se quedó dormida
+{M}(22) . </7am:caminar> Desayuno 2 molletes con carne, Juego "Crabs"  |   </11am:trabajo>, offline mode    |   </2pm:ejercico> rutina de pecho + canto |   </4pm:comida> atun con cajun extremo. Al llegar Cecy vemos el musica del "Joseph the dreamer" + Pizza  |   </11pm> Dolor intenso en la espala de Cecy
+{M2}(23) . Acompaño a Cecy rumbo al trabajo + Kali café |   </2pm> Costco |   *DENTISTA(3pm)*  |   
 {J}(24) . 
-{V}(25) . 
-{S}(26) . 
-{D}(27) . 
+{V}(25) . Juego con Jonathan y luego con Gera
+{S}(26) . Hoppy se enferma de la panza
+{D}(27) . Caldo de pollo | Hablo con mi papá
 --- 
-{L}(28) . *REVISAR UNADM*
-{M}(29) . 
-{M2}(30) . 
+{L}(28) . </8am:juego> Necesse  | </1pm:comida> *desayuno* carne molida , y empiezo a ser productivo  | *REVISAR UNADM* | trabajo rápido, limpio trastes, mato moscas |    Cumple de Mamá
+{M}(29) . desayuno, carne molida con aguacate   |    </1pm:trabajo> VM conexion (no se logró) |  pollo con mole y arroz     |   yogurt + 2 panes con cacahuate y café lechero   |  </4pm:trabajo> jadespark |   Juego con Gera hasta las 10:30  | Platica con Cecy
+{M2}(30) . Acompaño a Cecy al trabajo, me quedo en Kali, avanzo proyecto de Orquidea |   

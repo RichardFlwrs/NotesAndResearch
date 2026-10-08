@@ -1,22 +1,68 @@
-# Nombre: 
-Orquidea
+# Ficha del Proyecto: Orquídea
 
-# Descripción: 
-Nuestra página se enfoca en la gestión de invitados para tu evento y gestión de las mesas.
-Nuestros clientes podrán tener su propio "link" para su evento, donde sus invitados se "identificarán" para poder confirmar su asistencia y definir sus acompañantes.
-Además los clientes tendrán apoyo visual al momento de organizar las mesas y definir dónde se sentará cada invitado con sus acompañantes. El cliente puede elegir entre 3 estilos distintos para su invitación digital o con un costo extra le hacemos su diseño
+## Descripción
+Plataforma de gestión de eventos, confirmación de invitados (RSVP) y maquetación interactiva de mesas con invitaciones digitales personalizables.
+
+---
+
+## Tech Stack & Estructura
+
+**Monorepo:** API Symfony, SPA/Assets React, OpenAPI Codegen y tests E2E.
+
+| Folder | Stack / Herramientas | Propósito |
+| :--- | :--- | :--- |
+| `backend/` | **Symfony 7** + PHP 8.3 + Doctrine ORM + `NelmioApiDocBundle` | API REST, validaciones (DTOs), exportación de OpenAPI spec y gestión de eventos/archivos Excel. |
+| `frontend/` | **Vite + React + TypeScript** + Tailwind CSS + `react-konva` | Dashboard del cliente, canvas interactivo de mesas y landing estática/RSVP de invitados. |
+| `openapi/` | **OpenAPI 3.0 Spec** (`openapi.json` autocreado desde Symfony) | Contrato centralizado de datos y esquemas de validación. |
+| `codegen/` | `openapi-zod-client` / `orval` | Generación automática de tipos TypeScript y esquemas Zod desde la spec de OpenAPI. |
+| `e2e/` | **Playwright** | Pruebas de integración de flujos críticos (RSVP y canvas de mesas). |
+| `docs/` | Especificaciones de características | Documentación técnica del dominio. |
+
+---
+
+## Flujo de Arquitectura y Datos (Single Source of Truth)
+
+```
+[Symfony DTOs / Constraints] ──(Nelmio)──> [OpenAPI Spec (JSON)] ──(openapi-zod-client)──> [React (Zod Schemas + TS Types)]
+```
+
+1. **Backend (Symfony 7):** Define entidades, DTOs y reglas de validación mediante PHP Attributes (`Symfony\Component\Validator`). Genera la especificación OpenAPI automáticamente.
+2. **Contrato de API (`openapi/`):** La especificación JSON sirve de contrato único entre backend y frontend.
+3. **Frontend (React):** Ejecuta el script de *codegen* para crear esquemas de **Zod** y tipos de **TypeScript** sincronizados para formularios (`react-hook-form`), solicitudes HTTP y estado local.
+
+---
+
+## Features
+
+* **Notificaciones:** Envíos por correo (Symfony Mailer) y mensajería de WhatsApp.
+* **Control de Invitados:** RSVP, solicitud de acompañantes, validación de cupos y recordatorios personalizados.
+* **Procesamiento de Archivos:** Carga de Excel en Symfony con detección y resolución interactiva de duplicados (por nombre o teléfono).
+* **Internacionalización (i18n):** Soporte multi-idioma global en landing, dashboard y vista del invitado.
+
+---
+
+## Módulos Principales
+
+### 1. Dashboard del Cliente
+* **Gestión de Eventos:** Creación de links únicos (`/username/nombre-evento`).
+* **Importación Masiva:** Carga de Excel. Si hay duplicados (ej: dos "Ricardo Flores"), solicita editar nombres o exigir teléfono para desambiguar.
+* **Tabla de Control:** Estatus de asistencia, acompañantes y mesa asignada.
+
+### 2. Sección del Invitado (RSVP)
+* Confirmación de asistencia e identificación por nombre o teléfono.
+* Selección de número de acompañantes dentro del límite asignado.
+* Consulta del estatus actual y resumen de confirmación.
+
+### 3. Gestión Visual de Mesas (`react-konva`)
+* **Grid Dinámico:** Creación de layouts de mesas con sillas predeterminadas.
+* **Context Menu:** Renombrar mesas, ajustar número de sillas y aplicar etiquetas.
+* **Asignación:** Selector de invitados con actualización en tiempo real del canvas (sillas ocupadas vs. libres).
+* **Interacción Drag-and-Drop:** Reordenamiento visual de posiciones de sillas e invitados alrededor de la mesa. Persistencia mediante peticiones REST (`PUT`/`PATCH`) a Symfony.
+
+### 4. Estilización e Invitaciones
+* Selección de 3 plantillas base para la invitación digital o integración de diseños a medida.
 
 
-# Features:
-+ Envío de Correos y mensajería de WhatsApp.
-+ Mensajería instanea de notificación (websocket)
-+ Personalización de Recordatorios.
-+ Control de Invitados (cancelaciones, request para traer acompañante)
-+ Link donde ellos escriban su correo y telefono, además de cantidad de invitaciones.
-
-
-# UX/UI Global:
-+ i18 lenguaje de texto
 
 
 # Página personalizada
@@ -31,7 +77,7 @@ Graduación    |        100        | www.orquidea.com/username/graduacion
 
 # Módulos:
 
-1. Dashboard Cliente.
+## 1. Dashboard Cliente.
 Los Clientes nos tienen que dar "Nombre", "Telefono" y "Correo E.". Los ultimos 2 serían opcionales.
 Puede ver una tabla con sus invitados, su estatus actual, cantidad de acompañantes y mesa asignada.
 
@@ -51,12 +97,12 @@ Invitado 2: Ricardo Flores | (sin telefono)
     Invitado 2: Ricardo Flores | 8115358764
 --- Resultado-> Los invitados al ingresar su nombre, se le pedirá también su telefeono para corroborar la información.
 
-2. Sección de Invitado.
+## 2. Sección de Invitado.
 Confirma su asistencia
     Si sí.- Tiene derecho a X cantidad de acompañantes
 Si ya está confirmado.- Información de sus estatus y de sus acompañantes
 
-3. Gestión de Mesas
+## 3. Gestión de Mesas
 El usuario puede designar cuantás mesas tendrá su evento, y cuantas sillas tendrá las mesas por defecto.
 Posteriormente el usuario puede hacer click en cada mesa para asignarles un "nombre" y "etiquietas", además se personalizar la cantidad de sillas.
 El grid de las mesas será tambien personalizable, 3x3, 4x2, etc.
@@ -77,25 +123,5 @@ Ejemplo.-
 > Se actualiza la mesa.
 
 
-4. Estilización de la Página
+## 4. Estilización de la Página
 Por defecto la página personal de su evento tendrá un estilo predefinido 
-
-
-
-# Tech Stack
-
-Monorepo; landing, backend API, shared Zod schemas, and E2E tests.
-
-## Estructura
-
-| Folder | Stack |
-|--------|--------|
-| `frontend/` | Vite + React + TypeScript + Vitest + react-konva |
-| `backend/` | Fastify + TypeScript |
-| `zod/` | Shared Zod schemas |
-| `e2e/` | Playwright |
-| `docs/` | Feature specifications |
-
-
-## Frontend Specs
-+ react-konva.- Se usará para el pintado de mesas

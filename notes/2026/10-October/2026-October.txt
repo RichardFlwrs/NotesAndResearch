@@ -1,15 +1,15 @@
 Mes: October 
 
-{J}(1) . 
-{V}(2) . 
-{S}(3) . 
-{D}(4) . 
+{J}(1) . día de weba, auron minecraft + pan de chocolate y doble café   |   Llega el ginko biloba  |   Orquidea proyecto  |   Lavo ropa |   Pago las deudas | Anuncian cancelacion de claese por las lluvias
+{V}(2) . </9am:desayuno> molletes con carne molida  |   Limpio el cuarto y reacomodo cables |   proyecto de Adrian  |   Sincronizadas tipo nachos con guacamole    |   Nicole (se canceló por la lluiva) | Me desvelo hasta las 4 con un juego nuevo, Dwarfs
+{S}(3) .  Compramos ropa azul   |   Cavazos, restaurante pescado + pan de elote  |   Fiesta de Natty, tomo 4 cervezas
+{D}(4) . </10am:desayuno>   |   HEB surtir   |   Cenamos pasta con carne    | Minecraft con gera
 --- 
-{L}(5) . 
-{M}(6) . 
-{M2}(7) . 
+{L}(5) . </9am:desayuno> Pan almendrado, pan de elote   |  Caminar con Hoppy    |   Proyecto de Adrian  |   Hablamos del Infonavit y planes de comprar la casa
+{M}(6) . Actualizo mi CV y envio un par |   Conflicto interno por dejar de jugar    |   
+{M2}(7) . Duermo casi todo el día, empiezo keto-diet   |   </3pm:desayuno> omelete de pollo | Vuelvo a dormir  |   Cenamos ensalada de pollo   |   </11pm:dormir>
 {J}(8) . 
-{V}(9) . 
+{V}(9) .    |   Nicole (?)
 {S}(10) . 
 {D}(11) . 
 --- 
