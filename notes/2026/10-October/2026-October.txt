@@ -8,10 +8,10 @@ Mes: October
 {L}(5) . </9am:desayuno> Pan almendrado, pan de elote   |  Caminar con Hoppy    |   Proyecto de Adrian  |   Hablamos del Infonavit y planes de comprar la casa
 {M}(6) . Actualizo mi CV y envio un par |   Conflicto interno por dejar de jugar    |   
 {M2}(7) . Duermo casi todo el día, empiezo keto-diet   |   </3pm:desayuno> omelete de pollo | Vuelvo a dormir  |   Cenamos ensalada de pollo   |   </11pm:dormir>
-{J}(8) . </9am:flores> + limpieza de cocina | Lavo ropa y estiramientos |   </11am:desayuno> omelette de pollo y empiezo a trabajar en el proyecto de Adrian 
-{V}(9) .    |   Nicole (?)
-{S}(10) . 
-{D}(11) . 
+{J}(8) . </9am:flores> + limpieza de cocina | Lavo ropa y estiramientos |   </11am:desayuno> omelette de pollo y empiezo a trabajar en el proyecto de Adrian    |   </3pm:estudio>  cardio con hoppy 20 mins, curso ingerio agentico    |  </5pm:junta> con Adrian
+{V}(9) . Nada, solo jugar y hackear el juego de Hall of Torment 
+{S}(10) . Hacking Babel game    |   Ejercicio de Biceps | Discord con mi Papá   |   Fiesta de Dani teatro en Noreste Grill
+{D}(11) . Llevo 3 días durmiendo a las 3-4 am, me levanto a las 11am nuevamente |   Jugamos AoE hasta las 2pm   |    Ejercicio de pierna    |   Funeral de la tía de Betty
 --- 
 {L}(12) . 
 {M}(13) . 
